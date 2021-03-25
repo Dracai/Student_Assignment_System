@@ -42,6 +42,7 @@ namespace Student_Assignment_System
             this.btnStudentLogin.TabIndex = 0;
             this.btnStudentLogin.Text = "Student";
             this.btnStudentLogin.UseVisualStyleBackColor = true;
+            this.btnStudentLogin.Click += new System.EventHandler(this.btnStudentLogin_Click);
             // 
             // btnLecturerLogin
             // 

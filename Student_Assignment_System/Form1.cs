@@ -25,6 +25,7 @@ namespace Student_Assignment_System
             adminDash.Show();
         }
 
+<<<<<<< Updated upstream
         private void btnLecturerLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,6 +40,15 @@ namespace Student_Assignment_System
         }
 
 
+>>>>>>> Stashed changes
+=======
+        private void btnStudentLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var studentDashboard = new StudentDashboard();
+            studentDashboard.Closed += (s, args) => this.Close();
+            studentDashboard.Show();
+        }
 >>>>>>> Stashed changes
     }
 }
