@@ -19,3 +19,4 @@ C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assig
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.pdb
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.LecturerDashboard.resources
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdministratorDashboard.resources
+C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.StudentDashboard.resources

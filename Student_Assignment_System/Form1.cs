@@ -24,5 +24,13 @@ namespace Student_Assignment_System
             adminDash.FormClosed += (s, args) => this.Close();
             adminDash.Show();
         }
+
+        private void btnLecturerLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var LD = new LecturerDashboard();
+            LD.FormClosed += (s, args) => this.Close();
+            LD.Show();
+        }
     }
 }
