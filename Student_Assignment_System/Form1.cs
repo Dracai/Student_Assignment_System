@@ -29,8 +29,16 @@ namespace Student_Assignment_System
         {
             this.Hide();
             var LD = new LecturerDashboard();
+<<<<<<< Updated upstream
             LD.FormClosed += (s, args) => this.Close();
             LD.Show();
         }
+=======
+            LD.Closed += (s, args) => this.Close();
+            LD.Show();
+        }
+
+
+>>>>>>> Stashed changes
     }
 }
