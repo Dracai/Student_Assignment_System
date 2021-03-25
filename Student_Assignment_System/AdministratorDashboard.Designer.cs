@@ -35,6 +35,7 @@ namespace Student_Assignment_System
             this.tabPageAdmins = new System.Windows.Forms.TabPage();
             this.tabPageLects = new System.Windows.Forms.TabPage();
             this.tabPageStuds = new System.Windows.Forms.TabPage();
+            this.tabPageModules = new System.Windows.Forms.TabPage();
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
@@ -46,6 +47,7 @@ namespace Student_Assignment_System
             this.tabControl1.Controls.Add(this.tabPageAdmins);
             this.tabControl1.Controls.Add(this.tabPageLects);
             this.tabControl1.Controls.Add(this.tabPageStuds);
+            this.tabControl1.Controls.Add(this.tabPageModules);
             this.tabControl1.Controls.Add(this.tabPageLogOut);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -107,14 +109,23 @@ namespace Student_Assignment_System
             this.tabPageStuds.Text = "Students";
             this.tabPageStuds.UseVisualStyleBackColor = true;
             // 
+            // tabPageModules
+            // 
+            this.tabPageModules.Location = new System.Drawing.Point(4, 29);
+            this.tabPageModules.Name = "tabPageModules";
+            this.tabPageModules.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPageModules.Size = new System.Drawing.Size(768, 393);
+            this.tabPageModules.TabIndex = 4;
+            this.tabPageModules.Text = "Modules";
+            this.tabPageModules.UseVisualStyleBackColor = true;
+            // 
             // tabPageLogOut
             // 
             this.tabPageLogOut.Location = new System.Drawing.Point(4, 29);
             this.tabPageLogOut.Name = "tabPageLogOut";
-            this.tabPageLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabPageLogOut.Size = new System.Drawing.Size(768, 393);
-            this.tabPageLogOut.TabIndex = 4;
-            this.tabPageLogOut.Text = "Log out";
+            this.tabPageLogOut.TabIndex = 5;
+            this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
             // AdministratorDashboard
@@ -140,6 +151,7 @@ namespace Student_Assignment_System
         private System.Windows.Forms.TabPage tabPageLects;
         private System.Windows.Forms.TabPage tabPageStuds;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabPageModules;
         private System.Windows.Forms.TabPage tabPageLogOut;
     }
 }
