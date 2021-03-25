@@ -10,19 +10,13 @@ using System.Windows.Forms;
 
 namespace Student_Assignment_System
 {
-    public partial class Form1 : Form
+    public partial class AdministratorDashboard : Form
     {
-        public Form1()
+        public AdministratorDashboard()
         {
             InitializeComponent();
         }
 
-        private void btnAdminLogin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var adminDash = new AdministratorDashboard();
-            adminDash.FormClosed += (s, args) => this.Close();
-            adminDash.Show();
-        }
+      
     }
 }
