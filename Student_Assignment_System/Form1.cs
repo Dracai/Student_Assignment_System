@@ -17,12 +17,12 @@ namespace Student_Assignment_System
             InitializeComponent();
         }
 
-        private void btnLecturerLogin_Click(object sender, EventArgs e)
+        private void btnAdminLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var LD = new LecturerDashboard();
-            LD.Closed += (s, args) => this.Close();
-            LD.Show();
+            var adminDash = new AdministratorDashboard();
+            adminDash.FormClosed += (s, args) => this.Close();
+            adminDash.Show();
         }
     }
 }

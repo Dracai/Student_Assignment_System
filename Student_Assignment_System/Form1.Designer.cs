@@ -53,7 +53,6 @@ namespace Student_Assignment_System
             this.btnLecturerLogin.TabIndex = 1;
             this.btnLecturerLogin.Text = "Lecturer";
             this.btnLecturerLogin.UseVisualStyleBackColor = true;
-            this.btnLecturerLogin.Click += new System.EventHandler(this.btnLecturerLogin_Click);
             // 
             // btnAdminLogin
             // 
@@ -64,7 +63,7 @@ namespace Student_Assignment_System
             this.btnAdminLogin.TabIndex = 2;
             this.btnAdminLogin.Text = "Administrator";
             this.btnAdminLogin.UseVisualStyleBackColor = true;
-            //this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // Form1
             // 
