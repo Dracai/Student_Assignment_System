@@ -51,6 +51,7 @@ namespace Student_Assignment_System
             this.btnLecturerLogin.TabIndex = 1;
             this.btnLecturerLogin.Text = "Lecturer";
             this.btnLecturerLogin.UseVisualStyleBackColor = true;
+            this.btnLecturerLogin.Click += new System.EventHandler(this.btnLecturerLogin_Click);
             // 
             // btnAdminLogin
             // 

@@ -16,5 +16,13 @@ namespace Student_Assignment_System
         {
             InitializeComponent();
         }
+
+        private void btnLecturerLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var LD = new LecturerDashboard();
+            LD.Closed += (s, args) => this.Close();
+            LD.Show();
+        }
     }
 }
