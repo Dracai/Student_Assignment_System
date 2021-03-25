@@ -29,13 +29,57 @@ namespace Student_Assignment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnStudentLogin = new System.Windows.Forms.Button();
+            this.btnLecturerLogin = new System.Windows.Forms.Button();
+            this.btnAdminLogin = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnStudentLogin
+            // 
+            this.btnStudentLogin.Location = new System.Drawing.Point(51, 334);
+            this.btnStudentLogin.Name = "btnStudentLogin";
+            this.btnStudentLogin.Size = new System.Drawing.Size(116, 43);
+            this.btnStudentLogin.TabIndex = 0;
+            this.btnStudentLogin.Text = "Student";
+            this.btnStudentLogin.UseVisualStyleBackColor = true;
+            // 
+            // btnLecturerLogin
+            // 
+            this.btnLecturerLogin.Location = new System.Drawing.Point(336, 334);
+            this.btnLecturerLogin.Name = "btnLecturerLogin";
+            this.btnLecturerLogin.Size = new System.Drawing.Size(116, 43);
+            this.btnLecturerLogin.TabIndex = 1;
+            this.btnLecturerLogin.Text = "Lecturer";
+            this.btnLecturerLogin.UseVisualStyleBackColor = true;
+            // 
+            // btnAdminLogin
+            // 
+            this.btnAdminLogin.Location = new System.Drawing.Point(630, 334);
+            this.btnAdminLogin.Name = "btnAdminLogin";
+            this.btnAdminLogin.Size = new System.Drawing.Size(116, 43);
+            this.btnAdminLogin.TabIndex = 2;
+            this.btnAdminLogin.Text = "Administrator";
+            this.btnAdminLogin.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdminLogin);
+            this.Controls.Add(this.btnLecturerLogin);
+            this.Controls.Add(this.btnStudentLogin);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnStudentLogin;
+        private System.Windows.Forms.Button btnLecturerLogin;
+        private System.Windows.Forms.Button btnAdminLogin;
     }
 }
 
