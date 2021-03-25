@@ -33,8 +33,12 @@ namespace Student_Assignment_System
             LD.Show();
         }
 
-
-
-
+        private void btnStudentLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var studentDashboard = new StudentDashboard();
+            studentDashboard.Closed += (s, args) => this.Close();
+            studentDashboard.Show();
+        }
     }
 }
