@@ -24,6 +24,18 @@ namespace Student_Assignment_System
             this.DateOfHire = DateOfHire;
         }
 
+        ~Lecturer()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return String.Join(",", base.ToString(), this.LecturerID, this.LecturerPassword, this.ModulesToTeach, this.DateOfHire);
+        }
+
+
+
 
 
     }
