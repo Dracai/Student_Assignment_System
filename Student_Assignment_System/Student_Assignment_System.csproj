@@ -53,6 +53,7 @@
     <Compile Include="AdministratorDashboard.Designer.cs">
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Assignment.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
