@@ -20,5 +20,10 @@ namespace Student_Assignment_System
             this.PhoneNumber = pNumber;
             this.DateOfHire = HireDate;
         }
+
+        public override string ToString()
+        {
+            return  String.Join(",",this.AdminID,this.PhoneNumber,this.DateOfHire) + "," + base.ToString();
+        }
     }
 }

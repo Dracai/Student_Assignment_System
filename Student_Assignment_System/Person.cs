@@ -20,5 +20,10 @@ namespace Student_Assignment_System
             this.Address = pAddress;
             this.PPSNumber = pPPSNumber;
         }
+
+        public override string ToString()
+        {
+            return String.Join(",", this.Name, this.DateOfBirth, this.Address, this.PPSNumber);
+        }
     }
 }
