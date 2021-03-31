@@ -1,39 +1,13 @@
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe.config
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.pdb
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csprojAssemblyReference.cache
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Properties.Resources.resources
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.GenerateResource.cache
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.CoreCompileInputs.cache
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.exe
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.pdb
-<<<<<<< Updated upstream
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe.config
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.pdb
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csprojAssemblyReference.cache
+C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdministratorDashboard.resources
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Form1.resources
+C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.LecturerDashboard.resources
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Properties.Resources.resources
+C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.StudentDashboard.resources
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.GenerateResource.cache
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.CoreCompileInputs.cache
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.exe
 C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.pdb
-C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.LecturerDashboard.resources
-C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdministratorDashboard.resources
-C:\Users\conor\OneDrive\Documents\GitHub\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.StudentDashboard.resources
-=======
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe.config
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.exe
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\bin\Debug\Student_Assignment_System.pdb
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csprojAssemblyReference.cache
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdministratorDashboard.resources
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Form1.resources
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Properties.Resources.resources
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.GenerateResource.cache
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.CoreCompileInputs.cache
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.exe
-C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.pdb
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdministratorDashboard.resources
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.Form1.resources
-D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.StudentDashboard.resources
->>>>>>> Stashed changes
