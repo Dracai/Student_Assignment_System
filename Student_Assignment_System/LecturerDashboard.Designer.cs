@@ -32,8 +32,8 @@ namespace Student_Assignment_System
             this.tcDash = new System.Windows.Forms.TabControl();
             this.Dashboard = new System.Windows.Forms.TabPage();
             this.Assignments = new System.Windows.Forms.TabPage();
-            this.Logout = new System.Windows.Forms.TabPage();
             this.ClassGroups = new System.Windows.Forms.TabPage();
+            this.Logout = new System.Windows.Forms.TabPage();
             this.tcDash.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +71,6 @@ namespace Student_Assignment_System
             this.Assignments.Text = "Assignments";
             this.Assignments.UseVisualStyleBackColor = true;
             // 
-            // Logout
-            // 
-            this.Logout.Location = new System.Drawing.Point(4, 29);
-            this.Logout.Name = "Logout";
-            this.Logout.Padding = new System.Windows.Forms.Padding(3);
-            this.Logout.Size = new System.Drawing.Size(765, 393);
-            this.Logout.TabIndex = 2;
-            this.Logout.Text = "Logout";
-            this.Logout.UseVisualStyleBackColor = true;
-            // 
             // ClassGroups
             // 
             this.ClassGroups.Location = new System.Drawing.Point(4, 29);
@@ -90,6 +80,16 @@ namespace Student_Assignment_System
             this.ClassGroups.TabIndex = 3;
             this.ClassGroups.Text = "Class Groups";
             this.ClassGroups.UseVisualStyleBackColor = true;
+            // 
+            // Logout
+            // 
+            this.Logout.Location = new System.Drawing.Point(4, 29);
+            this.Logout.Name = "Logout";
+            this.Logout.Padding = new System.Windows.Forms.Padding(3);
+            this.Logout.Size = new System.Drawing.Size(765, 393);
+            this.Logout.TabIndex = 2;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
             // 
             // LecturerDashboard
             // 

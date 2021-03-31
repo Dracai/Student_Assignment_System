@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Student_Assignment_System
 {
+    [Serializable]
     class Lecturer : Person
     {
         public string LecturerID { get; set; }
