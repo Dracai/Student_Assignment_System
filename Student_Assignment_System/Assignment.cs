@@ -16,6 +16,7 @@ namespace Student_Assignment_System
         public string ClassGroup { get; set; }
         public string Module { get; set; }
         public string LecturerID { get; set; }
+        public string Description { get; set; }
 
         public Assignment(string assignmentID, string name, string dateIssued, string dateDue, string classGroup,
             string module, string lecturerID)

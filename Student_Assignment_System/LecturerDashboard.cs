@@ -14,12 +14,13 @@ namespace Student_Assignment_System
 {
     public partial class LecturerDashboard : Form
     {
-        List<Lecturer> LecturerList = new List<Lecturer>();
+        List<Assignment> AssignmentList = new List<Assignment>();
         List<ClassGroup> ClassGroupList = new List<ClassGroup>();
 
         public LecturerDashboard()
         {
             InitializeComponent();
+            ReadFiles();
         }
 
         private void LecLogout(object sender, EventArgs e)
@@ -35,29 +36,29 @@ namespace Student_Assignment_System
 
         private void ReadFiles()
         {
-            List<Lecturer> temp1 = new List<Lecturer>();
+            List<Assignment> temp1 = new List<Assignment>();
 
-            FileInfo LfInfo = new FileInfo("LecturerFiles.dat");
-            FileStream LecturerFile;
+            FileInfo AfInfo = new FileInfo("AssignmentFiles.dat");
+            FileStream AssignmentFile;
 
-            if (LfInfo.Exists)
+            if (AfInfo.Exists)
             {
-                LecturerFile = new FileStream("LecturerFiles.dat", FileMode.Open, FileAccess.Read);
+                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Open, FileAccess.Read);
                 BinaryFormatter bformatter = new BinaryFormatter();
                 try
                 {
-                    temp1 = bformatter.Deserialize(LecturerFile) as List<Lecturer>;
-                    LecturerList = temp1;
+                    temp1 = bformatter.Deserialize(AssignmentFile) as List<Assignment>;
+                    AssignmentList = temp1;
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show($"{e} Exception caught.");
                 }
-                LecturerFile.Close();
+                AssignmentFile.Close();
             }
             else
             {
-                MessageBox.Show("ERROR CANT FIND FILE " + LfInfo.FullName);
+                MessageBox.Show("ERROR CANT FIND FILE " + AfInfo.FullName);
             }
 
 
@@ -88,32 +89,30 @@ namespace Student_Assignment_System
 
         private void SaveFiles()
         {
-            FileInfo LfInfo = new FileInfo("LecturerFiles.dat");
-            FileStream LecturerFile;
+            FileInfo AfInfo = new FileInfo("AssignmentFiles.dat");
+            FileStream AssignmentFile;
 
-            if (LfInfo.Exists)
+            if (AfInfo.Exists)
             {
-                LecturerFile = new FileStream("LecturerFiles.dat", FileMode.Create, FileAccess.Write);
-                //Console.WriteLine("found file " + RecipefInfo.FullName);
+                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Create, FileAccess.Write);
             }
             else
             {
-                LecturerFile = new FileStream("LecturerFiles.dat", FileMode.Create, FileAccess.Write);
-                //Console.WriteLine("created file " + RecipefInfo.FullName);
+                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Create, FileAccess.Write);
             }
 
             BinaryFormatter bformatter = new BinaryFormatter();
 
             try
             {
-                bformatter.Serialize(LecturerFile, LecturerList);
+                bformatter.Serialize(AssignmentFile, AssignmentList);
             }
             catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
             }
 
-            LecturerFile.Close();
+            AssignmentFile.Close();
 
             
             FileInfo CGfInfo = new FileInfo("ClassGroupFile.dat");
@@ -122,12 +121,10 @@ namespace Student_Assignment_System
             if (CGfInfo.Exists)
             {
                 ClassFile = new FileStream("ClassGroupFile.dat", FileMode.Create, FileAccess.Write);
-                //Console.WriteLine("found file " + AllergenfInfo.FullName);
             }
             else
             {
                 ClassFile = new FileStream("ClassGroupFile.dat", FileMode.Create, FileAccess.Write);
-                //Console.WriteLine("created file " + AllergenfInfo.FullName);
             }
 
             BinaryFormatter rbformatter = new BinaryFormatter();
@@ -144,7 +141,14 @@ namespace Student_Assignment_System
             ClassFile.Close();
         }
 
+        private void btnAssignmentsGo_Click(object sender, EventArgs e)
+        {
+            tcDash.SelectedTab = tcDash.TabPages[1];
+        }
 
-
+        private void btnClassGroupsGo_Click(object sender, EventArgs e)
+        {
+            tcDash.SelectedTab = tcDash.TabPages[2];
+        }
     }
 }
