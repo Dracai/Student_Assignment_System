@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Assignment_System
 {
+    [Serializable]
     abstract class Person
     {
         public string Name { get; set; }
