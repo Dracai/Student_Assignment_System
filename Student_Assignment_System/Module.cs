@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Assignment_System
 {
+    [Serializable]
     class Module
     {
         public string ModuleCode { get; set; }

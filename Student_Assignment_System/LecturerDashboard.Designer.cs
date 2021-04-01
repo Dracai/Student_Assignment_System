@@ -44,59 +44,65 @@ namespace Student_Assignment_System
             this.tcDash.Controls.Add(this.ClassGroups);
             this.tcDash.Controls.Add(this.Logout);
             this.tcDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcDash.Location = new System.Drawing.Point(15, 12);
+            this.tcDash.Location = new System.Drawing.Point(20, 15);
+            this.tcDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tcDash.Name = "tcDash";
             this.tcDash.SelectedIndex = 0;
-            this.tcDash.Size = new System.Drawing.Size(773, 426);
+            this.tcDash.Size = new System.Drawing.Size(1031, 524);
             this.tcDash.TabIndex = 1;
             this.tcDash.SelectedIndexChanged += new System.EventHandler(this.LecLogout);
             // 
             // Dashboard
             // 
-            this.Dashboard.Location = new System.Drawing.Point(4, 29);
+            this.Dashboard.Location = new System.Drawing.Point(4, 34);
+            this.Dashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Dashboard.Name = "Dashboard";
-            this.Dashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.Dashboard.Size = new System.Drawing.Size(765, 393);
+            this.Dashboard.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Dashboard.Size = new System.Drawing.Size(1023, 486);
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "Dashboard";
             this.Dashboard.UseVisualStyleBackColor = true;
             // 
             // Assignments
             // 
-            this.Assignments.Location = new System.Drawing.Point(4, 29);
+            this.Assignments.Location = new System.Drawing.Point(4, 34);
+            this.Assignments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Assignments.Name = "Assignments";
-            this.Assignments.Padding = new System.Windows.Forms.Padding(3);
-            this.Assignments.Size = new System.Drawing.Size(765, 393);
+            this.Assignments.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Assignments.Size = new System.Drawing.Size(1023, 486);
             this.Assignments.TabIndex = 1;
             this.Assignments.Text = "Assignments";
             this.Assignments.UseVisualStyleBackColor = true;
             // 
             // ClassGroups
             // 
-            this.ClassGroups.Location = new System.Drawing.Point(4, 29);
+            this.ClassGroups.Location = new System.Drawing.Point(4, 34);
+            this.ClassGroups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClassGroups.Name = "ClassGroups";
-            this.ClassGroups.Padding = new System.Windows.Forms.Padding(3);
-            this.ClassGroups.Size = new System.Drawing.Size(765, 393);
+            this.ClassGroups.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClassGroups.Size = new System.Drawing.Size(1023, 486);
             this.ClassGroups.TabIndex = 3;
             this.ClassGroups.Text = "Class Groups";
             this.ClassGroups.UseVisualStyleBackColor = true;
             // 
             // Logout
             // 
-            this.Logout.Location = new System.Drawing.Point(4, 29);
+            this.Logout.Location = new System.Drawing.Point(4, 34);
+            this.Logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logout.Name = "Logout";
-            this.Logout.Padding = new System.Windows.Forms.Padding(3);
-            this.Logout.Size = new System.Drawing.Size(765, 393);
+            this.Logout.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Logout.Size = new System.Drawing.Size(1023, 486);
             this.Logout.TabIndex = 2;
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = true;
             // 
             // LecturerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tcDash);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LecturerDashboard";
             this.Text = "LecturerDashboard";
             this.tcDash.ResumeLayout(false);
