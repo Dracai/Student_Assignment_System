@@ -16,5 +16,16 @@ namespace Student_Assignment_System
         {
             InitializeComponent();
         }
+
+        private void StudentLogout(object sender, EventArgs e)
+        {
+            if (tcStudentDash.SelectedTab.Text == "Logout")
+            {
+                this.Hide();
+                var Login = new Form1();
+                Login.Closed += (s, args) => this.Close();
+                Login.Show();
+            }
+        }
     }
 }

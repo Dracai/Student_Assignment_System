@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Assignment_System
 {
+    [Serializable]
     class Student : Person
     {
         public string StudentID { get; set; }
@@ -20,6 +21,11 @@ namespace Student_Assignment_System
             this.StudentPassword = sPW;
             this.ClassGroup = sClassGroup;
             this.DateEnrolled = sDateEnrolled;
+        }
+
+        public override string ToString()
+        {
+            return String.Join(",", this.StudentID, this.ClassGroup, this.DateEnrolled) + "," + base.ToString();
         }
     }
 }
