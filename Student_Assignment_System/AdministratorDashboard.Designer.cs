@@ -29,35 +29,40 @@ namespace Student_Assignment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageDashboard = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageAdmins = new System.Windows.Forms.TabPage();
             this.tabPageLects = new System.Windows.Forms.TabPage();
             this.tabPageStuds = new System.Windows.Forms.TabPage();
             this.tabPageModules = new System.Windows.Forms.TabPage();
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.btnRead = new System.Windows.Forms.Button();
+            this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlAdmin
             // 
-            this.tabControl1.Controls.Add(this.tabPageDashboard);
-            this.tabControl1.Controls.Add(this.tabPageAdmins);
-            this.tabControl1.Controls.Add(this.tabPageLects);
-            this.tabControl1.Controls.Add(this.tabPageStuds);
-            this.tabControl1.Controls.Add(this.tabPageModules);
-            this.tabControl1.Controls.Add(this.tabPageLogOut);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlAdmin.Controls.Add(this.tabPageDashboard);
+            this.tabControlAdmin.Controls.Add(this.tabPageAdmins);
+            this.tabControlAdmin.Controls.Add(this.tabPageLects);
+            this.tabControlAdmin.Controls.Add(this.tabPageStuds);
+            this.tabControlAdmin.Controls.Add(this.tabPageModules);
+            this.tabControlAdmin.Controls.Add(this.tabPageLogOut);
+            this.tabControlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlAdmin.Location = new System.Drawing.Point(12, 12);
+            this.tabControlAdmin.Name = "tabControlAdmin";
+            this.tabControlAdmin.SelectedIndex = 0;
+            this.tabControlAdmin.Size = new System.Drawing.Size(776, 426);
+            this.tabControlAdmin.TabIndex = 0;
+            this.tabControlAdmin.SelectedIndexChanged += new System.EventHandler(this.tabControlAdmin_SelectedIndexChanged);
             // 
             // tabPageDashboard
             // 
+            this.tabPageDashboard.Controls.Add(this.btnRead);
+            this.tabPageDashboard.Controls.Add(this.btnSave);
             this.tabPageDashboard.Controls.Add(this.label1);
             this.tabPageDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageDashboard.Location = new System.Drawing.Point(4, 29);
@@ -67,6 +72,17 @@ namespace Student_Assignment_System
             this.tabPageDashboard.TabIndex = 0;
             this.tabPageDashboard.Text = "Dashboard";
             this.tabPageDashboard.UseVisualStyleBackColor = true;
+            this.tabPageDashboard.Click += new System.EventHandler(this.tabPageDashboard_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(283, 255);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 34);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -128,15 +144,26 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(364, 255);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(75, 34);
+            this.btnRead.TabIndex = 2;
+            this.btnRead.Text = "Read";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
             // AdministratorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlAdmin);
             this.Name = "AdministratorDashboard";
             this.Text = "Administrator Dashboard";
-            this.tabControl1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.AdministratorDashboard_Load);
+            this.tabControlAdmin.ResumeLayout(false);
             this.tabPageDashboard.ResumeLayout(false);
             this.tabPageDashboard.PerformLayout();
             this.ResumeLayout(false);
@@ -145,7 +172,7 @@ namespace Student_Assignment_System
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlAdmin;
         private System.Windows.Forms.TabPage tabPageDashboard;
         private System.Windows.Forms.TabPage tabPageAdmins;
         private System.Windows.Forms.TabPage tabPageLects;
@@ -153,5 +180,7 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPageModules;
         private System.Windows.Forms.TabPage tabPageLogOut;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnRead;
     }
 }
