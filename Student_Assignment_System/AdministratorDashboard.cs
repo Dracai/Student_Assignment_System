@@ -19,6 +19,33 @@ namespace Student_Assignment_System
         public AdministratorDashboard()
         {
             InitializeComponent();
+            ReadFile<Administrator>(ref AdminList, "AdminFile.dat");
+
+            foreach (Administrator admin in AdminList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Name = admin.AdminID;
+                item.Text = admin.AdminID;
+                item.SubItems.Add(admin.Name);
+                item.SubItems.Add(admin.Address);
+                item.SubItems.Add(admin.DateOfBirth);
+                item.SubItems.Add(admin.PPSNumber);
+                item.SubItems.Add(admin.DateOfHire);
+                this.listViewAdmin.Items.Add(item);
+            }
+
+            ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
+
+            foreach(Module module in ModuleList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Name = module.ModuleCode;
+                item.Text = module.ModuleCode;
+                item.SubItems.Add(module.ModuleName);
+                item.SubItems.Add(module.Credits.ToString());
+                this.listViewModule.Items.Add(item);
+            }
+
         }
 
         private void AdministratorDashboard_Load(object sender, EventArgs e)
