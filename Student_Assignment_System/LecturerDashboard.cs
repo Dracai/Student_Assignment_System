@@ -14,12 +14,14 @@ namespace Student_Assignment_System
 {
     public partial class LecturerDashboard : Form
     {
+        List<Student> StudentList = new List<Student>();
         List<Assignment> AssignmentList = new List<Assignment>();
         List<ClassGroup> ClassGroupList = new List<ClassGroup>();
 
-        public LecturerDashboard()
+        public LecturerDashboard(List<Student> stulist)
         {
             InitializeComponent();
+            List<Student> StudentList = stulist;
             ReadFiles();
         }
 
