@@ -106,18 +106,6 @@ namespace Student_Assignment_System
             Console.WriteLine("Data written to file");
         }
 
-
-        private void tabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(tabControlAdmin.SelectedIndex == 5)
-            {
-                this.Hide();
-                var Login = new Form1();
-                Login.Closed += (s, args) => this.Close();
-                Login.Show();
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             WriteFile<Administrator>(AdminList, "AdminFile.dat");
@@ -128,6 +116,17 @@ namespace Student_Assignment_System
         {
             ReadFile<Administrator>(ref AdminList, "AdminFile.dat");
             ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
+        }
+
+        private void Administrator_Logout(object sender, EventArgs e)
+        {
+            if (tabControlAdmin.SelectedIndex == 5)
+            {
+                this.Hide();
+                var Login = new Form1();
+                Login.Closed += (s, args) => this.Close();
+                Login.Show();
+            }
         }
     }
 }

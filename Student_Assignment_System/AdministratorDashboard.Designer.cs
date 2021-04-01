@@ -31,6 +31,7 @@ namespace Student_Assignment_System
         {
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageDashboard = new System.Windows.Forms.TabPage();
+            this.btnRead = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageAdmins = new System.Windows.Forms.TabPage();
@@ -38,7 +39,6 @@ namespace Student_Assignment_System
             this.tabPageStuds = new System.Windows.Forms.TabPage();
             this.tabPageModules = new System.Windows.Forms.TabPage();
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
-            this.btnRead = new System.Windows.Forms.Button();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace Student_Assignment_System
             this.tabControlAdmin.SelectedIndex = 0;
             this.tabControlAdmin.Size = new System.Drawing.Size(776, 426);
             this.tabControlAdmin.TabIndex = 0;
-            this.tabControlAdmin.SelectedIndexChanged += new System.EventHandler(this.tabControlAdmin_SelectedIndexChanged);
+            this.tabControlAdmin.SelectedIndexChanged += new System.EventHandler(this.Administrator_Logout);
             // 
             // tabPageDashboard
             // 
@@ -73,6 +73,16 @@ namespace Student_Assignment_System
             this.tabPageDashboard.Text = "Dashboard";
             this.tabPageDashboard.UseVisualStyleBackColor = true;
             this.tabPageDashboard.Click += new System.EventHandler(this.tabPageDashboard_Click);
+            // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(364, 255);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(75, 34);
+            this.btnRead.TabIndex = 2;
+            this.btnRead.Text = "Read";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnSave
             // 
@@ -143,16 +153,6 @@ namespace Student_Assignment_System
             this.tabPageLogOut.TabIndex = 5;
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
-            // 
-            // btnRead
-            // 
-            this.btnRead.Location = new System.Drawing.Point(364, 255);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(75, 34);
-            this.btnRead.TabIndex = 2;
-            this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // AdministratorDashboard
             // 
