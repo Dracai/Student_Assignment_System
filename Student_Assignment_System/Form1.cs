@@ -35,7 +35,7 @@ namespace Student_Assignment_System
         private void btnLecturerLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var LD = new LecturerDashboard();
+            var LD = new LecturerDashboard(studentList);
             LD.FormClosed += (s, args) => this.Close();
             LD.Show();
         }
@@ -73,9 +73,7 @@ namespace Student_Assignment_System
                 Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
             }
         }
-<<<<<<< Updated upstream
-=======
-
+        
         private void btn_Login_Click(object sender, EventArgs e)
         {
             if (ValidateLogin())
@@ -163,7 +161,5 @@ namespace Student_Assignment_System
 
             return true ;
         }
-
->>>>>>> Stashed changes
     }
 }

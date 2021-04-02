@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Student_Assignment_System
 {
     [Serializable]
-    abstract class Person
+    public abstract class Person
     {
         public string Name { get; set; }
         public string DateOfBirth { get; set; }
