@@ -155,5 +155,25 @@ namespace Student_Assignment_System
                 Login.Show();
             }
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 1;
+        }
+
+        private void btnLecturer_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 2;
+        }
+
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 3;
+        }
+
+        private void btnModule_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 4;
+        }
     }
 }
