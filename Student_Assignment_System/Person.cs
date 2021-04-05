@@ -14,6 +14,10 @@ namespace Student_Assignment_System
         public string Address { get; set; }
         public string PPSNumber { get; set; }
 
+        public Person()
+        {
+
+        }
         public Person(string pName, string pDOB, string pAddress, string pPPSNumber)
         {
             this.Name = pName;

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDetails.Designer.cs">
+      <DependentUpon>AdminDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrator.cs" />
     <Compile Include="AdministratorDashboard.cs">
       <SubType>Form</SubType>
@@ -79,6 +85,9 @@
     <Compile Include="StudentDashboard.Designer.cs">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminDetails.resx">
+      <DependentUpon>AdminDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministratorDashboard.resx">
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
     </EmbeddedResource>

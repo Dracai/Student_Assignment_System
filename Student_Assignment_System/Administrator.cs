@@ -14,6 +14,10 @@ namespace Student_Assignment_System
         public int PhoneNumber { get; set; }
         public string DateOfHire { get; set; }
 
+        public Administrator()
+        {
+
+        }
         public Administrator(string ID, string password, int pNumber, string HireDate, string name, string dob, string address, string ppsn) : base(name,dob,address,ppsn)
         {
             this.AdminID = ID;
