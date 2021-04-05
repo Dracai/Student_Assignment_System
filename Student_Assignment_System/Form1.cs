@@ -21,7 +21,7 @@ namespace Student_Assignment_System
         public Form1()
         {
             InitializeComponent();
-            txtPassword.PasswordChar = '*';
+            txtUserPassword.PasswordChar = '*';
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -81,9 +81,9 @@ namespace Student_Assignment_System
                 ReadFile(ref studentList, "StudentFiles.dat");
                 foreach (Student st in studentList)
                 {
-                    if (st.StudentID == txtID.Text)
+                    if (st.StudentID == txtUserID.Text)
                     {
-                        if (st.StudentPassword == txtPassword.Text)
+                        if (st.StudentPassword == txtUserPassword.Text)
                         {
                             //Open Student Dashboard
                             this.Hide();
@@ -104,9 +104,9 @@ namespace Student_Assignment_System
                 ReadFile(ref lecturerList, "LecturerFiles.dat");
                 foreach (Lecturer l in lecturerList)
                 {
-                    if (l.LecturerID == txtID.Text)
+                    if (l.LecturerID == txtUserID.Text)
                     {
-                        if (l.LecturerPassword == txtPassword.Text)
+                        if (l.LecturerPassword == txtUserPassword.Text)
                         {
                             //Open Lecturer Dashboard
                             this.Hide();
@@ -127,9 +127,9 @@ namespace Student_Assignment_System
                 ReadFile(ref administratorList, "AdminFile.dat");
                 foreach (Administrator a in administratorList)
                 {
-                    if (a.AdminID == txtID.Text)
+                    if (a.AdminID == txtUserID.Text)
                     {
-                        if (a.AdminPassword == txtPassword.Text)
+                        if (a.AdminPassword == txtUserPassword.Text)
                         {
                             //Open Administrator Password
                             this.Hide();
@@ -152,14 +152,14 @@ namespace Student_Assignment_System
 
         public bool ValidateLogin()
         {
-            if(txtID.Text == "" || txtPassword.Text == "")
+            if(txtUserID.Text == "" || txtUserPassword.Text == "")
             {
                 MessageBoxButtons mbb = MessageBoxButtons.OK;
                 MessageBox.Show("Please ensure both input fields are not empty", "Invalid Login Attempt",mbb);
                 return false;
             }
 
-            return true ;
+            return true;
         }
     }
 }
