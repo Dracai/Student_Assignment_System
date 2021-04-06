@@ -21,7 +21,7 @@ namespace Student_Assignment_System
         {
             if(validateInput())
             {
-                Administrator admin = new Administrator(txtAdminID.Text, txtAdminPassword.Text, Convert.ToInt32(txtAdminPhoneNumber.Text), txtAdminDateOfHire.Text, txtAdminName.Text, txtAdminDOB.Text, txtAdminAddress.Text, txtAdminPPSN.Text);
+                Administrator admin = new Administrator(txtAdminID.Text, txtAdminPassword.Text, Convert.ToInt32(txtAdminPhoneNumber.Text), Convert.ToDateTime(txtAdminDateOfHire.Text), txtAdminName.Text, Convert.ToDateTime(txtAdminDOB.Text), txtAdminAddress.Text, txtAdminPPSN.Text);
                 this.Tag = admin;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
