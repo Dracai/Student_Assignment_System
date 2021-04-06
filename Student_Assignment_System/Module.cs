@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace Student_Assignment_System
 {
     [Serializable]
-    class Module
+    public class Module
     {
         public string ModuleCode { get; set; }
         public string ModuleName { get; set; }
         public int Credits { get; set; }
+        public List<string> ClassGroups { get; set; }
 
         public Module()
         {
@@ -22,6 +23,15 @@ namespace Student_Assignment_System
             this.ModuleCode = code;
             this.ModuleName = name;
             this.Credits = creds;
+            this.ClassGroups = new List<string>();
+        }
+
+        public Module(string code, string name, int creds, List<string> templist)
+        {
+            this.ModuleCode = code;
+            this.ModuleName = name;
+            this.Credits = creds;
+            this.ClassGroups = templist;
         }
     }
 }
