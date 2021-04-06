@@ -191,7 +191,7 @@ namespace Student_Assignment_System
             AD.Show();
             */
             
-            Form assignmentDetails = new AssignmentDetails(ref user,ModuleList,ClassGroupList);
+            Form assignmentDetails = new AssignmentDetails(ref user,ModuleList,ClassGroupList,AssignmentList);
             DialogResult completeBtn = assignmentDetails.ShowDialog();
             if (completeBtn == DialogResult.OK)
             {
