@@ -39,10 +39,10 @@ namespace Student_Assignment_System
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDescript = new System.Windows.Forms.TextBox();
-            this.cbClassGroup = new System.Windows.Forms.ComboBox();
             this.cbModule = new System.Windows.Forms.ComboBox();
             this.btnFinish = new System.Windows.Forms.Button();
             this.dtpDue = new System.Windows.Forms.DateTimePicker();
+            this.txtCG = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -140,15 +140,6 @@ namespace Student_Assignment_System
             this.txtDescript.Size = new System.Drawing.Size(279, 130);
             this.txtDescript.TabIndex = 12;
             // 
-            // cbClassGroup
-            // 
-            this.cbClassGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClassGroup.FormattingEnabled = true;
-            this.cbClassGroup.Location = new System.Drawing.Point(201, 197);
-            this.cbClassGroup.Name = "cbClassGroup";
-            this.cbClassGroup.Size = new System.Drawing.Size(168, 32);
-            this.cbClassGroup.TabIndex = 13;
-            // 
             // cbModule
             // 
             this.cbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,15 +168,24 @@ namespace Student_Assignment_System
             this.dtpDue.Size = new System.Drawing.Size(279, 26);
             this.dtpDue.TabIndex = 16;
             // 
+            // txtCG
+            // 
+            this.txtCG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCG.Location = new System.Drawing.Point(201, 197);
+            this.txtCG.Name = "txtCG";
+            this.txtCG.ReadOnly = true;
+            this.txtCG.Size = new System.Drawing.Size(107, 29);
+            this.txtCG.TabIndex = 17;
+            // 
             // AssignmentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 518);
+            this.Controls.Add(this.txtCG);
             this.Controls.Add(this.dtpDue);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.cbModule);
-            this.Controls.Add(this.cbClassGroup);
             this.Controls.Add(this.txtDescript);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
@@ -215,9 +215,9 @@ namespace Student_Assignment_System
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDescript;
-        private System.Windows.Forms.ComboBox cbClassGroup;
         private System.Windows.Forms.ComboBox cbModule;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.DateTimePicker dtpDue;
+        private System.Windows.Forms.TextBox txtCG;
     }
 }

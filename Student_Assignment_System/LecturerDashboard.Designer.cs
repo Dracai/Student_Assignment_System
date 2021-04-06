@@ -60,6 +60,7 @@ namespace Student_Assignment_System
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Logout = new System.Windows.Forms.TabPage();
+            this.btnDescription = new System.Windows.Forms.Button();
             this.tcDash.SuspendLayout();
             this.Dashboard.SuspendLayout();
             this.gb.SuspendLayout();
@@ -182,6 +183,7 @@ namespace Student_Assignment_System
             // 
             // Assignments
             // 
+            this.Assignments.Controls.Add(this.btnDescription);
             this.Assignments.Controls.Add(this.btnRemoveAssignment);
             this.Assignments.Controls.Add(this.btnEditAssignment);
             this.Assignments.Controls.Add(this.btnCreateAssignment);
@@ -204,6 +206,7 @@ namespace Student_Assignment_System
             this.btnRemoveAssignment.TabIndex = 4;
             this.btnRemoveAssignment.Text = "Remove Assignment";
             this.btnRemoveAssignment.UseVisualStyleBackColor = true;
+            this.btnRemoveAssignment.Click += new System.EventHandler(this.btnRemoveAssignment_Click);
             // 
             // btnEditAssignment
             // 
@@ -363,6 +366,17 @@ namespace Student_Assignment_System
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = true;
             // 
+            // btnDescription
+            // 
+            this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescription.Location = new System.Drawing.Point(638, 369);
+            this.btnDescription.Name = "btnDescription";
+            this.btnDescription.Size = new System.Drawing.Size(153, 34);
+            this.btnDescription.TabIndex = 5;
+            this.btnDescription.Text = "View Description";
+            this.btnDescription.UseVisualStyleBackColor = true;
+            this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
+            // 
             // LecturerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +430,6 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader AssignmentID;
+        private System.Windows.Forms.Button btnDescription;
     }
 }
