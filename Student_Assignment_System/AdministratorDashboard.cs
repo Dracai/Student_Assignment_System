@@ -44,7 +44,6 @@ namespace Student_Assignment_System
                 item.Text = module.ModuleCode;
                 item.SubItems.Add(module.ModuleName);
                 item.SubItems.Add(module.Credits.ToString());
-                item.SubItems.Add(module.ClassGroups.ToString());
                 this.listViewModule.Items.Add(item);
             }
 
@@ -65,45 +64,27 @@ namespace Student_Assignment_System
                 this.listViewAdmin.Items.Add(item);
             }
         }
-
-        public void RefreshModuleDetails()
-        {
-            foreach (Module module in ModuleList)
-            {
-                ListViewItem item = new ListViewItem();
-                item.Name = module.ModuleCode;
-                item.Text = module.ModuleCode;
-                item.SubItems.Add(module.ModuleName);
-                item.SubItems.Add(module.Credits.ToString());
-                item.SubItems.Add(module.ClassGroups.ToString());
-                this.listViewModule.Items.Add(item);
-            }
-        }
         private void AdministratorDashboard_Load(object sender, EventArgs e)
         {
             /*
             Administrator A01 = new Administrator("A001", "Admin1", 0835555555, "12/03/2014", "Treakle Morrison", "15/02/1987", "123 Doll St.", "1234567L");
             Administrator A02 = new Administrator("A002", "Admin1", 1231231234, "15/06/2017", "Barry Benson", "28/11/1994", "42 Wallaby way", "7654321P");
             AdminList.Add(A01);
-            AdminList.Add(A02);*/
-/*
-            List<string> cgl = new List<string>();
-            cgl.Add("SD2A");
-            cgl.Add("SD2B");
-            Module M01 = new Module("M001", "Software Testing", 5, cgl);
-            Module M02 = new Module("M002", "Discrete Mathematics", 5, cgl);
-            Module M03 = new Module("M003", "Applications Development", 5, cgl);
-            Module M04 = new Module("M004", "Web Development Fundamentals", 5, cgl);
-            Module M05 = new Module("M005", "Data Driven Systems", 5, cgl);
-            Module M06 = new Module("M006", "Computer Science", 5, cgl);
-            ModuleList.Clear();
+            AdminList.Add(A02);
+
+            Module M01 = new Module("M001", "Software Testing", 5);
+            Module M02 = new Module("M002", "Discrete Mathematics", 5);
+            Module M03 = new Module("M003", "Applications Development", 5);
+            Module M04 = new Module("M004", "Web Development Fundamentals", 5);
+            Module M05 = new Module("M005", "Data Driven Systems", 5);
+            Module M06 = new Module("M006", "Computer Science", 5);
             ModuleList.Add(M01);
             ModuleList.Add(M02);
             ModuleList.Add(M03);
             ModuleList.Add(M04);
             ModuleList.Add(M05);
-            ModuleList.Add(M06);
-            WriteFile<Module>(ModuleList, "ModuleFile.dat");*/
+            ModuleList.Add(M06);*/
+
 
 
         }
@@ -213,31 +194,6 @@ namespace Student_Assignment_System
                 RefreshAdminDetails();
             }
                 
-        }
-
-        private void btnAddModule_Click(object sender, EventArgs e)
-        {
-            Module newModule = new Module();
-            Form moduleDetails = new ModuleDetails();
-            DialogResult completeBtn = moduleDetails.ShowDialog();
-            if (completeBtn == DialogResult.OK)
-            {
-                newModule = (Module)moduleDetails.Tag;
-                ModuleList.Add(newModule);
-            }
-            listViewModule.Items.Clear();
-            RefreshModuleDetails();
-        }
-
-        private void btnDeleteModule_Click(object sender, EventArgs e)
-        {
-            if (listViewModule.SelectedItems.Count > 0)
-            {
-                Debug.WriteLine(listViewModule.Items.IndexOf(listViewModule.SelectedItems[0]));
-                ModuleList.RemoveAt(listViewModule.Items.IndexOf(listViewModule.SelectedItems[0]));
-                listViewModule.Items.Clear();
-                RefreshModuleDetails();
-            }
         }
     }
 }
