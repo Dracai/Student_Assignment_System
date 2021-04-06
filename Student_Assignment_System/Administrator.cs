@@ -12,13 +12,13 @@ namespace Student_Assignment_System
         public string AdminID { get; set; }
         public string AdminPassword { get; set; }
         public int PhoneNumber { get; set; }
-        public string DateOfHire { get; set; }
+        public DateTime DateOfHire { get; set; }
 
         public Administrator()
         {
 
         }
-        public Administrator(string ID, string password, int pNumber, string HireDate, string name, string dob, string address, string ppsn) : base(name,dob,address,ppsn)
+        public Administrator(string ID, string password, int pNumber, DateTime HireDate, string name, DateTime dob, string address, string ppsn) : base(name,dob,address,ppsn)
         {
             this.AdminID = ID;
             this.AdminPassword = password;
