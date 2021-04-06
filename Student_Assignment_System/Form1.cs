@@ -17,6 +17,7 @@ namespace Student_Assignment_System
         List<Student> studentList = new List<Student>();
         List<Lecturer> lecturerList = new List<Lecturer>();
         List<Administrator> administratorList = new List<Administrator>();
+        List<ClassGroup> ClassGroupList = new List<ClassGroup>();
 
         public Form1()
         {
@@ -73,7 +74,37 @@ namespace Student_Assignment_System
                 Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
             }
         }
-        
+
+        public static void WriteFile<T>(List<T> list, string file)
+        {
+            FileInfo fileInfo = new FileInfo(file);
+            FileStream stream;
+
+            if (fileInfo.Exists)
+            {
+                stream = new FileStream(file, FileMode.Truncate, FileAccess.Write);
+                Console.WriteLine("found file " + fileInfo.FullName);
+            }
+            else
+            {
+                stream = new FileStream(file, FileMode.Create, FileAccess.Write);
+                Console.WriteLine("created file" + fileInfo.FullName);
+            }
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(stream, list);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception caught: {e}");
+            }
+
+            stream.Close();
+            Console.WriteLine("Data written to file");
+        }
+
         private void btn_Login_Click(object sender, EventArgs e)
         {
             if (ValidateLogin())
@@ -160,6 +191,10 @@ namespace Student_Assignment_System
             }
 
             return true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
         }
     }
 }

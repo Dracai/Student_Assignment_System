@@ -55,6 +55,10 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
+            this.btnDeleteModule = new System.Windows.Forms.Button();
+            this.btnEditModule = new System.Windows.Forms.Button();
+            this.btnAddModule = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.tabPageAdmins.SuspendLayout();
@@ -156,7 +160,7 @@ namespace Student_Assignment_System
             // btnDeleteAdmin
             // 
             this.btnDeleteAdmin.Location = new System.Drawing.Point(707, 272);
-            this.btnDeleteAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteAdmin.Name = "btnDeleteAdmin";
             this.btnDeleteAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnDeleteAdmin.TabIndex = 3;
@@ -167,7 +171,7 @@ namespace Student_Assignment_System
             // btnEditAdmin
             // 
             this.btnEditAdmin.Location = new System.Drawing.Point(364, 272);
-            this.btnEditAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAdmin.Name = "btnEditAdmin";
             this.btnEditAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnEditAdmin.TabIndex = 2;
@@ -177,7 +181,7 @@ namespace Student_Assignment_System
             // btnAddAdmin
             // 
             this.btnAddAdmin.Location = new System.Drawing.Point(24, 272);
-            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAdmin.Name = "btnAddAdmin";
             this.btnAddAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnAddAdmin.TabIndex = 1;
@@ -262,6 +266,10 @@ namespace Student_Assignment_System
             // 
             // tabPageModules
             // 
+            this.tabPageModules.Controls.Add(this.label3);
+            this.tabPageModules.Controls.Add(this.btnDeleteModule);
+            this.tabPageModules.Controls.Add(this.btnEditModule);
+            this.tabPageModules.Controls.Add(this.btnAddModule);
             this.tabPageModules.Controls.Add(this.listViewModule);
             this.tabPageModules.Location = new System.Drawing.Point(4, 29);
             this.tabPageModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -274,17 +282,19 @@ namespace Student_Assignment_System
             // 
             // listViewModule
             // 
+            this.listViewModule.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listViewModule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderModCode,
             this.columnHeaderModName,
             this.columnHeaderCredits,
             this.columnHeaderClassGroups});
+            this.listViewModule.FullRowSelect = true;
             this.listViewModule.GridLines = true;
             this.listViewModule.HideSelection = false;
-            this.listViewModule.Location = new System.Drawing.Point(3, 15);
+            this.listViewModule.Location = new System.Drawing.Point(3, 62);
             this.listViewModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewModule.Name = "listViewModule";
-            this.listViewModule.Size = new System.Drawing.Size(1008, 242);
+            this.listViewModule.Size = new System.Drawing.Size(1008, 216);
             this.listViewModule.TabIndex = 0;
             this.listViewModule.UseCompatibleStateImageBehavior = false;
             this.listViewModule.View = System.Windows.Forms.View.Details;
@@ -319,6 +329,52 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteModule
+            // 
+            this.btnDeleteModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteModule.Location = new System.Drawing.Point(710, 284);
+            this.btnDeleteModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteModule.Name = "btnDeleteModule";
+            this.btnDeleteModule.Size = new System.Drawing.Size(285, 39);
+            this.btnDeleteModule.TabIndex = 6;
+            this.btnDeleteModule.Text = "Delete Module";
+            this.btnDeleteModule.UseVisualStyleBackColor = true;
+            this.btnDeleteModule.Click += new System.EventHandler(this.btnDeleteModule_Click);
+            // 
+            // btnEditModule
+            // 
+            this.btnEditModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditModule.Location = new System.Drawing.Point(367, 284);
+            this.btnEditModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditModule.Name = "btnEditModule";
+            this.btnEditModule.Size = new System.Drawing.Size(285, 39);
+            this.btnEditModule.TabIndex = 5;
+            this.btnEditModule.Text = "Edit Module";
+            this.btnEditModule.UseVisualStyleBackColor = true;
+            // 
+            // btnAddModule
+            // 
+            this.btnAddModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddModule.Location = new System.Drawing.Point(27, 284);
+            this.btnAddModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddModule.Name = "btnAddModule";
+            this.btnAddModule.Size = new System.Drawing.Size(285, 39);
+            this.btnAddModule.TabIndex = 4;
+            this.btnAddModule.Text = "Add Module";
+            this.btnAddModule.UseVisualStyleBackColor = true;
+            this.btnAddModule.Click += new System.EventHandler(this.btnAddModule_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(462, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Modules";
+            // 
             // AdministratorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,6 +391,7 @@ namespace Student_Assignment_System
             this.tabPageAdmins.ResumeLayout(false);
             this.tabPageAdmins.PerformLayout();
             this.tabPageModules.ResumeLayout(false);
+            this.tabPageModules.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -367,5 +424,9 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Button btnDeleteAdmin;
         private System.Windows.Forms.Button btnEditAdmin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDeleteModule;
+        private System.Windows.Forms.Button btnEditModule;
+        private System.Windows.Forms.Button btnAddModule;
     }
 }

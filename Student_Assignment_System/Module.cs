@@ -12,12 +12,18 @@ namespace Student_Assignment_System
         public string ModuleCode { get; set; }
         public string ModuleName { get; set; }
         public int Credits { get; set; }
+        public List<string> ClassGroups { get; set; }
 
-        public Module(string code, string name, int creds)
+        public Module()
+        {
+
+        }
+        public Module(string code, string name, int creds, List<string> classgrouplist)
         {
             this.ModuleCode = code;
             this.ModuleName = name;
             this.Credits = creds;
+            this.ClassGroups = classgrouplist;
         }
     }
 }
