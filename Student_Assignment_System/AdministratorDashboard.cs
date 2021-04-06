@@ -64,6 +64,19 @@ namespace Student_Assignment_System
                 this.listViewAdmin.Items.Add(item);
             }
         }
+
+        public void RefreshModuleDetails()
+        {
+            foreach (Module module in ModuleList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Name = module.ModuleCode;
+                item.Text = module.ModuleCode;
+                item.SubItems.Add(module.ModuleName);
+                item.SubItems.Add(module.Credits.ToString());
+                this.listViewModule.Items.Add(item);
+            }
+        }
         private void AdministratorDashboard_Load(object sender, EventArgs e)
         {
             /*
@@ -196,6 +209,33 @@ namespace Student_Assignment_System
                 RefreshAdminDetails();
             }
                 
+        }
+
+
+
+        private void btnAddModule_Click_1(object sender, EventArgs e)
+        {
+            Module newModule = new Module();
+            Form moduleDetails = new ModuleDetails();
+            DialogResult completeBtn = moduleDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newModule = (Module)moduleDetails.Tag;
+                ModuleList.Add(newModule);
+            }
+            listViewModule.Items.Clear();
+            RefreshModuleDetails();
+        }
+
+        private void btnDeleteModule_Click(object sender, EventArgs e)
+        {
+            if (listViewModule.SelectedItems.Count > 0)
+            {
+                Debug.WriteLine(listViewModule.Items.IndexOf(listViewModule.SelectedItems[0]));
+                ModuleList.RemoveAt(listViewModule.Items.IndexOf(listViewModule.SelectedItems[0]));
+                listViewModule.Items.Clear();
+                RefreshModuleDetails();
+            }
         }
     }
 }
