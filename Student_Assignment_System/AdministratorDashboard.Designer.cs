@@ -100,7 +100,7 @@ namespace Student_Assignment_System
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(463, 255);
+            this.btnRead.Location = new System.Drawing.Point(591, 340);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(96, 34);
@@ -111,7 +111,7 @@ namespace Student_Assignment_System
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(251, 255);
+            this.btnSave.Location = new System.Drawing.Point(379, 340);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 34);
@@ -124,7 +124,7 @@ namespace Student_Assignment_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 39);
+            this.label1.Location = new System.Drawing.Point(406, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 36);
             this.label1.TabIndex = 0;
