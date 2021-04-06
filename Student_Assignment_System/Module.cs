@@ -13,6 +13,10 @@ namespace Student_Assignment_System
         public string ModuleName { get; set; }
         public int Credits { get; set; }
 
+        public Module()
+        {
+
+        }
         public Module(string code, string name, int creds)
         {
             this.ModuleCode = code;
