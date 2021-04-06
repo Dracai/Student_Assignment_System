@@ -14,6 +14,12 @@ namespace Student_Assignment_System
 {
     public partial class LecturerDashboard : Form
     {
+        //Temp User
+        
+        Lecturer user;
+
+
+        List<Module> ModuleList = new List<Module>();
         List<Student> StudentList = new List<Student>();
         List<Assignment> AssignmentList = new List<Assignment>();
         List<ClassGroup> ClassGroupList = new List<ClassGroup>();
@@ -23,6 +29,88 @@ namespace Student_Assignment_System
             InitializeComponent();
             List<Student> StudentList = stulist;
             ReadFiles();
+            SetUpData();
+            UpdateListViews();
+            //SaveFiles();
+            List<string> mod = new List<string>();
+            mod.Add("M002");
+            user = new Lecturer("Guinane Man", "23/02/1293", "Hobbiton", "PHHHHHP", "L002", "PASSWORD2", mod, "");
+
+
+        }
+
+        //TestDataFunction
+        public void SetUpData()
+        {
+            ModuleList.Add(new Module("M001", "Applications Development", 5));
+            ModuleList.Add(new Module("M002", "Data Driven Systems", 5));
+            AssignmentList.Add(new Assignment("A001","Student Application System","01/03/2021","05/05/2021","SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
+            AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", "21/01/2021", "05/05/2021", "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
+            ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
+            ClassGroupList.Add(new ClassGroup("SD2B", "Software Development", "2", 19));
+            StudentList.Add(new Student("Conor Moroney", "18/04/2001", "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "SD2A", "06/09/2020"));
+            StudentList.Add(new Student("Ethan Caffrey", "11/09/2017", "Six Mile Bridge", "1001001A", "K00251154", "PASSWORD1", "SD2A", "06/09/2020"));
+            StudentList.Add(new Student("Jakub Pawluczuk", "12/11/2001", "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "SD2A", "06/09/2020"));
+            StudentList.Add(new Student("Callum Moloney", "18/04/2001", "Ennis", "1001111A", "K00251156", "PASSWORD1", "SD2B", "06/09/2020"));
+            StudentList.Add(new Student("Cian Godfrey", "11/09/2000", "Shannon", "1011111A", "K00251157", "PASSWORD1", "SD2B", "06/09/2020"));
+            StudentList.Add(new Student("Jacob Paulson", "12/34/2001", "Dingle", "1111111A", "K00251158", "PASSWORD1", "SD2B", "06/09/2020"));
+        }
+
+        public static void ReadFile<T>(ref List<T> list, string file)
+        {
+            List<T> templist = new List<T>();
+            FileInfo fileInfo = new FileInfo(file);
+            FileStream stream;
+
+            if (fileInfo.Exists)
+            {
+                stream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                BinaryFormatter formatter = new BinaryFormatter();
+                try
+                {
+                    templist = formatter.Deserialize(stream) as List<T>;
+                    list = templist;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Exception caught {e}");
+                }
+                stream.Close();
+            }
+            else
+            {
+                Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
+            }
+        }
+
+        public static void WriteFile<T>(List<T> list, string file)
+        {
+            FileInfo fileInfo = new FileInfo(file);
+            FileStream stream;
+
+            if (fileInfo.Exists)
+            {
+                stream = new FileStream(file, FileMode.Truncate, FileAccess.Write);
+                Console.WriteLine("found file " + fileInfo.FullName);
+            }
+            else
+            {
+                stream = new FileStream(file, FileMode.Create, FileAccess.Write);
+                Console.WriteLine("created file" + fileInfo.FullName);
+            }
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(stream, list);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception caught: {e}");
+            }
+
+            stream.Close();
+            Console.WriteLine("Data written to file");
         }
 
         private void LecLogout(object sender, EventArgs e)
@@ -38,109 +126,47 @@ namespace Student_Assignment_System
 
         private void ReadFiles()
         {
-            List<Assignment> temp1 = new List<Assignment>();
-
-            FileInfo AfInfo = new FileInfo("AssignmentFiles.dat");
-            FileStream AssignmentFile;
-
-            if (AfInfo.Exists)
-            {
-                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Open, FileAccess.Read);
-                BinaryFormatter bformatter = new BinaryFormatter();
-                try
-                {
-                    temp1 = bformatter.Deserialize(AssignmentFile) as List<Assignment>;
-                    AssignmentList = temp1;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"{e} Exception caught.");
-                }
-                AssignmentFile.Close();
-            }
-            else
-            {
-                MessageBox.Show("ERROR CANT FIND FILE " + AfInfo.FullName);
-            }
-
-
-            List<ClassGroup> temp2 = new List<ClassGroup>();
-            FileInfo CGfInfo = new FileInfo("ClassGroupFile.dat");
-            FileStream ClassFile;
-
-            if (CGfInfo.Exists)
-            {
-                ClassFile = new FileStream("ClassList.dat", FileMode.Open, FileAccess.Read);
-                BinaryFormatter bformatter = new BinaryFormatter();
-                try
-                {
-                    temp2 = bformatter.Deserialize(ClassFile) as List<ClassGroup>;
-                    ClassGroupList = temp2;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"{e} Exception caught.");
-                }
-                ClassFile.Close();
-            }
-            else
-            {
-                MessageBox.Show("ERROR CANT FIND FILE " + CGfInfo.FullName);
-            }
+            ReadFile<Module>(ref ModuleList, "ModuleFiles.dat");
+            ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
+            ReadFile<ClassGroup>(ref ClassGroupList, "ClassGroupFiles.dat");
         }
 
         private void SaveFiles()
         {
-            FileInfo AfInfo = new FileInfo("AssignmentFiles.dat");
-            FileStream AssignmentFile;
+            WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
+        }
 
-            if (AfInfo.Exists)
+        public void UpdateListViews()
+        {
+            ListViewItem item;
+            foreach(ClassGroup cg in ClassGroupList)
             {
-                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Create, FileAccess.Write);
-            }
-            else
-            {
-                AssignmentFile = new FileStream("AssignmentFiles.dat", FileMode.Create, FileAccess.Write);
-            }
-
-            BinaryFormatter bformatter = new BinaryFormatter();
-
-            try
-            {
-                bformatter.Serialize(AssignmentFile, AssignmentList);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
+                item = new ListViewItem(cg.ClassGroupName);
+                item.SubItems.Add(cg.Course);
+                item.SubItems.Add(cg.YearOfStudy);
+                item.SubItems.Add(cg.NumberOfStudents.ToString());
+                lvAssignmentsCG.Items.Add(item);
             }
 
-            AssignmentFile.Close();
+            foreach (ClassGroup cg in ClassGroupList)
+            {
+                item = new ListViewItem(cg.ClassGroupName);
+                item.SubItems.Add(cg.Course);
+                item.SubItems.Add(cg.YearOfStudy);
+                item.SubItems.Add(cg.NumberOfStudents.ToString());
+                lvClassGroupsCG.Items.Add(item);
+            }
 
+            foreach(Assignment a in AssignmentList)
+            {
+                item = new ListViewItem(a.AssignmentID);
+                item.SubItems.Add(a.Name);
+                item.SubItems.Add(a.DateDue);
+                item.SubItems.Add(a.Module);
+                lvAssignmentsAss.Items.Add(item);
+            }
             
-            FileInfo CGfInfo = new FileInfo("ClassGroupFile.dat");
-            FileStream ClassFile;
 
-            if (CGfInfo.Exists)
-            {
-                ClassFile = new FileStream("ClassGroupFile.dat", FileMode.Create, FileAccess.Write);
-            }
-            else
-            {
-                ClassFile = new FileStream("ClassGroupFile.dat", FileMode.Create, FileAccess.Write);
-            }
-
-            BinaryFormatter rbformatter = new BinaryFormatter();
-
-            try
-            {
-                rbformatter.Serialize(ClassFile, ClassGroupList);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-            }
-
-            ClassFile.Close();
         }
 
         private void btnAssignmentsGo_Click(object sender, EventArgs e)
