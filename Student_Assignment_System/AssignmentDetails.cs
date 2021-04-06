@@ -13,17 +13,18 @@ namespace Student_Assignment_System
     public partial class AssignmentDetails : Form
     {
         Lecturer lecturer;
-        List<ClassGroup> classGroupslist;
+        string cg;
         List<Module> modlist;
         List<Assignment> Assignments;
 
-        public AssignmentDetails(ref Lecturer user,List<Module> mod,List<ClassGroup> classGroups,List<Assignment> assignments)
+        public AssignmentDetails(ref Lecturer user,List<Module> mod,string classgroup,List<Assignment> assignments)
         {
             InitializeComponent();
             lecturer = user;
-            classGroupslist = classGroups;
+            cg = classgroup;
             modlist = mod;
             Assignments = assignments;
+            txtCG.Text = cg;
             foreach(Module s in modlist)
             {
                 if (user.ModulesToTeach.Contains(s.ModuleCode))
@@ -39,7 +40,7 @@ namespace Student_Assignment_System
             bool check = validateInput(ref error);
             if (check)
             {
-                Assignment assignment = new Assignment(txtID.Text, txtName.Text, DateTime.Now, dtpDue.Value, cbClassGroup.Text, cbModule.Text, lecturer.LecturerID, txtDescript.Text);
+                Assignment assignment = new Assignment(txtID.Text, txtName.Text, DateTime.Now, dtpDue.Value, txtCG.Text, cbModule.Text, lecturer.LecturerID, txtDescript.Text);
                 this.Tag = assignment;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
