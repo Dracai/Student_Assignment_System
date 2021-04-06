@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Student_Assignment_System
 {
     [Serializable]
-    class ClassGroup
+    public class ClassGroup
     {
 
         public string ClassGroupName { get; set; }
