@@ -9,6 +9,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Student_Assignment_System
 {
@@ -182,6 +183,17 @@ namespace Student_Assignment_System
             AdminList.Add(newAdmin);
             listViewAdmin.Items.Clear();
             RefreshAdminDetails();
+        }
+
+        private void btnDeleteAdmin_Click(object sender, EventArgs e)
+        {
+            if(listViewAdmin.SelectedItems.Count > 0)
+            {
+                AdminList.RemoveAt(listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0]));
+                listViewAdmin.Items.Clear();
+                RefreshAdminDetails();
+            }
+                
         }
     }
 }
