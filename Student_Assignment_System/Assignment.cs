@@ -29,6 +29,7 @@ namespace Student_Assignment_System
             this.Module = module;
             this.LecturerID = lecturerID;
             this.Description = descript;
+
         }
     }
 }

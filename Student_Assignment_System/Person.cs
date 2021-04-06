@@ -10,7 +10,7 @@ namespace Student_Assignment_System
     public abstract class Person
     {
         public string Name { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string PPSNumber { get; set; }
 
@@ -18,7 +18,7 @@ namespace Student_Assignment_System
         {
 
         }
-        public Person(string pName, string pDOB, string pAddress, string pPPSNumber)
+        public Person(string pName, DateTime pDOB, string pAddress, string pPPSNumber)
         {
             this.Name = pName;
             this.DateOfBirth = pDOB;

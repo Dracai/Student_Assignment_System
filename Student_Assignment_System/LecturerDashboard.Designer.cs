@@ -224,6 +224,7 @@ namespace Student_Assignment_System
             this.btnCreateAssignment.TabIndex = 2;
             this.btnCreateAssignment.Text = "Create Assignment";
             this.btnCreateAssignment.UseVisualStyleBackColor = true;
+            this.btnCreateAssignment.Click += new System.EventHandler(this.btnCreateAssignment_Click);
             // 
             // lvAssignmentsAss
             // 
@@ -251,7 +252,7 @@ namespace Student_Assignment_System
             // AssignmentName
             // 
             this.AssignmentName.Text = "Assignment";
-            this.AssignmentName.Width = 82;
+            this.AssignmentName.Width = 254;
             // 
             // DueDate
             // 
@@ -261,7 +262,7 @@ namespace Student_Assignment_System
             // AssignmentModule
             // 
             this.AssignmentModule.Text = "Module";
-            this.AssignmentModule.Width = 510;
+            this.AssignmentModule.Width = 337;
             // 
             // lvAssignmentsCG
             // 

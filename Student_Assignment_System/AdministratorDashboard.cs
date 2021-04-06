@@ -29,9 +29,9 @@ namespace Student_Assignment_System
                 item.Text = admin.AdminID;
                 item.SubItems.Add(admin.Name);
                 item.SubItems.Add(admin.Address);
-                item.SubItems.Add(admin.DateOfBirth);
+                item.SubItems.Add(admin.DateOfBirth.ToString());
                 item.SubItems.Add(admin.PPSNumber);
-                item.SubItems.Add(admin.DateOfHire);
+                item.SubItems.Add(admin.DateOfHire.ToString());
                 this.listViewAdmin.Items.Add(item);
             }
 
@@ -58,9 +58,9 @@ namespace Student_Assignment_System
                 item.Text = admin.AdminID;
                 item.SubItems.Add(admin.Name);
                 item.SubItems.Add(admin.Address);
-                item.SubItems.Add(admin.DateOfBirth);
+                item.SubItems.Add(admin.DateOfBirth.ToString());
                 item.SubItems.Add(admin.PPSNumber);
-                item.SubItems.Add(admin.DateOfHire);
+                item.SubItems.Add(admin.DateOfHire.ToString());
                 this.listViewAdmin.Items.Add(item);
             }
         }
@@ -179,8 +179,10 @@ namespace Student_Assignment_System
             Form adminDetails = new AdminDetails();
             DialogResult completeBtn = adminDetails.ShowDialog();
             if (completeBtn == DialogResult.OK)
-                newAdmin = (Administrator) adminDetails.Tag;
-            AdminList.Add(newAdmin);
+            {
+                newAdmin = (Administrator)adminDetails.Tag;
+                AdminList.Add(newAdmin);
+            }
             listViewAdmin.Items.Clear();
             RefreshAdminDetails();
         }

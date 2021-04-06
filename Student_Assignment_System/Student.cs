@@ -11,14 +11,16 @@ namespace Student_Assignment_System
     {
         public string StudentID { get; set; }
         public string StudentPassword { get; set; }
+        public string Course { get; set; }
         public string ClassGroup { get; set; }
-        public string DateEnrolled { get; set; }
+        public DateTime DateEnrolled { get; set; }
 
-        public Student(string pName, string pDOB, string pAddress, string pPPSNumber,
-            string sSID, string sPW, string sClassGroup, string sDateEnrolled) : base(pName, pDOB, pAddress, pPPSNumber)
+        public Student(string pName, DateTime pDOB, string pAddress, string pPPSNumber,
+            string sSID, string sPW, string course, string sClassGroup, DateTime sDateEnrolled) : base(pName, pDOB, pAddress, pPPSNumber)
         {
             this.StudentID = sSID;
             this.StudentPassword = sPW;
+            this.Course = course;
             this.ClassGroup = sClassGroup;
             this.DateEnrolled = sDateEnrolled;
         }
