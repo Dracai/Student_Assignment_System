@@ -21,6 +21,7 @@ namespace Student_Assignment_System
         public Form1()
         {
             InitializeComponent();
+            txtUserPassword.PasswordChar = '*';
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -72,78 +73,93 @@ namespace Student_Assignment_System
                 Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
             }
         }
-
+        
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            ReadFile(ref studentList, "StudentFiles.dat");
-            foreach(Student st in studentList)
+            if (ValidateLogin())
             {
-                if(st.StudentID == txtID.Text)
+                ReadFile(ref studentList, "StudentFiles.dat");
+                foreach (Student st in studentList)
                 {
-                    if(st.StudentPassword==txtPassword.Text)
+                    if (st.StudentID == txtUserID.Text)
                     {
-                        //Open Student Dashboard
-                        this.Hide();
-                        var studentDashboard = new StudentDashboard();
-                        studentDashboard.Closed += (s, args) => this.Close();
-                        studentDashboard.Show();
+                        if (st.StudentPassword == txtUserPassword.Text)
+                        {
+                            //Open Student Dashboard
+                            this.Hide();
+                            var studentDashboard = new StudentDashboard();
+                            studentDashboard.Closed += (s, args) => this.Close();
+                            studentDashboard.Show();
 
-                        return;
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Password");
+                            break;
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Password");
-                        break;
-                    }
+
                 }
-                
+                ReadFile(ref lecturerList, "LecturerFiles.dat");
+                foreach (Lecturer l in lecturerList)
+                {
+                    if (l.LecturerID == txtUserID.Text)
+                    {
+                        if (l.LecturerPassword == txtUserPassword.Text)
+                        {
+                            //Open Lecturer Dashboard
+                            this.Hide();
+                            var LD = new LecturerDashboard(studentList);
+                            LD.FormClosed += (s, args) => this.Close();
+                            LD.Show();
+
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Password");
+                            break;
+                        }
+                    }
+
+                }
+                ReadFile(ref administratorList, "AdminFile.dat");
+                foreach (Administrator a in administratorList)
+                {
+                    if (a.AdminID == txtUserID.Text)
+                    {
+                        if (a.AdminPassword == txtUserPassword.Text)
+                        {
+                            //Open Administrator Password
+                            this.Hide();
+                            var adminDash = new AdministratorDashboard();
+                            adminDash.FormClosed += (s, args) => this.Close();
+                            adminDash.Show();
+
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Password");
+                            break;
+                        }
+                    }
+
+                }
             }
-            ReadFile(ref lecturerList, "LecturerFiles.dat");
-            foreach (Lecturer l in lecturerList)
+        }
+
+        public bool ValidateLogin()
+        {
+            if(txtUserID.Text == "" || txtUserPassword.Text == "")
             {
-                if (l.LecturerID == txtID.Text)
-                {
-                    if (l.LecturerPassword == txtPassword.Text)
-                    {
-                        //Open Lecturer Dashboard
-                        this.Hide();
-                        var LD = new LecturerDashboard(studentList);
-                        LD.FormClosed += (s, args) => this.Close();
-                        LD.Show();
-
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Password");
-                        break;
-                    }
-                }
-
+                MessageBoxButtons mbb = MessageBoxButtons.OK;
+                MessageBox.Show("Please ensure both input fields are not empty", "Invalid Login Attempt",mbb);
+                return false;
             }
-            ReadFile(ref administratorList, "AdminFiles.dat");
-            foreach (Administrator a in administratorList)
-            {
-                if (a.AdminID == txtID.Text)
-                {
-                    if (a.AdminPassword == txtPassword.Text)
-                    {
-                        //Open Administrator Password
-                        this.Hide();
-                        var adminDash = new AdministratorDashboard();
-                        adminDash.FormClosed += (s, args) => this.Close();
-                        adminDash.Show();
 
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Password");
-                        break;
-                    }
-                }
-
-            }
+            return true;
         }
     }
 }

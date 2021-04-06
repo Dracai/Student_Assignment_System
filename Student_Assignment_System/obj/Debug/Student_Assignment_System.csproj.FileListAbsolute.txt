@@ -24,3 +24,4 @@ D:\Second Year College Work\Semester 2\Applications Development\Student_Assignme
 D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.csproj.CoreCompileInputs.cache
 D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.exe
 D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.pdb
+C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.AdminDetails.resources

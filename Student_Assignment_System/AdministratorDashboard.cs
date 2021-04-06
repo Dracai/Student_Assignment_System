@@ -9,6 +9,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Student_Assignment_System
 {
@@ -48,8 +49,24 @@ namespace Student_Assignment_System
 
         }
 
+        public void RefreshAdminDetails()
+        {
+            foreach (Administrator admin in AdminList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Name = admin.AdminID;
+                item.Text = admin.AdminID;
+                item.SubItems.Add(admin.Name);
+                item.SubItems.Add(admin.Address);
+                item.SubItems.Add(admin.DateOfBirth);
+                item.SubItems.Add(admin.PPSNumber);
+                item.SubItems.Add(admin.DateOfHire);
+                this.listViewAdmin.Items.Add(item);
+            }
+        }
         private void AdministratorDashboard_Load(object sender, EventArgs e)
         {
+            /*
             Administrator A01 = new Administrator("A001", "Admin1", 0835555555, "12/03/2014", "Treakle Morrison", "15/02/1987", "123 Doll St.", "1234567L");
             Administrator A02 = new Administrator("A002", "Admin1", 1231231234, "15/06/2017", "Barry Benson", "28/11/1994", "42 Wallaby way", "7654321P");
             AdminList.Add(A01);
@@ -66,7 +83,7 @@ namespace Student_Assignment_System
             ModuleList.Add(M03);
             ModuleList.Add(M04);
             ModuleList.Add(M05);
-            ModuleList.Add(M06);
+            ModuleList.Add(M06);*/
 
 
 
@@ -154,6 +171,29 @@ namespace Student_Assignment_System
                 Login.Closed += (s, args) => this.Close();
                 Login.Show();
             }
+        }
+
+        private void btnAddAdmin_Click(object sender, EventArgs e)
+        {
+            Administrator newAdmin = new Administrator();
+            Form adminDetails = new AdminDetails();
+            DialogResult completeBtn = adminDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+                newAdmin = (Administrator) adminDetails.Tag;
+            AdminList.Add(newAdmin);
+            listViewAdmin.Items.Clear();
+            RefreshAdminDetails();
+        }
+
+        private void btnDeleteAdmin_Click(object sender, EventArgs e)
+        {
+            if(listViewAdmin.SelectedItems.Count > 0)
+            {
+                AdminList.RemoveAt(listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0]));
+                listViewAdmin.Items.Clear();
+                RefreshAdminDetails();
+            }
+                
         }
     }
 }

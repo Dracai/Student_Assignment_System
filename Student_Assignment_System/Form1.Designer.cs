@@ -32,12 +32,12 @@ namespace Student_Assignment_System
             this.btnStudentLogin = new System.Windows.Forms.Button();
             this.btnLecturerLogin = new System.Windows.Forms.Button();
             this.btnAdminLogin = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_Login = new System.Windows.Forms.Button();
+            this.lblHeading = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.txtUserPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStudentLogin
@@ -70,73 +70,73 @@ namespace Student_Assignment_System
             this.btnAdminLogin.UseVisualStyleBackColor = true;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
-            // label1
+            // lblHeading
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(178, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Login";
+            this.lblHeading.AutoSize = true;
+            this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeading.Location = new System.Drawing.Point(164, 48);
+            this.lblHeading.Name = "lblHeading";
+            this.lblHeading.Size = new System.Drawing.Size(90, 36);
+            this.lblHeading.TabIndex = 3;
+            this.lblHeading.Text = "Login";
             // 
-            // txtID
+            // lblID
             // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(165, 120);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(161, 26);
-            this.txtID.TabIndex = 4;
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(103, 107);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(31, 25);
+            this.lblID.TabIndex = 6;
+            this.lblID.Text = "ID";
             // 
-            // txtPassword
+            // lblPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(165, 168);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(161, 26);
-            this.txtPassword.TabIndex = 5;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(36, 163);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.TabIndex = 7;
+            this.lblPassword.Text = "Password";
             // 
-            // label2
+            // txtUserID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(133, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID";
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(170, 101);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(163, 34);
+            this.txtUserID.TabIndex = 8;
             // 
-            // label3
+            // txtUserPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Password";
+            this.txtUserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserPassword.Location = new System.Drawing.Point(170, 157);
+            this.txtUserPassword.Name = "txtUserPassword";
+            this.txtUserPassword.Size = new System.Drawing.Size(163, 34);
+            this.txtUserPassword.TabIndex = 9;
             // 
-            // btn_Login
+            // btnLogin
             // 
-            this.btn_Login.Location = new System.Drawing.Point(165, 220);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(75, 23);
-            this.btn_Login.TabIndex = 8;
-            this.btn_Login.Text = "Login";
-            this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(170, 225);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(163, 38);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 342);
-            this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtUserPassword);
+            this.Controls.Add(this.txtUserID);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.btnLecturerLogin);
             this.Controls.Add(this.btnStudentLogin);
@@ -152,12 +152,15 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Button btnStudentLogin;
         private System.Windows.Forms.Button btnLecturerLogin;
         private System.Windows.Forms.Button btnAdminLogin;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeading;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btn_Login;
+        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.TextBox txtUserPassword;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 
