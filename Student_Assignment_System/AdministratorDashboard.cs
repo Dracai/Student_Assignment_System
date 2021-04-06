@@ -17,6 +17,7 @@ namespace Student_Assignment_System
     {
         List<Administrator> AdminList = new List<Administrator>();
         List<Module> ModuleList = new List<Module>();
+        List<ClassGroup> ClassGroups = new List<ClassGroup>();
         public AdministratorDashboard()
         {
             InitializeComponent();
@@ -37,16 +38,23 @@ namespace Student_Assignment_System
 
             ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
 
-            foreach(Module module in ModuleList)
+            foreach (Module module in ModuleList)
             {
+                string temp = "";
                 ListViewItem item = new ListViewItem();
                 item.Name = module.ModuleCode;
                 item.Text = module.ModuleCode;
                 item.SubItems.Add(module.ModuleName);
                 item.SubItems.Add(module.Credits.ToString());
+                foreach (string s in module.ClassGroups)
+                {
+                    temp += s + ", ";
+                }
+                temp = temp.Trim(',', ' ');
+                item.SubItems.Add(temp);
                 this.listViewModule.Items.Add(item);
             }
-
+            ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
         }
 
         public void RefreshAdminDetails()
@@ -69,11 +77,18 @@ namespace Student_Assignment_System
         {
             foreach (Module module in ModuleList)
             {
+                string temp = "";
                 ListViewItem item = new ListViewItem();
                 item.Name = module.ModuleCode;
                 item.Text = module.ModuleCode;
                 item.SubItems.Add(module.ModuleName);
                 item.SubItems.Add(module.Credits.ToString());
+                foreach(string s in module.ClassGroups)
+                {
+                    temp += s + ", ";
+                }
+                temp = temp.Trim(',',' ');
+                item.SubItems.Add(temp);
                 this.listViewModule.Items.Add(item);
             }
         }
@@ -83,21 +98,28 @@ namespace Student_Assignment_System
             Administrator A01 = new Administrator("A001", "Admin1", 0835555555, "12/03/2014", "Treakle Morrison", "15/02/1987", "123 Doll St.", "1234567L");
             Administrator A02 = new Administrator("A002", "Admin1", 1231231234, "15/06/2017", "Barry Benson", "28/11/1994", "42 Wallaby way", "7654321P");
             AdminList.Add(A01);
-            AdminList.Add(A02);
+            AdminList.Add(A02);*/
 
-            Module M01 = new Module("M001", "Software Testing", 5);
-            Module M02 = new Module("M002", "Discrete Mathematics", 5);
-            Module M03 = new Module("M003", "Applications Development", 5);
-            Module M04 = new Module("M004", "Web Development Fundamentals", 5);
-            Module M05 = new Module("M005", "Data Driven Systems", 5);
-            Module M06 = new Module("M006", "Computer Science", 5);
+            /*List<string> ClassGroupNames = new List<string>();
+            foreach(ClassGroup cg in ClassGroups)
+            {
+                ClassGroupNames.Add(cg.ClassGroupName);
+            }
+
+            Module M01 = new Module("M001", "Software Testing", 5, ClassGroupNames);
+            Module M02 = new Module("M002", "Discrete Mathematics", 5, ClassGroupNames);
+            Module M03 = new Module("M003", "Applications Development", 5, ClassGroupNames);
+            Module M04 = new Module("M004", "Web Development Fundamentals", 5, ClassGroupNames);
+            Module M05 = new Module("M005", "Data Driven Systems", 5, ClassGroupNames);
+            Module M06 = new Module("M006", "Computer Science", 5, ClassGroupNames);
+            ModuleList.Clear();
             ModuleList.Add(M01);
             ModuleList.Add(M02);
             ModuleList.Add(M03);
             ModuleList.Add(M04);
             ModuleList.Add(M05);
-            ModuleList.Add(M06);*/
-
+            ModuleList.Add(M06);
+            WriteFile<Module>(ModuleList, "ModuleFile.dat");*/
 
 
         }
