@@ -19,7 +19,11 @@ namespace Student_Assignment_System
         public string Description { get; set; }
 
         public Assignment(string assignmentID, string name, DateTime dateIssued, DateTime dateDue, string classGroup,
+<<<<<<< Updated upstream
             string module, string lecturerID, string descript)
+=======
+            string module, string lecturerID, string description)
+>>>>>>> Stashed changes
         {
             this.AssignmentID = assignmentID;
             this.Name = name;
@@ -28,7 +32,11 @@ namespace Student_Assignment_System
             this.ClassGroup = classGroup;
             this.Module = module;
             this.LecturerID = lecturerID;
+<<<<<<< Updated upstream
             this.Description = descript;
+=======
+            this.Description = description;
+>>>>>>> Stashed changes
         }
     }
 }

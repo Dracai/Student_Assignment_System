@@ -12,6 +12,11 @@ namespace Student_Assignment_System
 {
     public partial class StudentDashboard : Form
     {
+        static DateTime s1DOB = new DateTime(2001, 05, 05);
+        static DateTime s1Enrolled = new DateTime(2019, 09, 01);
+        Student s1 = new Student("Jakub Pawluczuk", s1DOB, "15 Inis Irga", "3571228N", "K00251917", "Password1",
+            "Software Development", "SD2A", s1Enrolled);
+
         public StudentDashboard()
         {
             InitializeComponent();
@@ -19,7 +24,16 @@ namespace Student_Assignment_System
 
         private void StudentLogout(object sender, EventArgs e)
         {
-            if (tcStudentDash.SelectedTab.Text == "Logout")
+            if (tcStudentDash.SelectedTab.Text == "Dashboard")
+            {
+                txtStudentCourse.Text = s1.Course;
+                txtStudentClassgroup.Text = s1.ClassGroup;
+            }
+            else if (tcStudentDash.SelectedTab.Text == "Assignments")
+            {
+
+            }
+            else if (tcStudentDash.SelectedTab.Text == "Logout")
             {
                 this.Hide();
                 var Login = new Form1();
