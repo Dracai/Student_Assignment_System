@@ -15,31 +15,29 @@ namespace Student_Assignment_System
         Lecturer lecturer;
         List<ClassGroup> classGroupslist;
         List<Module> modlist;
+        List<Assignment> Assignments;
 
-        public AssignmentDetails(ref Lecturer user,List<Module> mod,List<ClassGroup> classGroups)
+        public AssignmentDetails(ref Lecturer user,List<Module> mod,List<ClassGroup> classGroups,List<Assignment> assignments)
         {
             InitializeComponent();
             lecturer = user;
             classGroupslist = classGroups;
             modlist = mod;
+            Assignments = assignments;
             foreach(Module s in modlist)
             {
                 if (user.ModulesToTeach.Contains(s.ModuleCode))
                     cbModule.Items.Add(s.ModuleName);
             }
-            /*
-            foreach (Module s in modlist)
-            {
-                if (user.ModulesToTeach.Contains(s.ModuleCode)) 
-                    cbClassGroup.Items.AddRange(s.ClassGroups);
-            }
-            */
+            
 
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            if (validateInput())
+            string error = "";
+            bool check = validateInput(ref error);
+            if (check)
             {
                 Assignment assignment = new Assignment(txtID.Text, txtName.Text, DateTime.Now, dtpDue.Value, cbClassGroup.Text, cbModule.Text, lecturer.LecturerID, txtDescript.Text);
                 this.Tag = assignment;
@@ -48,11 +46,11 @@ namespace Student_Assignment_System
             }
             else
             {
-                MessageBox.Show("Invalid Data Entered");
+                MessageBox.Show(error,"Invalid Data Entered");
             }
         }
 
-        public bool validateInput()
+        public bool validateInput(ref string error)
         {
             return true;
         }

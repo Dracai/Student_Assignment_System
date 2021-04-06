@@ -60,6 +60,12 @@
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Assignment.cs" />
+    <Compile Include="AssignmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignmentDetails.Designer.cs">
+      <DependentUpon>AssignmentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassGroup.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdministratorDashboard.resx">
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignmentDetails.resx">
+      <DependentUpon>AssignmentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
