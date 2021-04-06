@@ -42,11 +42,8 @@ namespace Student_Assignment_System
         //TestDataFunction
         public void SetUpData()
         {
-            List<string> softdev = new List<string>();
-            softdev.Add("SD2A");
-            softdev.Add("SD2B");
-            ModuleList.Add(new Module("M001", "Applications Development", 5,softdev));
-            ModuleList.Add(new Module("M002", "Data Driven Systems", 5,softdev));
+            ModuleList.Add(new Module("M001", "Applications Development", 5));
+            ModuleList.Add(new Module("M002", "Data Driven Systems", 5));
             AssignmentList.Add(new Assignment("A001","Student Application System", Convert.ToDateTime("01/03/2021"), Convert.ToDateTime("05/05/2021"), "SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
             AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
             ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
@@ -56,7 +53,7 @@ namespace Student_Assignment_System
             StudentList.Add(new Student("Jakub Pawluczuk", Convert.ToDateTime("12/11/2001"), "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
             StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
             StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/04/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/34/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
         }
         
         public static void ReadFile<T>(ref List<T> list, string file)
@@ -136,8 +133,7 @@ namespace Student_Assignment_System
 
         private void SaveFiles()
         {
-            //WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
-            WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
+            WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
         }
 
         public void UpdateListViews()
@@ -165,7 +161,7 @@ namespace Student_Assignment_System
             {
                 item = new ListViewItem(a.AssignmentID);
                 item.SubItems.Add(a.Name);
-                item.SubItems.Add(a.DateDue.ToShortDateString().ToString());
+                item.SubItems.Add(a.DateDue.ToString());
                 item.SubItems.Add(a.Module);
                 lvAssignmentsAss.Items.Add(item);
             }
@@ -185,23 +181,7 @@ namespace Student_Assignment_System
 
         private void btnCreateAssignment_Click(object sender, EventArgs e)
         {
-            /*
-            var AD = new AssignmentDetails(ref user);
-            AD.FormClosed += (s, args) => this.Close();
-            AD.Show();
-            */
-            
-            Form assignmentDetails = new AssignmentDetails(ref user,ModuleList,ClassGroupList);
-            DialogResult completeBtn = assignmentDetails.ShowDialog();
-            if (completeBtn == DialogResult.OK)
-            {
-                Assignment newassignment = (Assignment)assignmentDetails.Tag;
-                AssignmentList.Add(newassignment);
-            }
-            lvAssignmentsAss.Items.Clear();
-            lvAssignmentsCG.Items.Clear();
-            lvClassGroupsCG.Items.Clear();
-            UpdateListViews();
+
         }
     }
 }
