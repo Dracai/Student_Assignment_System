@@ -44,8 +44,8 @@ namespace Student_Assignment_System
         {
             ModuleList.Add(new Module("M001", "Applications Development", 5));
             ModuleList.Add(new Module("M002", "Data Driven Systems", 5));
-            AssignmentList.Add(new Assignment("A001","Student Application System","01/03/2021","05/05/2021","SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
-            AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", "21/01/2021", "05/05/2021", "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
+            AssignmentList.Add(new Assignment("A001","Student Application System", Convert.ToDateTime("01/03/2021"), Convert.ToDateTime("05/05/2021"), "SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
+            AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
             ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
             ClassGroupList.Add(new ClassGroup("SD2B", "Software Development", "2", 19));
             StudentList.Add(new Student("Conor Moroney", "18/04/2001", "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "SD2A", "06/09/2020"));
@@ -161,7 +161,7 @@ namespace Student_Assignment_System
             {
                 item = new ListViewItem(a.AssignmentID);
                 item.SubItems.Add(a.Name);
-                item.SubItems.Add(a.DateDue);
+                item.SubItems.Add(a.DateDue.ToString());
                 item.SubItems.Add(a.Module);
                 lvAssignmentsAss.Items.Add(item);
             }
@@ -177,6 +177,11 @@ namespace Student_Assignment_System
         private void btnClassGroupsGo_Click(object sender, EventArgs e)
         {
             tcDash.SelectedTab = tcDash.TabPages[2];
+        }
+
+        private void btnCreateAssignment_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

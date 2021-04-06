@@ -179,8 +179,10 @@ namespace Student_Assignment_System
             Form adminDetails = new AdminDetails();
             DialogResult completeBtn = adminDetails.ShowDialog();
             if (completeBtn == DialogResult.OK)
-                newAdmin = (Administrator) adminDetails.Tag;
-            AdminList.Add(newAdmin);
+            {
+                newAdmin = (Administrator)adminDetails.Tag;
+                AdminList.Add(newAdmin);
+            }
             listViewAdmin.Items.Clear();
             RefreshAdminDetails();
         }
