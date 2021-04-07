@@ -78,7 +78,7 @@ namespace Student_Assignment_System
         {
             if (ValidateLogin())
             {
-                ReadFile(ref studentList, "StudentFiles.dat");
+                ReadFile(ref studentList, "StudentFile.dat");
                 foreach (Student st in studentList)
                 {
                     if (st.StudentID == txtUserID.Text)

@@ -52,12 +52,13 @@ namespace Student_Assignment_System
             //AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
             //ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
             //ClassGroupList.Add(new ClassGroup("SD2B", "Software Development", "2", 19));
-            StudentList.Add(new Student("Conor Moroney", Convert.ToDateTime("18/04/2001"), "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Ethan Caffrey", Convert.ToDateTime("11/09/2017"), "Six Mile Bridge", "1001001A", "K00251154", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Jakub Pawluczuk", Convert.ToDateTime("12/11/2001"), "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
-            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/04/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
+            List<string> sCA = new List<string>();
+            StudentList.Add(new Student("Conor Moroney", Convert.ToDateTime("18/04/2001"), "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
+            StudentList.Add(new Student("Ethan Caffrey", Convert.ToDateTime("11/09/2017"), "Six Mile Bridge", "1001001A", "K00251154", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
+            StudentList.Add(new Student("Jakub Pawluczuk", Convert.ToDateTime("12/11/2001"), "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
+            StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
+            StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
+            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/04/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)

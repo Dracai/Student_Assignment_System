@@ -40,22 +40,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblStudentWelcome = new System.Windows.Forms.Label();
             this.tpStudentAssignments = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btnACeomplete = new System.Windows.Forms.Button();
+            this.txtADescription = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtALecturer = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtADateDue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtAName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtAModuleID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lvStudentAssignments = new System.Windows.Forms.ListView();
             this.chModule = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chLecturer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpStudentLogout = new System.Windows.Forms.TabPage();
+            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcStudentDash.SuspendLayout();
             this.tbStudentDashboard.SuspendLayout();
             this.tpStudentAssignments.SuspendLayout();
@@ -175,16 +176,16 @@
             // 
             // tpStudentAssignments
             // 
-            this.tpStudentAssignments.Controls.Add(this.button1);
-            this.tpStudentAssignments.Controls.Add(this.textBox9);
+            this.tpStudentAssignments.Controls.Add(this.btnACeomplete);
+            this.tpStudentAssignments.Controls.Add(this.txtADescription);
             this.tpStudentAssignments.Controls.Add(this.label10);
-            this.tpStudentAssignments.Controls.Add(this.textBox8);
+            this.tpStudentAssignments.Controls.Add(this.txtALecturer);
             this.tpStudentAssignments.Controls.Add(this.label9);
-            this.tpStudentAssignments.Controls.Add(this.textBox7);
+            this.tpStudentAssignments.Controls.Add(this.txtADateDue);
             this.tpStudentAssignments.Controls.Add(this.label8);
-            this.tpStudentAssignments.Controls.Add(this.textBox6);
+            this.tpStudentAssignments.Controls.Add(this.txtAName);
             this.tpStudentAssignments.Controls.Add(this.label7);
-            this.tpStudentAssignments.Controls.Add(this.textBox5);
+            this.tpStudentAssignments.Controls.Add(this.txtAModuleID);
             this.tpStudentAssignments.Controls.Add(this.label6);
             this.tpStudentAssignments.Controls.Add(this.lvStudentAssignments);
             this.tpStudentAssignments.Location = new System.Drawing.Point(4, 29);
@@ -195,99 +196,100 @@
             this.tpStudentAssignments.Text = "Assignments";
             this.tpStudentAssignments.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnACeomplete
             // 
-            this.button1.Location = new System.Drawing.Point(373, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Complete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnACeomplete.Location = new System.Drawing.Point(462, 344);
+            this.btnACeomplete.Name = "btnACeomplete";
+            this.btnACeomplete.Size = new System.Drawing.Size(95, 32);
+            this.btnACeomplete.TabIndex = 11;
+            this.btnACeomplete.Text = "Complete";
+            this.btnACeomplete.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // txtADescription
             // 
-            this.textBox9.Location = new System.Drawing.Point(537, 258);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(199, 118);
-            this.textBox9.TabIndex = 10;
+            this.txtADescription.Location = new System.Drawing.Point(563, 258);
+            this.txtADescription.Multiline = true;
+            this.txtADescription.Name = "txtADescription";
+            this.txtADescription.Size = new System.Drawing.Size(199, 118);
+            this.txtADescription.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(434, 261);
+            this.label10.Location = new System.Drawing.Point(459, 261);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 20);
             this.label10.TabIndex = 9;
             this.label10.Text = "Description :";
             // 
-            // textBox8
+            // txtALecturer
             // 
-            this.textBox8.Location = new System.Drawing.Point(538, 203);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(199, 26);
-            this.textBox8.TabIndex = 8;
+            this.txtALecturer.Location = new System.Drawing.Point(563, 200);
+            this.txtALecturer.Name = "txtALecturer";
+            this.txtALecturer.Size = new System.Drawing.Size(199, 26);
+            this.txtALecturer.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 206);
+            this.label9.Location = new System.Drawing.Point(480, 203);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 7;
             this.label9.Text = "Lecturer :";
             // 
-            // textBox7
+            // txtADateDue
             // 
-            this.textBox7.Location = new System.Drawing.Point(537, 150);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 26);
-            this.textBox7.TabIndex = 6;
+            this.txtADateDue.Location = new System.Drawing.Point(563, 147);
+            this.txtADateDue.Name = "txtADateDue";
+            this.txtADateDue.Size = new System.Drawing.Size(199, 26);
+            this.txtADateDue.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(445, 153);
+            this.label8.Location = new System.Drawing.Point(470, 150);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 5;
             this.label8.Text = "Date Due :";
             // 
-            // textBox6
+            // txtAName
             // 
-            this.textBox6.Location = new System.Drawing.Point(537, 98);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(199, 26);
-            this.textBox6.TabIndex = 4;
+            this.txtAName.Location = new System.Drawing.Point(563, 95);
+            this.txtAName.Name = "txtAName";
+            this.txtAName.Size = new System.Drawing.Size(199, 26);
+            this.txtAName.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(472, 101);
+            this.label7.Location = new System.Drawing.Point(497, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Name :";
             // 
-            // textBox5
+            // txtAModuleID
             // 
-            this.textBox5.Location = new System.Drawing.Point(537, 43);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 26);
-            this.textBox5.TabIndex = 2;
+            this.txtAModuleID.Location = new System.Drawing.Point(563, 46);
+            this.txtAModuleID.Name = "txtAModuleID";
+            this.txtAModuleID.Size = new System.Drawing.Size(199, 26);
+            this.txtAModuleID.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(441, 46);
+            this.label6.Location = new System.Drawing.Point(466, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Module ID :";
+            this.label6.Text = "Module  :";
             // 
             // lvStudentAssignments
             // 
             this.lvStudentAssignments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chID,
             this.chModule,
             this.chName,
             this.chLecturer});
@@ -295,10 +297,11 @@
             this.lvStudentAssignments.HideSelection = false;
             this.lvStudentAssignments.Location = new System.Drawing.Point(6, 18);
             this.lvStudentAssignments.Name = "lvStudentAssignments";
-            this.lvStudentAssignments.Size = new System.Drawing.Size(361, 358);
+            this.lvStudentAssignments.Size = new System.Drawing.Size(447, 358);
             this.lvStudentAssignments.TabIndex = 0;
             this.lvStudentAssignments.UseCompatibleStateImageBehavior = false;
             this.lvStudentAssignments.View = System.Windows.Forms.View.Details;
+            this.lvStudentAssignments.SelectedIndexChanged += new System.EventHandler(this.SelectedAssignment);
             // 
             // chModule
             // 
@@ -323,6 +326,11 @@
             this.tpStudentLogout.TabIndex = 2;
             this.tpStudentLogout.Text = "Logout";
             this.tpStudentLogout.UseVisualStyleBackColor = true;
+            // 
+            // chID
+            // 
+            this.chID.Text = "ID";
+            this.chID.Width = 85;
             // 
             // StudentDashboard
             // 
@@ -355,21 +363,22 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStudentWelcome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button btnACeomplete;
+        private System.Windows.Forms.TextBox txtADescription;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtALecturer;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtADateDue;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtAName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtAModuleID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView lvStudentAssignments;
         private System.Windows.Forms.ColumnHeader chModule;
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.ColumnHeader chLecturer;
         private System.Windows.Forms.TabPage tpStudentLogout;
+        private System.Windows.Forms.ColumnHeader chID;
     }
 }
