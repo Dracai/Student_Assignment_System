@@ -15,7 +15,7 @@ namespace Student_Assignment_System
     public partial class LecturerDashboard : Form
     {
         //Temp User
-        
+
         Lecturer user;
 
 
@@ -31,9 +31,10 @@ namespace Student_Assignment_System
             ReadFiles();
             SetUpData();
             UpdateListViews();
-            //SaveFiles();
+            SaveFiles();
             List<string> mod = new List<string>();
             mod.Add("M002");
+            mod.Add("M001");
             user = new Lecturer("Guinane Man", Convert.ToDateTime("23/02/1293"), "Hobbiton", "PHHHHHP", "L002", "PASSWORD2", mod, Convert.ToDateTime("23/03/0987"));
 
 
@@ -42,21 +43,23 @@ namespace Student_Assignment_System
         //TestDataFunction
         public void SetUpData()
         {
-            List<string> sCA = new List<string>();
-            ModuleList.Add(new Module("M001", "Applications Development", 5));
-            ModuleList.Add(new Module("M002", "Data Driven Systems", 5));
-            AssignmentList.Add(new Assignment("A001","Student Application System", Convert.ToDateTime("01/03/2021"), Convert.ToDateTime("05/05/2021"), "SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
-            AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
-            ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
-            ClassGroupList.Add(new ClassGroup("SD2B", "Software Development", "2", 19));
-            StudentList.Add(new Student("Conor Moroney", Convert.ToDateTime("18/04/2001"), "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
-            StudentList.Add(new Student("Ethan Caffrey", Convert.ToDateTime("11/09/2017"), "Six Mile Bridge", "1001001A", "K00251154", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
-            StudentList.Add(new Student("Jakub Pawluczuk", Convert.ToDateTime("12/11/2001"), "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020"), sCA));
-            StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
-            StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
-            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/34/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
+            List<string> softdev = new List<string>();
+            softdev.Add("SD2A");
+            softdev.Add("SD2B");
+            ModuleList.Add(new Module("M001", "Applications Development", 5, softdev));
+            ModuleList.Add(new Module("M002", "Data Driven Systems", 5, softdev));
+            //AssignmentList.Add(new Assignment("A001","Student Application System", Convert.ToDateTime("01/03/2021"), Convert.ToDateTime("05/05/2021"), "SD2A","Applications Development","L001","Group Project For Windows Forms Driven Desktop Application"));
+            //AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002","Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
+            //ClassGroupList.Add(new ClassGroup("SD2A", "Software Development", "2", 18));
+            //ClassGroupList.Add(new ClassGroup("SD2B", "Software Development", "2", 19));
+            StudentList.Add(new Student("Conor Moroney", Convert.ToDateTime("18/04/2001"), "Inchadrinagh", "1001000A", "K00251153", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Ethan Caffrey", Convert.ToDateTime("11/09/2017"), "Six Mile Bridge", "1001001A", "K00251154", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Jakub Pawluczuk", Convert.ToDateTime("12/11/2001"), "Six Mile Bridge", "1001011A", "K00251155", "PASSWORD1", "Software Development", "SD2A", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
+            StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/04/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020")));
         }
-        
+
         public static void ReadFile<T>(ref List<T> list, string file)
         {
             List<T> templist = new List<T>();
@@ -118,6 +121,7 @@ namespace Student_Assignment_System
         {
             if (tcDash.SelectedTab.Text == "Logout")
             {
+                SaveFiles();
                 this.Hide();
                 var Login = new Form1();
                 Login.Closed += (s, args) => this.Close();
@@ -129,18 +133,22 @@ namespace Student_Assignment_System
         {
             ReadFile<Module>(ref ModuleList, "ModuleFiles.dat");
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
-            ReadFile<ClassGroup>(ref ClassGroupList, "ClassGroupFiles.dat");
+            ReadFile<ClassGroup>(ref ClassGroupList, "ClassGroupFile.dat");
         }
 
         private void SaveFiles()
         {
             WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
+            WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
         }
 
         public void UpdateListViews()
         {
+            lvAssignmentsAss.Items.Clear();
+            lvAssignmentsCG.Items.Clear();
+            lvClassGroupsCG.Items.Clear();
             ListViewItem item;
-            foreach(ClassGroup cg in ClassGroupList)
+            foreach (ClassGroup cg in ClassGroupList)
             {
                 item = new ListViewItem(cg.ClassGroupName);
                 item.SubItems.Add(cg.Course);
@@ -158,15 +166,15 @@ namespace Student_Assignment_System
                 lvClassGroupsCG.Items.Add(item);
             }
 
-            foreach(Assignment a in AssignmentList)
+            foreach (Assignment a in AssignmentList)
             {
                 item = new ListViewItem(a.AssignmentID);
                 item.SubItems.Add(a.Name);
-                item.SubItems.Add(a.DateDue.ToString());
+                item.SubItems.Add(a.DateDue.ToShortDateString().ToString());
                 item.SubItems.Add(a.Module);
                 lvAssignmentsAss.Items.Add(item);
             }
-            
+
 
         }
 
@@ -182,7 +190,68 @@ namespace Student_Assignment_System
 
         private void btnCreateAssignment_Click(object sender, EventArgs e)
         {
+            if (lvAssignmentsCG.SelectedItems.Count > 0)
+            {
+                Form assignmentDetails = new AssignmentDetails(ref user, ModuleList, lvAssignmentsCG.SelectedItems[0].Text, AssignmentList);
+                DialogResult completeBtn = assignmentDetails.ShowDialog();
+                if (completeBtn == DialogResult.OK)
+                {
+                    Assignment newassignment = (Assignment)assignmentDetails.Tag;
+                    AssignmentList.Add(newassignment);
+                }
+                lvAssignmentsAss.Items.Clear();
+                lvAssignmentsCG.Items.Clear();
+                lvClassGroupsCG.Items.Clear();
+                UpdateListViews();
+            }
+            else
+            {
+                MessageBox.Show("Please Select A Class Group", "Error");
+            }
+        }
+
+        private void btnRemoveAssignment_Click(object sender, EventArgs e)
+        {
+            if (lvAssignmentsAss.SelectedItems.Count > 0)
+            {
+                foreach (Assignment a in AssignmentList)
+                {
+                    if (a.AssignmentID == lvAssignmentsAss.SelectedItems[0].Text)
+                    {
+                        AssignmentList.Remove(a);
+                        UpdateListViews();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select An Assignment", "Error");
+            }
 
         }
+
+        private void btnDescription_Click(object sender, EventArgs e)
+        {
+            if (lvAssignmentsAss.SelectedItems.Count > 0)
+            {
+                foreach (Assignment a in AssignmentList)
+                {
+                    if (a.AssignmentID == lvAssignmentsAss.SelectedItems[0].Text)
+                    {
+                        MessageBox.Show(a.Description);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select An Assignment", "Error");
+            }
+        }
+
+
+
+
     }
 }

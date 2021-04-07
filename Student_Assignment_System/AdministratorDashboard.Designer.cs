@@ -49,6 +49,10 @@ namespace Student_Assignment_System
             this.tabPageLects = new System.Windows.Forms.TabPage();
             this.tabPageStuds = new System.Windows.Forms.TabPage();
             this.tabPageModules = new System.Windows.Forms.TabPage();
+            this.lblModuleHeading = new System.Windows.Forms.Label();
+            this.btnDeleteModule = new System.Windows.Forms.Button();
+            this.btnEditModule = new System.Windows.Forms.Button();
+            this.btnAddModule = new System.Windows.Forms.Button();
             this.listViewModule = new System.Windows.Forms.ListView();
             this.columnHeaderModCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderModName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -96,7 +100,7 @@ namespace Student_Assignment_System
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(463, 255);
+            this.btnRead.Location = new System.Drawing.Point(591, 340);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(96, 34);
@@ -107,7 +111,7 @@ namespace Student_Assignment_System
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(251, 255);
+            this.btnSave.Location = new System.Drawing.Point(379, 340);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 34);
@@ -120,7 +124,7 @@ namespace Student_Assignment_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 39);
+            this.label1.Location = new System.Drawing.Point(406, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 36);
             this.label1.TabIndex = 0;
@@ -156,7 +160,7 @@ namespace Student_Assignment_System
             // btnDeleteAdmin
             // 
             this.btnDeleteAdmin.Location = new System.Drawing.Point(707, 272);
-            this.btnDeleteAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteAdmin.Name = "btnDeleteAdmin";
             this.btnDeleteAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnDeleteAdmin.TabIndex = 3;
@@ -167,7 +171,7 @@ namespace Student_Assignment_System
             // btnEditAdmin
             // 
             this.btnEditAdmin.Location = new System.Drawing.Point(364, 272);
-            this.btnEditAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAdmin.Name = "btnEditAdmin";
             this.btnEditAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnEditAdmin.TabIndex = 2;
@@ -177,7 +181,7 @@ namespace Student_Assignment_System
             // btnAddAdmin
             // 
             this.btnAddAdmin.Location = new System.Drawing.Point(24, 272);
-            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAdmin.Name = "btnAddAdmin";
             this.btnAddAdmin.Size = new System.Drawing.Size(285, 39);
             this.btnAddAdmin.TabIndex = 1;
@@ -262,6 +266,10 @@ namespace Student_Assignment_System
             // 
             // tabPageModules
             // 
+            this.tabPageModules.Controls.Add(this.lblModuleHeading);
+            this.tabPageModules.Controls.Add(this.btnDeleteModule);
+            this.tabPageModules.Controls.Add(this.btnEditModule);
+            this.tabPageModules.Controls.Add(this.btnAddModule);
             this.tabPageModules.Controls.Add(this.listViewModule);
             this.tabPageModules.Location = new System.Drawing.Point(4, 29);
             this.tabPageModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,19 +280,64 @@ namespace Student_Assignment_System
             this.tabPageModules.Text = "Modules";
             this.tabPageModules.UseVisualStyleBackColor = true;
             // 
+            // lblModuleHeading
+            // 
+            this.lblModuleHeading.AutoSize = true;
+            this.lblModuleHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleHeading.Location = new System.Drawing.Point(413, 20);
+            this.lblModuleHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModuleHeading.Name = "lblModuleHeading";
+            this.lblModuleHeading.Size = new System.Drawing.Size(106, 29);
+            this.lblModuleHeading.TabIndex = 7;
+            this.lblModuleHeading.Text = "Modules";
+            // 
+            // btnDeleteModule
+            // 
+            this.btnDeleteModule.Location = new System.Drawing.Point(704, 297);
+            this.btnDeleteModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteModule.Name = "btnDeleteModule";
+            this.btnDeleteModule.Size = new System.Drawing.Size(285, 39);
+            this.btnDeleteModule.TabIndex = 6;
+            this.btnDeleteModule.Text = "Delete Module";
+            this.btnDeleteModule.UseVisualStyleBackColor = true;
+            this.btnDeleteModule.Click += new System.EventHandler(this.btnDeleteModule_Click);
+            // 
+            // btnEditModule
+            // 
+            this.btnEditModule.Location = new System.Drawing.Point(367, 297);
+            this.btnEditModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditModule.Name = "btnEditModule";
+            this.btnEditModule.Size = new System.Drawing.Size(285, 39);
+            this.btnEditModule.TabIndex = 5;
+            this.btnEditModule.Text = "Edit Module";
+            this.btnEditModule.UseVisualStyleBackColor = true;
+            // 
+            // btnAddModule
+            // 
+            this.btnAddModule.Location = new System.Drawing.Point(27, 297);
+            this.btnAddModule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddModule.Name = "btnAddModule";
+            this.btnAddModule.Size = new System.Drawing.Size(285, 39);
+            this.btnAddModule.TabIndex = 4;
+            this.btnAddModule.Text = "Add Module";
+            this.btnAddModule.UseVisualStyleBackColor = true;
+            this.btnAddModule.Click += new System.EventHandler(this.btnAddModule_Click_1);
+            // 
             // listViewModule
             // 
+            this.listViewModule.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listViewModule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderModCode,
             this.columnHeaderModName,
             this.columnHeaderCredits,
             this.columnHeaderClassGroups});
+            this.listViewModule.FullRowSelect = true;
             this.listViewModule.GridLines = true;
             this.listViewModule.HideSelection = false;
-            this.listViewModule.Location = new System.Drawing.Point(3, 15);
+            this.listViewModule.Location = new System.Drawing.Point(6, 70);
             this.listViewModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewModule.Name = "listViewModule";
-            this.listViewModule.Size = new System.Drawing.Size(1008, 242);
+            this.listViewModule.Size = new System.Drawing.Size(1008, 204);
             this.listViewModule.TabIndex = 0;
             this.listViewModule.UseCompatibleStateImageBehavior = false;
             this.listViewModule.View = System.Windows.Forms.View.Details;
@@ -335,6 +388,7 @@ namespace Student_Assignment_System
             this.tabPageAdmins.ResumeLayout(false);
             this.tabPageAdmins.PerformLayout();
             this.tabPageModules.ResumeLayout(false);
+            this.tabPageModules.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -367,5 +421,9 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Button btnDeleteAdmin;
         private System.Windows.Forms.Button btnEditAdmin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblModuleHeading;
+        private System.Windows.Forms.Button btnDeleteModule;
+        private System.Windows.Forms.Button btnEditModule;
+        private System.Windows.Forms.Button btnAddModule;
     }
 }
