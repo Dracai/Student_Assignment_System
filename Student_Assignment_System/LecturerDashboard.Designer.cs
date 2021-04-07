@@ -40,6 +40,7 @@ namespace Student_Assignment_System
             this.btnAssignmentsGo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Assignments = new System.Windows.Forms.TabPage();
+            this.btnDescription = new System.Windows.Forms.Button();
             this.btnRemoveAssignment = new System.Windows.Forms.Button();
             this.btnEditAssignment = new System.Windows.Forms.Button();
             this.btnCreateAssignment = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@ namespace Student_Assignment_System
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Logout = new System.Windows.Forms.TabPage();
-            this.btnDescription = new System.Windows.Forms.Button();
             this.tcDash.SuspendLayout();
             this.Dashboard.SuspendLayout();
             this.gb.SuspendLayout();
@@ -197,6 +197,17 @@ namespace Student_Assignment_System
             this.Assignments.Text = "Assignments";
             this.Assignments.UseVisualStyleBackColor = true;
             // 
+            // btnDescription
+            // 
+            this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescription.Location = new System.Drawing.Point(638, 369);
+            this.btnDescription.Name = "btnDescription";
+            this.btnDescription.Size = new System.Drawing.Size(153, 34);
+            this.btnDescription.TabIndex = 5;
+            this.btnDescription.Text = "View Description";
+            this.btnDescription.UseVisualStyleBackColor = true;
+            this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
+            // 
             // btnRemoveAssignment
             // 
             this.btnRemoveAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,6 +228,7 @@ namespace Student_Assignment_System
             this.btnEditAssignment.TabIndex = 3;
             this.btnEditAssignment.Text = "Edit Assignment";
             this.btnEditAssignment.UseVisualStyleBackColor = true;
+            this.btnEditAssignment.Click += new System.EventHandler(this.btnEditAssignment_Click);
             // 
             // btnCreateAssignment
             // 
@@ -365,17 +377,6 @@ namespace Student_Assignment_System
             this.Logout.TabIndex = 2;
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = true;
-            // 
-            // btnDescription
-            // 
-            this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDescription.Location = new System.Drawing.Point(638, 369);
-            this.btnDescription.Name = "btnDescription";
-            this.btnDescription.Size = new System.Drawing.Size(153, 34);
-            this.btnDescription.TabIndex = 5;
-            this.btnDescription.Text = "View Description";
-            this.btnDescription.UseVisualStyleBackColor = true;
-            this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
             // 
             // LecturerDashboard
             // 

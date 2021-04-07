@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace Student_Assignment_System
 {
     [Serializable]
-    public class Administrator : Person
+    class Administrator : Person
     {
         public string AdminID { get; set; }
         public string AdminPassword { get; set; }
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         public DateTime DateOfHire { get; set; }
 
         public Administrator()
         {
 
         }
-        public Administrator(string ID, string password, string pNumber, DateTime HireDate, string name, DateTime dob, string address, string ppsn) : base(name,dob,address,ppsn)
+        public Administrator(string ID, string password, int pNumber, DateTime HireDate, string name, DateTime dob, string address, string ppsn) : base(name,dob,address,ppsn)
         {
             this.AdminID = ID;
             this.AdminPassword = password;

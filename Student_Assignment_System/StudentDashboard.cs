@@ -25,13 +25,18 @@ namespace Student_Assignment_System
         public StudentDashboard()
         {
             InitializeComponent();
-            Student s1 = new Student("Jakub Pawluczuk", Convert.ToDateTime("05/05/2001").Date, "15 Inis Irga", "3571228N", "K00251917", "Password1",
-                "Software Development", "SD2A", Convert.ToDateTime("01/09/2019").Date, sCA);
-
-            ReadFile<Assignment>(ref AssignmentList, "AssignmentsFile.dat");
+            Student s1 = new Student("Jakub Pawluczuk", Convert.ToDateTime("05/05/2001"), "15 Inis Irga", "3571228N", "K00251917", "Password1",
+                "Software Development", "SD2A", Convert.ToDateTime("01/09/2019"), sCA);
+            setupData();
+            ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             StudentsAssignments(AssignmentList, studentAssignments, s1);
             setupAssignments();
             startUp(s1);
+        }
+
+        private void setupData()
+        {
+            
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)
@@ -72,13 +77,17 @@ namespace Student_Assignment_System
             }
         }
 
+        private static void ReadAssignments()
+        {
+
+        }
+
         private void setupAssignments()
         {
             foreach(Assignment a in studentAssignments)
             {
                 lvStudentAssignments.Items.Add(new ListViewItem(new string[]
                 {
-                    a.AssignmentID,
                     a.Module,
                     a.Name,
                     a.LecturerID
@@ -113,22 +122,5 @@ namespace Student_Assignment_System
             txtStudentAssignmentNum.Text = studentAssignments.Count.ToString();
         }
 
-        private void SelectedAssignment(object sender, EventArgs e)
-        {
-            foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
-            {
-                foreach(Assignment a in AssignmentList)
-                {
-                    if(a.AssignmentID == x.SubItems[0].Text)
-                    {
-                        this.txtAModuleID.Text = a.Module;
-                        this.txtAName.Text = a.Name;
-                        this.txtADateDue.Text = a.DateDue.Date.ToString();
-                        this.txtALecturer.Text = a.LecturerID;
-                        this.txtADescription.Text = a.Description;
-                    }
-                }
-            }
-        }
     }
 }
