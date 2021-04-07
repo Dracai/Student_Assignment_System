@@ -23,12 +23,37 @@ namespace Student_Assignment_System
             InitializeComponent();
             ReadFile<Administrator>(ref AdminList, "AdminFile.dat");
 
-            RefreshAdminDetails();
+            foreach (Administrator admin in AdminList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Name = admin.AdminID;
+                item.Text = admin.AdminID;
+                item.SubItems.Add(admin.Name);
+                item.SubItems.Add(admin.Address);
+                item.SubItems.Add(admin.DateOfBirth.ToString());
+                item.SubItems.Add(admin.PPSNumber);
+                item.SubItems.Add(admin.DateOfHire.ToString());
+                this.listViewAdmin.Items.Add(item);
+            }
 
             ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
 
-            RefreshModuleDetails();
-
+            foreach (Module module in ModuleList)
+            {
+                string temp = "";
+                ListViewItem item = new ListViewItem();
+                item.Name = module.ModuleCode;
+                item.Text = module.ModuleCode;
+                item.SubItems.Add(module.ModuleName);
+                item.SubItems.Add(module.Credits.ToString());
+                foreach (string s in module.ClassGroups)
+                {
+                    temp += s + ", ";
+                }
+                temp = temp.Trim(',', ' ');
+                item.SubItems.Add(temp);
+                this.listViewModule.Items.Add(item);
+            }
             ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
         }
 
@@ -41,9 +66,9 @@ namespace Student_Assignment_System
                 item.Text = admin.AdminID;
                 item.SubItems.Add(admin.Name);
                 item.SubItems.Add(admin.Address);
-                item.SubItems.Add(admin.DateOfBirth.ToShortDateString());
+                item.SubItems.Add(admin.DateOfBirth.ToString());
                 item.SubItems.Add(admin.PPSNumber);
-                item.SubItems.Add(admin.DateOfHire.ToShortDateString());
+                item.SubItems.Add(admin.DateOfHire.ToString());
                 this.listViewAdmin.Items.Add(item);
             }
         }
@@ -69,12 +94,12 @@ namespace Student_Assignment_System
         }
         private void AdministratorDashboard_Load(object sender, EventArgs e)
         {
-            
-            /*Administrator A01 = new Administrator("A001", "Admin1", "0835555555", Convert.ToDateTime("12/03/2014"), "Treakle Morrison", Convert.ToDateTime("15/02/1987"), "123 Doll St.", "1234567L");
-            Administrator A02 = new Administrator("A002", "Admin1", "1231231234", Convert.ToDateTime("15/06/2017"), "Barry Benson", Convert.ToDateTime("28/11/1994"), "42 Wallaby way", "7654321P");
+            /*
+            Administrator A01 = new Administrator("A001", "Admin1", 0835555555, "12/03/2014", "Treakle Morrison", "15/02/1987", "123 Doll St.", "1234567L");
+            Administrator A02 = new Administrator("A002", "Admin1", 1231231234, "15/06/2017", "Barry Benson", "28/11/1994", "42 Wallaby way", "7654321P");
             AdminList.Add(A01);
-            AdminList.Add(A02);
-            WriteFile<Administrator>(AdminList, "AdminFile.dat");*/
+            AdminList.Add(A02);*/
+
             /*List<string> ClassGroupNames = new List<string>();
             foreach(ClassGroup cg in ClassGroups)
             {
@@ -185,9 +210,8 @@ namespace Student_Assignment_System
 
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
-            string formHeading = "Add Adminstrator";
             Administrator newAdmin = new Administrator();
-            Form adminDetails = new AdminDetails(formHeading);
+            Form adminDetails = new AdminDetails();
             DialogResult completeBtn = adminDetails.ShowDialog();
             if (completeBtn == DialogResult.OK)
             {
@@ -234,21 +258,6 @@ namespace Student_Assignment_System
                 listViewModule.Items.Clear();
                 RefreshModuleDetails();
             }
-        }
-
-        private void btnEditAdmin_Click(object sender, EventArgs e)
-        {
-            string formHeading = "Edit Adminstrator";
-            Administrator newAdmin = new Administrator();
-            Form adminDetails = new AdminDetails(formHeading, AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])]);
-            DialogResult completeBtn = adminDetails.ShowDialog();
-            if (completeBtn == DialogResult.OK)
-            {
-                newAdmin = (Administrator)adminDetails.Tag;
-                AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])] = newAdmin;
-            }
-            listViewAdmin.Items.Clear();
-            RefreshAdminDetails();
         }
     }
 }
