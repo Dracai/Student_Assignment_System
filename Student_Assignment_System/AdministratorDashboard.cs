@@ -213,8 +213,9 @@ namespace Student_Assignment_System
 
         private void btnAddModule_Click_1(object sender, EventArgs e)
         {
+            string formHeading = "Add Module";
             Module newModule = new Module();
-            Form moduleDetails = new ModuleDetails();
+            Form moduleDetails = new ModuleDetails(formHeading);
             DialogResult completeBtn = moduleDetails.ShowDialog();
             if (completeBtn == DialogResult.OK)
             {
@@ -249,6 +250,21 @@ namespace Student_Assignment_System
             }
             listViewAdmin.Items.Clear();
             RefreshAdminDetails();
+        }
+
+        private void btnEditModule_Click(object sender, EventArgs e)
+        {
+            string formHeading = "Edit Module";
+            Module newModule = new Module();
+            Form moduleDetails = new ModuleDetails(formHeading, ModuleList[listViewModule.Items.IndexOf(listViewModule.SelectedItems[0])]);
+            DialogResult completeBtn = moduleDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newModule = (Module)moduleDetails.Tag;
+                ModuleList[listViewModule.Items.IndexOf(listViewModule.SelectedItems[0])] = newModule;
+            }
+            listViewModule.Items.Clear();
+            RefreshModuleDetails();
         }
     }
 }

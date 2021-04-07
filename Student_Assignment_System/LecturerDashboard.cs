@@ -59,6 +59,7 @@ namespace Student_Assignment_System
             StudentList.Add(new Student("Callum Moloney", Convert.ToDateTime("18/04/2001"), "Ennis", "1001111A", "K00251156", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
             StudentList.Add(new Student("Cian Godfrey", Convert.ToDateTime("11/09/2000"), "Shannon", "1011111A", "K00251157", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
             StudentList.Add(new Student("Jacob Paulson", Convert.ToDateTime("12/04/2001"), "Dingle", "1111111A", "K00251158", "PASSWORD1", "Software Development", "SD2B", Convert.ToDateTime("06/09/2020"), sCA));
+
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)
