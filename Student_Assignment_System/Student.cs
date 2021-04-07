@@ -14,15 +14,20 @@ namespace Student_Assignment_System
         public string Course { get; set; }
         public string ClassGroup { get; set; }
         public DateTime DateEnrolled { get; set; }
+        public List<string> CompletedAssignments { get; set; }
+
+        public Student() { }
 
         public Student(string pName, DateTime pDOB, string pAddress, string pPPSNumber,
-            string sSID, string sPW, string course, string sClassGroup, DateTime sDateEnrolled) : base(pName, pDOB, pAddress, pPPSNumber)
+            string sSID, string sPW, string course, string sClassGroup, DateTime sDateEnrolled, List<string> sCA)
+            : base(pName, pDOB, pAddress, pPPSNumber)
         {
             this.StudentID = sSID;
             this.StudentPassword = sPW;
             this.Course = course;
             this.ClassGroup = sClassGroup;
             this.DateEnrolled = sDateEnrolled;
+            this.CompletedAssignments = sCA;
         }
 
         public override string ToString()
