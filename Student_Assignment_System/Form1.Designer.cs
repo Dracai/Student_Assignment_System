@@ -76,7 +76,7 @@ namespace Student_Assignment_System
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeading.Location = new System.Drawing.Point(164, 48);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(90, 36);
+            this.lblHeading.Size = new System.Drawing.Size(73, 29);
             this.lblHeading.TabIndex = 3;
             this.lblHeading.Text = "Login";
             // 
@@ -86,7 +86,7 @@ namespace Student_Assignment_System
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(103, 107);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(31, 25);
+            this.lblID.Size = new System.Drawing.Size(26, 20);
             this.lblID.TabIndex = 6;
             this.lblID.Text = "ID";
             // 
@@ -96,7 +96,7 @@ namespace Student_Assignment_System
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(36, 163);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.Size = new System.Drawing.Size(78, 20);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "Password";
             // 
@@ -105,7 +105,7 @@ namespace Student_Assignment_System
             this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserID.Location = new System.Drawing.Point(170, 101);
             this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(163, 34);
+            this.txtUserID.Size = new System.Drawing.Size(163, 28);
             this.txtUserID.TabIndex = 8;
             // 
             // txtUserPassword
@@ -113,7 +113,7 @@ namespace Student_Assignment_System
             this.txtUserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserPassword.Location = new System.Drawing.Point(170, 157);
             this.txtUserPassword.Name = "txtUserPassword";
-            this.txtUserPassword.Size = new System.Drawing.Size(163, 34);
+            this.txtUserPassword.Size = new System.Drawing.Size(163, 28);
             this.txtUserPassword.TabIndex = 9;
             // 
             // btnLogin
@@ -125,6 +125,7 @@ namespace Student_Assignment_System
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // Form1
             // 

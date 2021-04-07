@@ -16,10 +16,25 @@ namespace Student_Assignment_System
         string cg;
         List<Module> modlist;
         List<Assignment> Assignments;
+        Assignment edit;
 
-        public AssignmentDetails(ref Lecturer user,List<Module> mod,string classgroup,List<Assignment> assignments)
+        public AssignmentDetails(ref Lecturer user,List<Module> mod,List<Assignment> assignments, string classgroup = "", Assignment edit = null)
         {
             InitializeComponent();
+            
+            if (edit!=null)
+            {
+                txtID.Text = edit.AssignmentID;
+                txtName.Text = edit.Name;
+                txtDescript.Text = edit.Description;
+                txtCG.Text = edit.ClassGroup;
+                foreach (Module s in modlist)
+                {
+                    if (user.ModulesToTeach.Contains(s.ModuleCode))
+                        cbModule.Items.Add(s.ModuleName);
+                }
+               
+            }
             lecturer = user;
             cg = classgroup;
             modlist = mod;
