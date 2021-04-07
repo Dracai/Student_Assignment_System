@@ -177,6 +177,7 @@ namespace Student_Assignment_System
             this.btnEditAdmin.TabIndex = 2;
             this.btnEditAdmin.Text = "Edit Admin";
             this.btnEditAdmin.UseVisualStyleBackColor = true;
+            this.btnEditAdmin.Click += new System.EventHandler(this.btnEditAdmin_Click);
             // 
             // btnAddAdmin
             // 
