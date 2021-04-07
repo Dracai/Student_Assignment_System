@@ -285,7 +285,7 @@ namespace Student_Assignment_System
             // 
             this.lblModuleHeading.AutoSize = true;
             this.lblModuleHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModuleHeading.Location = new System.Drawing.Point(413, 20);
+            this.lblModuleHeading.Location = new System.Drawing.Point(438, 18);
             this.lblModuleHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModuleHeading.Name = "lblModuleHeading";
             this.lblModuleHeading.Size = new System.Drawing.Size(106, 29);
@@ -312,6 +312,7 @@ namespace Student_Assignment_System
             this.btnEditModule.TabIndex = 5;
             this.btnEditModule.Text = "Edit Module";
             this.btnEditModule.UseVisualStyleBackColor = true;
+            this.btnEditModule.Click += new System.EventHandler(this.btnEditModule_Click);
             // 
             // btnAddModule
             // 
