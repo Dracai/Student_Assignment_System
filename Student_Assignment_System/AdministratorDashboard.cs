@@ -15,21 +15,24 @@ namespace Student_Assignment_System
 {
     public partial class AdministratorDashboard : Form
     {
+        //Initialise lists to work with within form
         List<Administrator> AdminList = new List<Administrator>();
         List<Module> ModuleList = new List<Module>();
         List<ClassGroup> ClassGroups = new List<ClassGroup>();
-        public AdministratorDashboard()
+
+        //Allow one admin object to be passed to constructor, as this is 
+        //The admin that has successfully logged in
+        public AdministratorDashboard(Administrator currentAdmin)
         {
             InitializeComponent();
+            //Read data from files and populate lists, refreshing list views as data is read
             ReadFile<Administrator>(ref AdminList, "AdminFile.dat");
-
             RefreshAdminDetails();
-
             ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
-
             RefreshModuleDetails();
-
             ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
+            //Personalise dashboard heading
+            lblDashboardHeading.Text = $"Welcome, {currentAdmin.Name}";
         }
 
         public void RefreshAdminDetails()
@@ -289,6 +292,26 @@ namespace Student_Assignment_System
             }
             listViewAdmin.Items.Clear();
             RefreshAdminDetails();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 1;
+        }
+
+        private void btnLect_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 2;
+        }
+
+        private void btnStud_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 3;
+        }
+
+        private void btnModule_Click(object sender, EventArgs e)
+        {
+            tabControlAdmin.SelectedIndex = 4;
         }
     }
 }
