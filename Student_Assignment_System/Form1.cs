@@ -25,11 +25,11 @@ namespace Student_Assignment_System
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
-        {
+        {/*
             this.Hide();
             var adminDash = new AdministratorDashboard();
             adminDash.FormClosed += (s, args) => this.Close();
-            adminDash.Show();
+            adminDash.Show();*/
         }
 
         private void btnLecturerLogin_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace Student_Assignment_System
                         {
                             //Open Administrator Password
                             this.Hide();
-                            var adminDash = new AdministratorDashboard();
+                            var adminDash = new AdministratorDashboard(a);
                             adminDash.FormClosed += (s, args) => this.Close();
                             adminDash.Show();
 
