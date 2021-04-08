@@ -58,12 +58,15 @@ namespace Student_Assignment_System
                 item.Text = module.ModuleCode;
                 item.SubItems.Add(module.ModuleName);
                 item.SubItems.Add(module.Credits.ToString());
-                foreach(string s in module.ClassGroups)
+                if (!(module.ClassGroups.Count == null))
                 {
-                    temp += s + ", ";
+                    foreach (string s in module.ClassGroups)
+                    {
+                        temp += s + ", ";
+                    }
+                    temp = temp.Trim(',', ' ');
+                    item.SubItems.Add(temp);
                 }
-                temp = temp.Trim(',',' ');
-                item.SubItems.Add(temp);
                 this.listViewModule.Items.Add(item);
             }
         }
@@ -74,7 +77,8 @@ namespace Student_Assignment_System
             Administrator A02 = new Administrator("A002", "Admin1", "1231231234", Convert.ToDateTime("15/06/2017"), "Barry Benson", Convert.ToDateTime("28/11/1994"), "42 Wallaby way", "7654321P");
             AdminList.Add(A01);
             AdminList.Add(A02);
-            WriteFile<Administrator>(AdminList, "AdminFile.dat");*/
+            WriteFile<Administrator>(AdminList, "AdminFile.dat");
+            RefreshAdminDetails();*/
             /*List<string> ClassGroupNames = new List<string>();
             foreach(ClassGroup cg in ClassGroups)
             {
@@ -94,8 +98,8 @@ namespace Student_Assignment_System
             ModuleList.Add(M04);
             ModuleList.Add(M05);
             ModuleList.Add(M06);
-            WriteFile<Module>(ModuleList, "ModuleFile.dat");*/
-
+            WriteFile<Module>(ModuleList, "ModuleFile.dat");
+            RefreshModuleDetails();*/
 
         }
         private void tabPageDashboard_Click(object sender, EventArgs e)
@@ -206,6 +210,11 @@ namespace Student_Assignment_System
                 listViewAdmin.Items.Clear();
                 RefreshAdminDetails();
             }
+            else
+            {
+                MessageBox.Show("Select an admin to delete", "No admin selected", MessageBoxButtons.OK);
+                return;
+            }
                 
         }
 
@@ -235,25 +244,20 @@ namespace Student_Assignment_System
                 listViewModule.Items.Clear();
                 RefreshModuleDetails();
             }
-        }
-
-        private void btnEditAdmin_Click(object sender, EventArgs e)
-        {
-            string formHeading = "Edit Adminstrator";
-            Administrator newAdmin = new Administrator();
-            Form adminDetails = new AdminDetails(formHeading, AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])]);
-            DialogResult completeBtn = adminDetails.ShowDialog();
-            if (completeBtn == DialogResult.OK)
+            else
             {
-                newAdmin = (Administrator)adminDetails.Tag;
-                AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])] = newAdmin;
+                MessageBox.Show("Select a module to delete", "No module selected", MessageBoxButtons.OK);
+                return;
             }
-            listViewAdmin.Items.Clear();
-            RefreshAdminDetails();
         }
 
         private void btnEditModule_Click(object sender, EventArgs e)
         {
+            if(listViewModule.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a module to edit", "No module selected", MessageBoxButtons.OK);
+                return;
+            }
             string formHeading = "Edit Module";
             Module newModule = new Module();
             Form moduleDetails = new ModuleDetails(formHeading, ModuleList[listViewModule.Items.IndexOf(listViewModule.SelectedItems[0])]);
@@ -265,6 +269,26 @@ namespace Student_Assignment_System
             }
             listViewModule.Items.Clear();
             RefreshModuleDetails();
+        }
+
+        private void btnEditAdmin_Click_1(object sender, EventArgs e)
+        {
+            if(listViewAdmin.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select an admin to edit", "No admin selected", MessageBoxButtons.OK);
+                return;
+            }
+            string formHeading = "Edit Adminstrator";
+            Administrator newAdmin = new Administrator();
+            Form adminDetails = new AdminDetails(formHeading, AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])]);
+            DialogResult completeBtn = adminDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newAdmin = (Administrator)adminDetails.Tag;
+                AdminList[listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0])] = newAdmin;
+            }
+            listViewAdmin.Items.Clear();
+            RefreshAdminDetails();
         }
     }
 }
