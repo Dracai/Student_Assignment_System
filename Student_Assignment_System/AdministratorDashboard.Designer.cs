@@ -33,7 +33,7 @@ namespace Student_Assignment_System
             this.tabPageDashboard = new System.Windows.Forms.TabPage();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDashboardHeading = new System.Windows.Forms.Label();
             this.tabPageAdmins = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDeleteAdmin = new System.Windows.Forms.Button();
@@ -59,10 +59,23 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
+            this.grpbAdmins = new System.Windows.Forms.GroupBox();
+            this.grpbLects = new System.Windows.Forms.GroupBox();
+            this.grpbStuds = new System.Windows.Forms.GroupBox();
+            this.grpbModules = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnLect = new System.Windows.Forms.Button();
+            this.btnStud = new System.Windows.Forms.Button();
+            this.btnModule = new System.Windows.Forms.Button();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.tabPageAdmins.SuspendLayout();
             this.tabPageModules.SuspendLayout();
+            this.grpbAdmins.SuspendLayout();
+            this.grpbLects.SuspendLayout();
+            this.grpbStuds.SuspendLayout();
+            this.grpbModules.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -84,9 +97,14 @@ namespace Student_Assignment_System
             // 
             // tabPageDashboard
             // 
+            this.tabPageDashboard.Controls.Add(this.label1);
+            this.tabPageDashboard.Controls.Add(this.grpbModules);
+            this.tabPageDashboard.Controls.Add(this.grpbStuds);
+            this.tabPageDashboard.Controls.Add(this.grpbLects);
+            this.tabPageDashboard.Controls.Add(this.grpbAdmins);
             this.tabPageDashboard.Controls.Add(this.btnRead);
             this.tabPageDashboard.Controls.Add(this.btnSave);
-            this.tabPageDashboard.Controls.Add(this.label1);
+            this.tabPageDashboard.Controls.Add(this.lblDashboardHeading);
             this.tabPageDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageDashboard.Location = new System.Drawing.Point(4, 29);
             this.tabPageDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -100,7 +118,7 @@ namespace Student_Assignment_System
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(591, 340);
+            this.btnRead.Location = new System.Drawing.Point(915, 39);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(96, 34);
@@ -111,7 +129,7 @@ namespace Student_Assignment_System
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(379, 340);
+            this.btnSave.Location = new System.Drawing.Point(6, 39);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 34);
@@ -120,15 +138,15 @@ namespace Student_Assignment_System
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
+            // lblDashboardHeading
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(406, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome, {User}";
+            this.lblDashboardHeading.AutoSize = true;
+            this.lblDashboardHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboardHeading.Location = new System.Drawing.Point(329, 35);
+            this.lblDashboardHeading.Name = "lblDashboardHeading";
+            this.lblDashboardHeading.Size = new System.Drawing.Size(237, 36);
+            this.lblDashboardHeading.TabIndex = 0;
+            this.lblDashboardHeading.Text = "Welcome, {User}";
             // 
             // tabPageAdmins
             // 
@@ -177,6 +195,7 @@ namespace Student_Assignment_System
             this.btnEditAdmin.TabIndex = 2;
             this.btnEditAdmin.Text = "Edit Admin";
             this.btnEditAdmin.UseVisualStyleBackColor = true;
+            this.btnEditAdmin.Click += new System.EventHandler(this.btnEditAdmin_Click_1);
             // 
             // btnAddAdmin
             // 
@@ -373,6 +392,96 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
+            // grpbAdmins
+            // 
+            this.grpbAdmins.Controls.Add(this.btnAdmin);
+            this.grpbAdmins.Location = new System.Drawing.Point(32, 223);
+            this.grpbAdmins.Name = "grpbAdmins";
+            this.grpbAdmins.Size = new System.Drawing.Size(234, 165);
+            this.grpbAdmins.TabIndex = 3;
+            this.grpbAdmins.TabStop = false;
+            this.grpbAdmins.Text = "Administrators";
+            // 
+            // grpbLects
+            // 
+            this.grpbLects.Controls.Add(this.btnLect);
+            this.grpbLects.Location = new System.Drawing.Point(272, 223);
+            this.grpbLects.Name = "grpbLects";
+            this.grpbLects.Size = new System.Drawing.Size(234, 165);
+            this.grpbLects.TabIndex = 4;
+            this.grpbLects.TabStop = false;
+            this.grpbLects.Text = "Lecturers";
+            // 
+            // grpbStuds
+            // 
+            this.grpbStuds.Controls.Add(this.btnStud);
+            this.grpbStuds.Location = new System.Drawing.Point(512, 223);
+            this.grpbStuds.Name = "grpbStuds";
+            this.grpbStuds.Size = new System.Drawing.Size(234, 165);
+            this.grpbStuds.TabIndex = 4;
+            this.grpbStuds.TabStop = false;
+            this.grpbStuds.Text = "Students";
+            // 
+            // grpbModules
+            // 
+            this.grpbModules.Controls.Add(this.btnModule);
+            this.grpbModules.Location = new System.Drawing.Point(752, 223);
+            this.grpbModules.Name = "grpbModules";
+            this.grpbModules.Size = new System.Drawing.Size(234, 165);
+            this.grpbModules.TabIndex = 4;
+            this.grpbModules.TabStop = false;
+            this.grpbModules.Text = "Modules";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 29);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Manage:";
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(6, 82);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(222, 34);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.Text = "Go";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnLect
+            // 
+            this.btnLect.Location = new System.Drawing.Point(6, 82);
+            this.btnLect.Name = "btnLect";
+            this.btnLect.Size = new System.Drawing.Size(222, 34);
+            this.btnLect.TabIndex = 1;
+            this.btnLect.Text = "Go";
+            this.btnLect.UseVisualStyleBackColor = true;
+            this.btnLect.Click += new System.EventHandler(this.btnLect_Click);
+            // 
+            // btnStud
+            // 
+            this.btnStud.Location = new System.Drawing.Point(6, 82);
+            this.btnStud.Name = "btnStud";
+            this.btnStud.Size = new System.Drawing.Size(222, 34);
+            this.btnStud.TabIndex = 2;
+            this.btnStud.Text = "Go";
+            this.btnStud.UseVisualStyleBackColor = true;
+            this.btnStud.Click += new System.EventHandler(this.btnStud_Click);
+            // 
+            // btnModule
+            // 
+            this.btnModule.Location = new System.Drawing.Point(6, 82);
+            this.btnModule.Name = "btnModule";
+            this.btnModule.Size = new System.Drawing.Size(222, 34);
+            this.btnModule.TabIndex = 3;
+            this.btnModule.Text = "Go";
+            this.btnModule.UseVisualStyleBackColor = true;
+            this.btnModule.Click += new System.EventHandler(this.btnModule_Click);
+            // 
             // AdministratorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,6 +499,10 @@ namespace Student_Assignment_System
             this.tabPageAdmins.PerformLayout();
             this.tabPageModules.ResumeLayout(false);
             this.tabPageModules.PerformLayout();
+            this.grpbAdmins.ResumeLayout(false);
+            this.grpbLects.ResumeLayout(false);
+            this.grpbStuds.ResumeLayout(false);
+            this.grpbModules.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,7 +514,7 @@ namespace Student_Assignment_System
         private System.Windows.Forms.TabPage tabPageAdmins;
         private System.Windows.Forms.TabPage tabPageLects;
         private System.Windows.Forms.TabPage tabPageStuds;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDashboardHeading;
         private System.Windows.Forms.TabPage tabPageModules;
         private System.Windows.Forms.TabPage tabPageLogOut;
         private System.Windows.Forms.Button btnSave;
@@ -426,5 +539,14 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Button btnDeleteModule;
         private System.Windows.Forms.Button btnEditModule;
         private System.Windows.Forms.Button btnAddModule;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpbModules;
+        private System.Windows.Forms.Button btnModule;
+        private System.Windows.Forms.GroupBox grpbStuds;
+        private System.Windows.Forms.Button btnStud;
+        private System.Windows.Forms.GroupBox grpbLects;
+        private System.Windows.Forms.Button btnLect;
+        private System.Windows.Forms.GroupBox grpbAdmins;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
