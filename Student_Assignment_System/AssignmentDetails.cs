@@ -28,6 +28,7 @@ namespace Student_Assignment_System
                 txtName.Text = edit.Name;
                 txtDescript.Text = edit.Description;
                 txtCG.Text = edit.ClassGroup;
+                dtpDue.Value = edit.DateDue;
                 foreach (Module s in modlist)
                 {
                     if (user.ModulesToTeach.Contains(s.ModuleCode))
