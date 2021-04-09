@@ -19,6 +19,8 @@ namespace Student_Assignment_System
         List<Administrator> AdminList = new List<Administrator>();
         List<Module> ModuleList = new List<Module>();
         List<ClassGroup> ClassGroups = new List<ClassGroup>();
+        List<Lecturer> LectList = new List<Lecturer>();
+        List<Student> StudentList = new List<Student>();
 
         //Allow one admin object to be passed to constructor, as this is 
         //The admin that has successfully logged in
@@ -31,6 +33,11 @@ namespace Student_Assignment_System
             ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
             RefreshModuleDetails();
             ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
+
+            ReadFile<Lecturer>(ref LectList, "LecturerFiles.dat");
+            RefreshLecturerDetails();
+            ReadFile<Student>(ref StudentList, "StudentFiles.dat");
+            RefreshStudentDetails();
             //Personalise dashboard heading
             lblDashboardHeading.Text = $"Welcome, {currentAdmin.Name}";
         }
@@ -61,7 +68,7 @@ namespace Student_Assignment_System
                 item.Text = module.ModuleCode;
                 item.SubItems.Add(module.ModuleName);
                 item.SubItems.Add(module.Credits.ToString());
-                if (!(module.ClassGroups.Count == null))
+                if (!(module.ClassGroups.Count == 0))
                 {
                     foreach (string s in module.ClassGroups)
                     {
@@ -71,6 +78,49 @@ namespace Student_Assignment_System
                     item.SubItems.Add(temp);
                 }
                 this.listViewModule.Items.Add(item);
+            }
+        }
+
+        public void RefreshLecturerDetails()
+        {
+            foreach(Lecturer lect in LectList)
+            {
+                string temp = "";
+                ListViewItem item = new ListViewItem();
+                item.Name = lect.LecturerID;
+                item.Text = lect.LecturerID;
+                item.SubItems.Add(lect.Name);
+                item.SubItems.Add(lect.Address);
+                item.SubItems.Add(lect.DateOfBirth.ToShortDateString());
+                item.SubItems.Add(lect.PPSNumber);
+                item.SubItems.Add(lect.DateOfHire.ToShortDateString());
+                if (!(lect.ModulesToTeach.Count == 0))
+                {
+                    foreach(string module in lect.ModulesToTeach)
+                    {
+                        temp += module + ", ";
+                    }
+                    temp = temp.Trim(',', ' ');
+                    item.SubItems.Add(temp);
+                }
+                this.listViewLecturer.Items.Add(item);
+            }
+        }
+
+        public void RefreshStudentDetails()
+        {
+            foreach(Student student in StudentList)
+            {
+                string temp = "";
+                ListViewItem item = new ListViewItem();
+                item.Name = student.StudentID;
+                item.Text = student.StudentID;
+                item.SubItems.Add(student.Name);
+                item.SubItems.Add(student.DateOfBirth.ToShortDateString());
+                item.SubItems.Add(student.PPSNumber);
+                item.SubItems.Add(student.DateEnrolled.ToShortDateString());
+                item.SubItems.Add(student.ClassGroup);
+                this.listViewStudent.Items.Add(item);
             }
         }
         private void AdministratorDashboard_Load(object sender, EventArgs e)
@@ -312,6 +362,11 @@ namespace Student_Assignment_System
         private void btnModule_Click(object sender, EventArgs e)
         {
             tabControlAdmin.SelectedIndex = 4;
+        }
+
+        private void btnAddLect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
