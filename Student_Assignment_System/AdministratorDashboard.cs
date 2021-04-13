@@ -460,5 +460,25 @@ namespace Student_Assignment_System
             listViewStudent.Items.Clear();
             RefreshStudentDetails();
         }
+
+        private void btnEditStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudent.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a student to edit", "No student selected", MessageBoxButtons.OK);
+                return;
+            }
+            string formHeading = "Edit Student";
+            Student newStud = new Student();
+            Form studDetails = new StudentDetails(formHeading, StudentList[listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0])]);
+            DialogResult completeBtn = studDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newStud = (Student)studDetails.Tag;
+                StudentList[listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0])] = newStud;
+            }
+            listViewStudent.Items.Clear();
+            RefreshStudentDetails();
+        }
     }
 }

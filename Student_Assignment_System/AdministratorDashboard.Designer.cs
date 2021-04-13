@@ -82,6 +82,8 @@ namespace Student_Assignment_System
             this.columnHeaderStudentPPSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStudentDateEnrolled = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStudentClassGroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCourse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCompletedAssignments = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageModules = new System.Windows.Forms.TabPage();
             this.lblModuleHeading = new System.Windows.Forms.Label();
             this.btnDeleteModule = new System.Windows.Forms.Button();
@@ -93,8 +95,6 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
-            this.columnHeaderStudentCourse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderStudentCompletedAssignments = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.grpbModules.SuspendLayout();
@@ -553,6 +553,7 @@ namespace Student_Assignment_System
             this.btnEditStudent.TabIndex = 7;
             this.btnEditStudent.Text = "Edit Student";
             this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click);
             // 
             // btnAddStudent
             // 
@@ -626,6 +627,16 @@ namespace Student_Assignment_System
             // 
             this.columnHeaderStudentClassGroup.Text = "Class Group";
             this.columnHeaderStudentClassGroup.Width = 140;
+            // 
+            // columnHeaderStudentCourse
+            // 
+            this.columnHeaderStudentCourse.Text = "Course";
+            this.columnHeaderStudentCourse.Width = 120;
+            // 
+            // columnHeaderStudentCompletedAssignments
+            // 
+            this.columnHeaderStudentCompletedAssignments.Text = "Completed Assignments";
+            this.columnHeaderStudentCompletedAssignments.Width = 180;
             // 
             // tabPageModules
             // 
@@ -735,16 +746,6 @@ namespace Student_Assignment_System
             this.tabPageLogOut.TabIndex = 5;
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
-            // 
-            // columnHeaderStudentCourse
-            // 
-            this.columnHeaderStudentCourse.Text = "Course";
-            this.columnHeaderStudentCourse.Width = 120;
-            // 
-            // columnHeaderStudentCompletedAssignments
-            // 
-            this.columnHeaderStudentCompletedAssignments.Text = "Completed Assignments";
-            this.columnHeaderStudentCompletedAssignments.Width = 180;
             // 
             // AdministratorDashboard
             // 
