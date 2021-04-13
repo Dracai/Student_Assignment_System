@@ -40,13 +40,13 @@ namespace Student_Assignment_System
             this.lblAdminDateOfHire = new System.Windows.Forms.Label();
             this.txtAdminID = new System.Windows.Forms.TextBox();
             this.txtAdminName = new System.Windows.Forms.TextBox();
-            this.txtAdminDOB = new System.Windows.Forms.TextBox();
             this.txtAdminAddress = new System.Windows.Forms.TextBox();
             this.txtAdminPPSN = new System.Windows.Forms.TextBox();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.txtAdminPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtAdminDateOfHire = new System.Windows.Forms.TextBox();
             this.btnComplete = new System.Windows.Forms.Button();
+            this.dtpAdminDOB = new System.Windows.Forms.DateTimePicker();
+            this.dtpAdminDateOfHire = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -161,7 +161,7 @@ namespace Student_Assignment_System
             // 
             this.txtAdminID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminID.Location = new System.Drawing.Point(277, 100);
-            this.txtAdminID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminID.Name = "txtAdminID";
             this.txtAdminID.Size = new System.Drawing.Size(277, 27);
             this.txtAdminID.TabIndex = 9;
@@ -171,27 +171,17 @@ namespace Student_Assignment_System
             // 
             this.txtAdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminName.Location = new System.Drawing.Point(277, 143);
-            this.txtAdminName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminName.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminName.Name = "txtAdminName";
             this.txtAdminName.Size = new System.Drawing.Size(277, 27);
             this.txtAdminName.TabIndex = 10;
             this.txtAdminName.TextChanged += new System.EventHandler(this.txtAdminName_TextChanged);
             // 
-            // txtAdminDOB
-            // 
-            this.txtAdminDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdminDOB.Location = new System.Drawing.Point(277, 187);
-            this.txtAdminDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtAdminDOB.Name = "txtAdminDOB";
-            this.txtAdminDOB.Size = new System.Drawing.Size(277, 27);
-            this.txtAdminDOB.TabIndex = 11;
-            this.txtAdminDOB.TextChanged += new System.EventHandler(this.txtAdminDOB_TextChanged);
-            // 
             // txtAdminAddress
             // 
             this.txtAdminAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminAddress.Location = new System.Drawing.Point(277, 233);
-            this.txtAdminAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminAddress.Name = "txtAdminAddress";
             this.txtAdminAddress.Size = new System.Drawing.Size(277, 27);
             this.txtAdminAddress.TabIndex = 12;
@@ -201,7 +191,7 @@ namespace Student_Assignment_System
             // 
             this.txtAdminPPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminPPSN.Location = new System.Drawing.Point(277, 277);
-            this.txtAdminPPSN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminPPSN.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminPPSN.Name = "txtAdminPPSN";
             this.txtAdminPPSN.Size = new System.Drawing.Size(277, 27);
             this.txtAdminPPSN.TabIndex = 13;
@@ -211,7 +201,7 @@ namespace Student_Assignment_System
             // 
             this.txtAdminPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminPassword.Location = new System.Drawing.Point(277, 321);
-            this.txtAdminPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminPassword.Name = "txtAdminPassword";
             this.txtAdminPassword.Size = new System.Drawing.Size(277, 27);
             this.txtAdminPassword.TabIndex = 14;
@@ -221,27 +211,17 @@ namespace Student_Assignment_System
             // 
             this.txtAdminPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminPhoneNumber.Location = new System.Drawing.Point(277, 368);
-            this.txtAdminPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdminPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdminPhoneNumber.Name = "txtAdminPhoneNumber";
             this.txtAdminPhoneNumber.Size = new System.Drawing.Size(277, 27);
             this.txtAdminPhoneNumber.TabIndex = 15;
             this.txtAdminPhoneNumber.TextChanged += new System.EventHandler(this.txtAdminPhoneNumber_TextChanged);
             // 
-            // txtAdminDateOfHire
-            // 
-            this.txtAdminDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdminDateOfHire.Location = new System.Drawing.Point(277, 415);
-            this.txtAdminDateOfHire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtAdminDateOfHire.Name = "txtAdminDateOfHire";
-            this.txtAdminDateOfHire.Size = new System.Drawing.Size(277, 27);
-            this.txtAdminDateOfHire.TabIndex = 16;
-            this.txtAdminDateOfHire.TextChanged += new System.EventHandler(this.txtAdminDateOfHire_TextChanged);
-            // 
             // btnComplete
             // 
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplete.Location = new System.Drawing.Point(277, 470);
-            this.btnComplete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnComplete.Margin = new System.Windows.Forms.Padding(4);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(279, 39);
             this.btnComplete.TabIndex = 17;
@@ -249,18 +229,34 @@ namespace Student_Assignment_System
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
+            // dtpAdminDOB
+            // 
+            this.dtpAdminDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAdminDOB.Location = new System.Drawing.Point(277, 188);
+            this.dtpAdminDOB.Name = "dtpAdminDOB";
+            this.dtpAdminDOB.Size = new System.Drawing.Size(279, 24);
+            this.dtpAdminDOB.TabIndex = 18;
+            // 
+            // dtpAdminDateOfHire
+            // 
+            this.dtpAdminDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAdminDateOfHire.Location = new System.Drawing.Point(277, 411);
+            this.dtpAdminDateOfHire.Name = "dtpAdminDateOfHire";
+            this.dtpAdminDateOfHire.Size = new System.Drawing.Size(279, 22);
+            this.dtpAdminDateOfHire.TabIndex = 19;
+            // 
             // AdminDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 522);
+            this.Controls.Add(this.dtpAdminDateOfHire);
+            this.Controls.Add(this.dtpAdminDOB);
             this.Controls.Add(this.btnComplete);
-            this.Controls.Add(this.txtAdminDateOfHire);
             this.Controls.Add(this.txtAdminPhoneNumber);
             this.Controls.Add(this.txtAdminPassword);
             this.Controls.Add(this.txtAdminPPSN);
             this.Controls.Add(this.txtAdminAddress);
-            this.Controls.Add(this.txtAdminDOB);
             this.Controls.Add(this.txtAdminName);
             this.Controls.Add(this.txtAdminID);
             this.Controls.Add(this.lblAdminDateOfHire);
@@ -272,7 +268,7 @@ namespace Student_Assignment_System
             this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.lblAdminID);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminDetails";
             this.Text = "AdminDetails";
             this.ResumeLayout(false);
@@ -293,12 +289,12 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Label lblAdminDateOfHire;
         private System.Windows.Forms.TextBox txtAdminID;
         private System.Windows.Forms.TextBox txtAdminName;
-        private System.Windows.Forms.TextBox txtAdminDOB;
         private System.Windows.Forms.TextBox txtAdminAddress;
         private System.Windows.Forms.TextBox txtAdminPPSN;
         private System.Windows.Forms.TextBox txtAdminPassword;
         private System.Windows.Forms.TextBox txtAdminPhoneNumber;
-        private System.Windows.Forms.TextBox txtAdminDateOfHire;
         private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.DateTimePicker dtpAdminDOB;
+        private System.Windows.Forms.DateTimePicker dtpAdminDateOfHire;
     }
 }

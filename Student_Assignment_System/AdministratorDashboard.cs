@@ -221,6 +221,7 @@ namespace Student_Assignment_System
         {
             WriteFile<Administrator>(AdminList, "AdminFile.dat");
             WriteFile<Module>(ModuleList, "ModuleFile.dat");
+            WriteFile<Lecturer>(LectList, "LecturerFiles.dat");
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -388,6 +389,22 @@ namespace Student_Assignment_System
             }
             listViewLecturer.Items.Clear();
             RefreshLecturerDetails();
+        }
+
+        private void btnDeleteLect_Click(object sender, EventArgs e)
+        {
+            if (listViewLecturer.SelectedItems.Count > 0)
+            {
+                Debug.WriteLine(listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0]));
+                LectList.RemoveAt(listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0]));
+                listViewLecturer.Items.Clear();
+                RefreshLecturerDetails();
+            }
+            else
+            {
+                MessageBox.Show("Select a lecturer to delete", "No lecturer selected", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

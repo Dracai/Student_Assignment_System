@@ -412,6 +412,7 @@ namespace Student_Assignment_System
             this.btnDeleteLect.TabIndex = 8;
             this.btnDeleteLect.Text = "Delete Lecturer";
             this.btnDeleteLect.UseVisualStyleBackColor = true;
+            this.btnDeleteLect.Click += new System.EventHandler(this.btnDeleteLect_Click);
             // 
             // btnEditLect
             // 
