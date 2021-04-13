@@ -366,7 +366,28 @@ namespace Student_Assignment_System
 
         private void btnAddLect_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnEditLect_Click(object sender, EventArgs e)
+        {
+            if (listViewLecturer.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a lecturer to edit", "No lecturers selected", MessageBoxButtons.OK);
+                return;
+            }
+            string formHeading = "Edit Lecturer";
+            Lecturer newLect = new Lecturer();
+
+            Form lectDetails = new LecturerDetails(formHeading, LectList[listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0])]);
+            DialogResult completeBtn = lectDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newLect = (Lecturer)lectDetails.Tag;
+                LectList[listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0])] = newLect;
+            }
+            listViewLecturer.Items.Clear();
+            RefreshLecturerDetails();
         }
     }
 }

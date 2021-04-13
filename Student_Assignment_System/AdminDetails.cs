@@ -49,5 +49,90 @@ namespace Student_Assignment_System
         {
             return true;
         }
+
+        private void txtAdminDateOfHire_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminPPSN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminDOB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdminID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminDateOfHire_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminPPSN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminDOB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdminID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
