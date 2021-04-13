@@ -18,6 +18,7 @@ namespace Student_Assignment_System
 {
     public partial class StudentDashboard : Form
     {
+        Student student;
         List<Assignment> AssignmentList = new List<Assignment>();
         List<Assignment> studentAssignments = new List<Assignment>();
         List<string> sCA = new List<string>();
@@ -25,13 +26,13 @@ namespace Student_Assignment_System
         public StudentDashboard()
         {
             InitializeComponent();
-            Student s1 = new Student("Jakub Pawluczuk", Convert.ToDateTime("05/05/2001"), "15 Inis Irga", "3571228N", "K00251917", "Password1",
-                "Software Development", "SD2A", Convert.ToDateTime("01/09/2019"), sCA);
+            student = new Student("Jakub Pawluczuk", Convert.ToDateTime("05/05/2001").Date, "15 Inis Orga", "3571228N", "K00251917", "Password1",
+                "Software Development", "SD2A", Convert.ToDateTime("01/09/2019").Date, sCA);
             setupData();
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
-            StudentsAssignments(AssignmentList, studentAssignments, s1);
+            StudentsAssignments(AssignmentList, studentAssignments, student);
             setupAssignments();
-            startUp(s1);
+            startUp(student);
         }
 
         private void setupData()
@@ -66,11 +67,11 @@ namespace Student_Assignment_System
             }
         }
 
-        private static void StudentsAssignments(List<Assignment> AssignmentList, List<Assignment> studentAssignments, Student s1)
+        private static void StudentsAssignments(List<Assignment> AssignmentList, List<Assignment> studentAssignments, Student student)
         {
             foreach(Assignment a in AssignmentList)
             {
-                if(a.ClassGroup == s1.ClassGroup)
+                if(a.ClassGroup == student.ClassGroup && !student.CompletedAssignments.Contains(a.AssignmentID))
                 {
                     studentAssignments.Add(a);
                 }
@@ -88,6 +89,7 @@ namespace Student_Assignment_System
             {
                 lvStudentAssignments.Items.Add(new ListViewItem(new string[]
                 {
+                    a.AssignmentID,
                     a.Module,
                     a.Name,
                     a.LecturerID
@@ -122,5 +124,39 @@ namespace Student_Assignment_System
             txtStudentAssignmentNum.Text = studentAssignments.Count.ToString();
         }
 
+        private void lvStudentAssignments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
+            {
+                foreach(Assignment a in AssignmentList)
+                {
+                    if(a.AssignmentID == x.SubItems[0].Text)
+                    {
+                        this.txtSAModuleID.Text = a.Module;
+                        this.txtSAName.Text = a.Name;
+                        this.txtSADateDue.Text = a.DateDue.ToString();
+                        this.txtSALecturer.Text = a.LecturerID;
+                        this.txtSADesciption.Text = a.Description;
+                    }
+                }
+            }
+        }
+
+        private void btnAComplete_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
+            {
+                student.CompletedAssignments.Add(x.SubItems[0].Text);
+                AssignmentList.RemoveAt(x.Index);
+                lvStudentAssignments.Items.RemoveAt(x.Index);
+
+            }
+
+            this.txtSAModuleID.Clear();
+            this.txtSAName.Clear();
+            this.txtSADateDue.Clear();
+            this.txtSALecturer.Clear();
+            this.txtSADesciption.Clear();
+        }
     }
 }
