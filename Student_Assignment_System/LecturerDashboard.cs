@@ -117,7 +117,7 @@ namespace Student_Assignment_System
         private void SaveFiles()
         {
             WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
-            WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
+            //WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
         }
 
         public void UpdateListViews()
@@ -170,7 +170,7 @@ namespace Student_Assignment_System
         {
             if (lvAssignmentsCG.SelectedItems.Count > 0)
             {
-                Form assignmentDetails = new AssignmentDetails(ref user, ModuleList, AssignmentList,lvAssignmentsCG.SelectedItems[0].Text);
+                Form assignmentDetails = new AssignmentDetails(ref user,lvAssignmentsCG.SelectedItems[0].Text);
                 DialogResult completeBtn = assignmentDetails.ShowDialog();
                 if (completeBtn == DialogResult.OK)
                 {
@@ -234,27 +234,39 @@ namespace Student_Assignment_System
             Form assignmentDetails;
             if (lvAssignmentsAss.SelectedItems.Count > 0)
             {
-                foreach (Assignment a in AssignmentList)
+                /*foreach (Assignment a in AssignmentList)
                 {
                     if(lvAssignmentsAss.SelectedItems[0].Text == a.AssignmentID)
                     {
-                        assignmentDetails = new AssignmentDetails(ref user, ModuleList, AssignmentList,"",a);
+                        assignmentDetails = new AssignmentDetails(ref user,"", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
                         completeBtn = assignmentDetails.ShowDialog();
                         if (completeBtn == DialogResult.OK)
                         {
                             Assignment newassignment = (Assignment)assignmentDetails.Tag;
-                            AssignmentList.Add(newassignment);
-                            AssignmentList.Remove(a);
+                            AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
                         }
                     }
+                }*/
+                assignmentDetails = new AssignmentDetails(ref user, "", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
+                completeBtn = assignmentDetails.ShowDialog();
+                if (completeBtn == DialogResult.OK)
+                {
+                    Assignment newassignment = (Assignment)assignmentDetails.Tag;
+                    AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
                 }
-                
+                UpdateListViews();
+
 
             }
             else
             {
                 MessageBox.Show("Please Select An Assignment To Edit", "Error");
             }
+        }
+
+        private void btnAssSave_Click(object sender, EventArgs e)
+        {
+            SaveFiles();
         }
     }
 }
