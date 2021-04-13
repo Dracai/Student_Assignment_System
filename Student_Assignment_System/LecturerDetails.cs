@@ -21,7 +21,11 @@ namespace Student_Assignment_System
             InitializeComponent();
             lblLectDetailsheading.Text = detailsHeading;
             ReadFile<Module>(ref moduleList, "ModuleFile.dat");
-            if(!(selectedLecturer == null))
+            foreach (Module m in moduleList)
+            {
+                clbModulesToTeach.Items.Add(m.ModuleName);
+            }
+            if (!(selectedLecturer == null))
             {
                 txtLecturerID.ReadOnly = true;
                 txtLecturerID.Text = selectedLecturer.LecturerID;
@@ -31,10 +35,7 @@ namespace Student_Assignment_System
                 txtLecturerPPSN.Text = selectedLecturer.PPSNumber;
                 txtLecturerPassword.Text = selectedLecturer.LecturerPassword;
 
-                foreach(Module m in moduleList)
-                {
-                    clbModulesToTeach.Items.Add(m.ModuleName);
-                }
+                
                 List<string> itemsToCheck = new List<string>();
                 foreach(Module module in moduleList)
                 {
