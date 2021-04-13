@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Student_Assignment_System
 {
@@ -18,35 +20,38 @@ namespace Student_Assignment_System
         List<Assignment> Assignments;
         Assignment edit;
 
-        public AssignmentDetails(ref Lecturer user,List<Module> mod,List<Assignment> assignments, string classgroup = "", Assignment edit = null)
+        public AssignmentDetails(ref Lecturer user, string classgroup = "", Assignment edit = null)
         {
             InitializeComponent();
-            
-            if (edit!=null)
+            ReadFiles();
+
+            lecturer = user;
+            cg = classgroup;
+            if (!(edit == null))
             {
-                txtID.Text = edit.AssignmentID;
-                txtName.Text = edit.Name;
-                txtDescript.Text = edit.Description;
-                txtCG.Text = edit.ClassGroup;
-                dtpDue.Value = edit.DateDue;
+                this.edit = edit;
+                txtID.Text = this.edit.AssignmentID;
+                txtID.ReadOnly = true;
+                txtName.Text = this.edit.Name;
+                txtDescript.Text = this.edit.Description;
+                txtCG.Text = this.edit.ClassGroup;
+                dtpDue.Value = this.edit.DateDue;
                 foreach (Module s in modlist)
                 {
                     if (user.ModulesToTeach.Contains(s.ModuleCode))
                         cbModule.Items.Add(s.ModuleName);
                 }
-               
+                cbModule.SelectedIndex = cbModule.Items.IndexOf(this.edit.Module);
             }
-            lecturer = user;
-            cg = classgroup;
-            modlist = mod;
-            Assignments = assignments;
-            txtCG.Text = cg;
-            foreach(Module s in modlist)
+            else
             {
-                if (user.ModulesToTeach.Contains(s.ModuleCode))
-                    cbModule.Items.Add(s.ModuleName);
+                txtCG.Text = cg;
+                foreach (Module s in modlist)
+                {
+                    if (user.ModulesToTeach.Contains(s.ModuleCode))
+                        cbModule.Items.Add(s.ModuleName);
+                }
             }
-            
 
         }
 
@@ -71,5 +76,40 @@ namespace Student_Assignment_System
         {
             return true;
         }
+
+        public static void ReadFile<T>(ref List<T> list, string file)
+        {
+            List<T> templist = new List<T>();
+            FileInfo fileInfo = new FileInfo(file);
+            FileStream stream;
+
+            if (fileInfo.Exists)
+            {
+                stream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                BinaryFormatter formatter = new BinaryFormatter();
+                try
+                {
+                    templist = formatter.Deserialize(stream) as List<T>;
+                    list = templist;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Exception caught {e}");
+                }
+                stream.Close();
+            }
+            else
+            {
+                Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
+            }
+        }
+
+        private void ReadFiles()
+        {
+            ReadFile<Module>(ref modlist, "ModuleFile.dat");
+            ReadFile<Assignment>(ref Assignments, "Assignments.dat");
+        }
+
+
     }
 }
