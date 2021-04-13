@@ -117,10 +117,21 @@ namespace Student_Assignment_System
                 item.Name = student.StudentID;
                 item.Text = student.StudentID;
                 item.SubItems.Add(student.Name);
+                item.SubItems.Add(student.Address);
                 item.SubItems.Add(student.DateOfBirth.ToShortDateString());
                 item.SubItems.Add(student.PPSNumber);
                 item.SubItems.Add(student.DateEnrolled.ToShortDateString());
                 item.SubItems.Add(student.ClassGroup);
+                item.SubItems.Add(student.Course);
+                if (!(student.CompletedAssignments.Count == 0))
+                {
+                    foreach (string completedAssignment in student.CompletedAssignments)
+                    {
+                        temp += completedAssignment + ", ";
+                    }
+                    temp = temp.Trim(',', ' ');
+                    item.SubItems.Add(temp);
+                }
                 this.listViewStudent.Items.Add(item);
             }
         }
@@ -433,6 +444,21 @@ namespace Student_Assignment_System
                 MessageBox.Show("Select a student to delete", "No student selected", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            string formHeading = "Add Student";
+            Student newStud = new Student();
+            Form studDetails = new StudentDetails(formHeading);
+            DialogResult completeBtn = studDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newStud = (Student) studDetails.Tag;
+                StudentList.Add(newStud);
+            }
+            listViewStudent.Items.Clear();
+            RefreshStudentDetails();
         }
     }
 }

@@ -55,6 +55,7 @@ namespace Student_Assignment_System
             this.columnHeaderDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPPSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDateOfHire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAdminPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLects = new System.Windows.Forms.TabPage();
             this.lblLecturerHeading = new System.Windows.Forms.Label();
             this.btnDeleteLect = new System.Windows.Forms.Button();
@@ -92,7 +93,8 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
-            this.columnHeaderAdminPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCourse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCompletedAssignments = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.grpbModules.SuspendLayout();
@@ -379,6 +381,11 @@ namespace Student_Assignment_System
             this.columnHeaderDateOfHire.Text = "Date Of Hire";
             this.columnHeaderDateOfHire.Width = 127;
             // 
+            // columnHeaderAdminPhoneNumber
+            // 
+            this.columnHeaderAdminPhoneNumber.Text = "Phone Number";
+            this.columnHeaderAdminPhoneNumber.Width = 120;
+            // 
             // tabPageLects
             // 
             this.tabPageLects.Controls.Add(this.lblLecturerHeading);
@@ -532,7 +539,7 @@ namespace Student_Assignment_System
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(285, 39);
             this.btnDeleteStudent.TabIndex = 8;
-            this.btnDeleteStudent.Text = "Delete Admin";
+            this.btnDeleteStudent.Text = "Delete Student";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
@@ -544,7 +551,7 @@ namespace Student_Assignment_System
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.Size = new System.Drawing.Size(285, 39);
             this.btnEditStudent.TabIndex = 7;
-            this.btnEditStudent.Text = "Edit Admin";
+            this.btnEditStudent.Text = "Edit Student";
             this.btnEditStudent.UseVisualStyleBackColor = true;
             // 
             // btnAddStudent
@@ -555,8 +562,9 @@ namespace Student_Assignment_System
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(285, 39);
             this.btnAddStudent.TabIndex = 6;
-            this.btnAddStudent.Text = "Add Admin";
+            this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // listViewStudent
             // 
@@ -568,16 +576,18 @@ namespace Student_Assignment_System
             this.columnHeaderStudentDOB,
             this.columnHeaderStudentPPSN,
             this.columnHeaderStudentDateEnrolled,
-            this.columnHeaderStudentClassGroup});
+            this.columnHeaderStudentClassGroup,
+            this.columnHeaderStudentCourse,
+            this.columnHeaderStudentCompletedAssignments});
             this.listViewStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewStudent.FullRowSelect = true;
             this.listViewStudent.GridLines = true;
             this.listViewStudent.HideSelection = false;
-            this.listViewStudent.Location = new System.Drawing.Point(52, 92);
+            this.listViewStudent.Location = new System.Drawing.Point(15, 92);
             this.listViewStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewStudent.MultiSelect = false;
             this.listViewStudent.Name = "listViewStudent";
-            this.listViewStudent.Size = new System.Drawing.Size(1205, 176);
+            this.listViewStudent.Size = new System.Drawing.Size(1272, 176);
             this.listViewStudent.TabIndex = 5;
             this.listViewStudent.UseCompatibleStateImageBehavior = false;
             this.listViewStudent.View = System.Windows.Forms.View.Details;
@@ -726,10 +736,15 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
-            // columnHeaderAdminPhoneNumber
+            // columnHeaderStudentCourse
             // 
-            this.columnHeaderAdminPhoneNumber.Text = "Phone Number";
-            this.columnHeaderAdminPhoneNumber.Width = 120;
+            this.columnHeaderStudentCourse.Text = "Course";
+            this.columnHeaderStudentCourse.Width = 120;
+            // 
+            // columnHeaderStudentCompletedAssignments
+            // 
+            this.columnHeaderStudentCompletedAssignments.Text = "Completed Assignments";
+            this.columnHeaderStudentCompletedAssignments.Width = 180;
             // 
             // AdministratorDashboard
             // 
@@ -826,5 +841,7 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeaderStudentDateEnrolled;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentClassGroup;
         private System.Windows.Forms.ColumnHeader columnHeaderAdminPhoneNumber;
+        private System.Windows.Forms.ColumnHeader columnHeaderStudentCourse;
+        private System.Windows.Forms.ColumnHeader columnHeaderStudentCompletedAssignments;
     }
 }
