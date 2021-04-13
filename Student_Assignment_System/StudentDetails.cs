@@ -17,6 +17,18 @@ namespace Student_Assignment_System
         public StudentDetails(string detailsHeading, Student selectedStudent = null)
         {
             InitializeComponent();
+            if(!(selectedStudent == null))
+            {
+                txtStudentID.Text = selectedStudent.StudentID;
+                txtStudentName.Text = selectedStudent.Name;
+                dtpStudentDOB.Value = selectedStudent.DateOfBirth;
+                txtStudentAddress.Text = selectedStudent.Address;
+                txtStudentPPSN.Text = selectedStudent.PPSNumber;
+                txtStudentPassword.Text = selectedStudent.StudentPassword;
+                txtStudentClassGroups.Text = selectedStudent.ClassGroup;
+                txtStudentCourse.Text = selectedStudent.Course;
+                dtpStudentDateEnrolled.Value = selectedStudent.DateEnrolled;
+            }
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
