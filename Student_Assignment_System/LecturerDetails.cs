@@ -19,7 +19,7 @@ namespace Student_Assignment_System
             {
                 txtLecturerID.Text = selectedLecturer.LecturerID;
                 txtLecturerName.Text = selectedLecturer.Name;
-                txtLecturerDOB.Text = selectedLecturer.DateOfBirth.ToShortDateString();
+                dtpLecturerDOB.Value = selectedLecturer.DateOfBirth;
                 txtLecturerAddress.Text = selectedLecturer.Address;
                 txtLecturerPPSN.Text = selectedLecturer.PPSNumber;
                 txtLecturerPassword.Text = selectedLecturer.LecturerPassword;
@@ -30,7 +30,7 @@ namespace Student_Assignment_System
                 }
                 temp = temp.TrimEnd(',', ' ');
                 txtLecturerModuleToTeach.Text = temp;
-                txtLecturerDateOfHire.Text = selectedLecturer.DateOfHire.ToShortDateString();
+                dtpLecturerDateOfHire.Value = selectedLecturer.DateOfHire;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Student_Assignment_System
             if (validateInput())
             {
                 List<string> modulesToTeach = new List<string>(txtLecturerModuleToTeach.Text.Split(',').ToList());
-                Lecturer lect = new Lecturer(txtLecturerName.Text,Convert.ToDateTime(txtLecturerDOB.Text),txtLecturerAddress.Text,txtLecturerPPSN.Text,txtLecturerID.Text,txtLecturerPassword.Text,modulesToTeach,Convert.ToDateTime(txtLecturerDateOfHire.Text));
+                Lecturer lect = new Lecturer(txtLecturerName.Text,dtpLecturerDOB.Value,txtLecturerAddress.Text,txtLecturerPPSN.Text,txtLecturerID.Text,txtLecturerPassword.Text,modulesToTeach,dtpLecturerDateOfHire.Value);
                 this.Tag = lect;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
