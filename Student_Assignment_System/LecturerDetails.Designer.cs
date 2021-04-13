@@ -53,7 +53,7 @@ namespace Student_Assignment_System
             // btnComplete
             // 
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComplete.Location = new System.Drawing.Point(260, 532);
+            this.btnComplete.Location = new System.Drawing.Point(222, 532);
             this.btnComplete.Margin = new System.Windows.Forms.Padding(4);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(279, 39);
@@ -65,7 +65,7 @@ namespace Student_Assignment_System
             // txtLecturerPassword
             // 
             this.txtLecturerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerPassword.Location = new System.Drawing.Point(260, 286);
+            this.txtLecturerPassword.Location = new System.Drawing.Point(222, 286);
             this.txtLecturerPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerPassword.Name = "txtLecturerPassword";
             this.txtLecturerPassword.Size = new System.Drawing.Size(277, 27);
@@ -74,7 +74,7 @@ namespace Student_Assignment_System
             // txtLecturerPPSN
             // 
             this.txtLecturerPPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerPPSN.Location = new System.Drawing.Point(260, 242);
+            this.txtLecturerPPSN.Location = new System.Drawing.Point(222, 242);
             this.txtLecturerPPSN.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerPPSN.Name = "txtLecturerPPSN";
             this.txtLecturerPPSN.Size = new System.Drawing.Size(277, 27);
@@ -83,7 +83,7 @@ namespace Student_Assignment_System
             // txtLecturerAddress
             // 
             this.txtLecturerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerAddress.Location = new System.Drawing.Point(260, 198);
+            this.txtLecturerAddress.Location = new System.Drawing.Point(222, 198);
             this.txtLecturerAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerAddress.Name = "txtLecturerAddress";
             this.txtLecturerAddress.Size = new System.Drawing.Size(277, 27);
@@ -92,7 +92,7 @@ namespace Student_Assignment_System
             // txtLecturerName
             // 
             this.txtLecturerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerName.Location = new System.Drawing.Point(260, 108);
+            this.txtLecturerName.Location = new System.Drawing.Point(222, 108);
             this.txtLecturerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerName.Name = "txtLecturerName";
             this.txtLecturerName.Size = new System.Drawing.Size(277, 27);
@@ -101,7 +101,7 @@ namespace Student_Assignment_System
             // txtLecturerID
             // 
             this.txtLecturerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerID.Location = new System.Drawing.Point(260, 65);
+            this.txtLecturerID.Location = new System.Drawing.Point(222, 65);
             this.txtLecturerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerID.Name = "txtLecturerID";
             this.txtLecturerID.Size = new System.Drawing.Size(277, 27);
@@ -111,7 +111,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerDateOfHire.AutoSize = true;
             this.lblLecturerDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerDateOfHire.Location = new System.Drawing.Point(102, 450);
+            this.lblLecturerDateOfHire.Location = new System.Drawing.Point(64, 476);
             this.lblLecturerDateOfHire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerDateOfHire.Name = "lblLecturerDateOfHire";
             this.lblLecturerDateOfHire.Size = new System.Drawing.Size(114, 25);
@@ -122,7 +122,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerModulesToTeach.AutoSize = true;
             this.lblLecturerModulesToTeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerModulesToTeach.Location = new System.Drawing.Point(47, 332);
+            this.lblLecturerModulesToTeach.Location = new System.Drawing.Point(9, 332);
             this.lblLecturerModulesToTeach.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerModulesToTeach.Name = "lblLecturerModulesToTeach";
             this.lblLecturerModulesToTeach.Size = new System.Drawing.Size(177, 25);
@@ -133,7 +133,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerPassword.AutoSize = true;
             this.lblLecturerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerPassword.Location = new System.Drawing.Point(50, 288);
+            this.lblLecturerPassword.Location = new System.Drawing.Point(12, 288);
             this.lblLecturerPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerPassword.Name = "lblLecturerPassword";
             this.lblLecturerPassword.Size = new System.Drawing.Size(174, 25);
@@ -144,7 +144,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerPPSN.AutoSize = true;
             this.lblLecturerPPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerPPSN.Location = new System.Drawing.Point(70, 241);
+            this.lblLecturerPPSN.Location = new System.Drawing.Point(52, 241);
             this.lblLecturerPPSN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerPPSN.Name = "lblLecturerPPSN";
             this.lblLecturerPPSN.Size = new System.Drawing.Size(126, 25);
@@ -155,7 +155,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerAddress.AutoSize = true;
             this.lblLecturerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerAddress.Location = new System.Drawing.Point(124, 200);
+            this.lblLecturerAddress.Location = new System.Drawing.Point(93, 197);
             this.lblLecturerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerAddress.Name = "lblLecturerAddress";
             this.lblLecturerAddress.Size = new System.Drawing.Size(85, 25);
@@ -166,7 +166,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerDOB.AutoSize = true;
             this.lblLecturerDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerDOB.Location = new System.Drawing.Point(80, 151);
+            this.lblLecturerDOB.Location = new System.Drawing.Point(60, 151);
             this.lblLecturerDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerDOB.Name = "lblLecturerDOB";
             this.lblLecturerDOB.Size = new System.Drawing.Size(118, 25);
@@ -177,7 +177,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerName.AutoSize = true;
             this.lblLecturerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerName.Location = new System.Drawing.Point(152, 107);
+            this.lblLecturerName.Location = new System.Drawing.Point(120, 107);
             this.lblLecturerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerName.Name = "lblLecturerName";
             this.lblLecturerName.Size = new System.Drawing.Size(64, 25);
@@ -188,7 +188,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerID.AutoSize = true;
             this.lblLecturerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerID.Location = new System.Drawing.Point(115, 63);
+            this.lblLecturerID.Location = new System.Drawing.Point(79, 64);
             this.lblLecturerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerID.Name = "lblLecturerID";
             this.lblLecturerID.Size = new System.Drawing.Size(107, 25);
@@ -209,16 +209,17 @@ namespace Student_Assignment_System
             // lblLectDetailsheading
             // 
             this.lblLectDetailsheading.AutoSize = true;
-            this.lblLectDetailsheading.Location = new System.Drawing.Point(227, 31);
+            this.lblLectDetailsheading.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLectDetailsheading.Location = new System.Drawing.Point(172, 19);
             this.lblLectDetailsheading.Name = "lblLectDetailsheading";
-            this.lblLectDetailsheading.Size = new System.Drawing.Size(108, 17);
+            this.lblLectDetailsheading.Size = new System.Drawing.Size(139, 24);
             this.lblLectDetailsheading.TabIndex = 36;
             this.lblLectDetailsheading.Text = "Lecturer Details";
             // 
             // dtpLecturerDOB
             // 
             this.dtpLecturerDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpLecturerDOB.Location = new System.Drawing.Point(260, 153);
+            this.dtpLecturerDOB.Location = new System.Drawing.Point(222, 153);
             this.dtpLecturerDOB.Name = "dtpLecturerDOB";
             this.dtpLecturerDOB.Size = new System.Drawing.Size(279, 22);
             this.dtpLecturerDOB.TabIndex = 37;
@@ -226,7 +227,7 @@ namespace Student_Assignment_System
             // dtpLecturerDateOfHire
             // 
             this.dtpLecturerDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpLecturerDateOfHire.Location = new System.Drawing.Point(258, 452);
+            this.dtpLecturerDateOfHire.Location = new System.Drawing.Point(222, 478);
             this.dtpLecturerDateOfHire.Name = "dtpLecturerDateOfHire";
             this.dtpLecturerDateOfHire.Size = new System.Drawing.Size(279, 22);
             this.dtpLecturerDateOfHire.TabIndex = 38;
@@ -234,16 +235,16 @@ namespace Student_Assignment_System
             // clbModulesToTeach
             // 
             this.clbModulesToTeach.FormattingEnabled = true;
-            this.clbModulesToTeach.Location = new System.Drawing.Point(258, 332);
+            this.clbModulesToTeach.Location = new System.Drawing.Point(220, 332);
             this.clbModulesToTeach.Name = "clbModulesToTeach";
-            this.clbModulesToTeach.Size = new System.Drawing.Size(279, 106);
+            this.clbModulesToTeach.Size = new System.Drawing.Size(279, 123);
             this.clbModulesToTeach.TabIndex = 39;
             // 
             // LecturerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 597);
+            this.ClientSize = new System.Drawing.Size(513, 582);
             this.Controls.Add(this.clbModulesToTeach);
             this.Controls.Add(this.dtpLecturerDateOfHire);
             this.Controls.Add(this.dtpLecturerDOB);

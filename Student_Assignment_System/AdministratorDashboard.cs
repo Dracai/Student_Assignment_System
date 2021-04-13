@@ -54,6 +54,7 @@ namespace Student_Assignment_System
                 item.SubItems.Add(admin.DateOfBirth.ToShortDateString());
                 item.SubItems.Add(admin.PPSNumber);
                 item.SubItems.Add(admin.DateOfHire.ToShortDateString());
+                item.SubItems.Add(admin.PhoneNumber);
                 this.listViewAdmin.Items.Add(item);
             }
         }
@@ -222,6 +223,7 @@ namespace Student_Assignment_System
             WriteFile<Administrator>(AdminList, "AdminFile.dat");
             WriteFile<Module>(ModuleList, "ModuleFile.dat");
             WriteFile<Lecturer>(LectList, "LecturerFiles.dat");
+            WriteFile<Student>(StudentList, "StudentFiles.dat");
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -413,6 +415,22 @@ namespace Student_Assignment_System
             else
             {
                 MessageBox.Show("Select a lecturer to delete", "No lecturer selected", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudent.SelectedItems.Count > 0)
+            {
+                Debug.WriteLine(listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0]));
+                StudentList.RemoveAt(listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0]));
+                listViewStudent.Items.Clear();
+                RefreshStudentDetails();
+            }
+            else
+            {
+                MessageBox.Show("Select a student to delete", "No student selected", MessageBoxButtons.OK);
                 return;
             }
         }
