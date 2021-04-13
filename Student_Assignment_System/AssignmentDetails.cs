@@ -107,7 +107,7 @@ namespace Student_Assignment_System
         private void ReadFiles()
         {
             ReadFile<Module>(ref modlist, "ModuleFile.dat");
-            ReadFile<Assignment>(ref Assignments, "Assignments.dat");
+            ReadFile<Assignment>(ref Assignments, "AssignmentFiles.dat");
         }
 
 

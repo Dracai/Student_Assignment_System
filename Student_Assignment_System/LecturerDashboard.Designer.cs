@@ -61,6 +61,7 @@ namespace Student_Assignment_System
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Logout = new System.Windows.Forms.TabPage();
+            this.btnAssSave = new System.Windows.Forms.Button();
             this.tcDash.SuspendLayout();
             this.Dashboard.SuspendLayout();
             this.gb.SuspendLayout();
@@ -183,6 +184,7 @@ namespace Student_Assignment_System
             // 
             // Assignments
             // 
+            this.Assignments.Controls.Add(this.btnAssSave);
             this.Assignments.Controls.Add(this.btnDescription);
             this.Assignments.Controls.Add(this.btnRemoveAssignment);
             this.Assignments.Controls.Add(this.btnEditAssignment);
@@ -200,7 +202,7 @@ namespace Student_Assignment_System
             // btnDescription
             // 
             this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDescription.Location = new System.Drawing.Point(638, 369);
+            this.btnDescription.Location = new System.Drawing.Point(638, 351);
             this.btnDescription.Name = "btnDescription";
             this.btnDescription.Size = new System.Drawing.Size(153, 34);
             this.btnDescription.TabIndex = 5;
@@ -211,7 +213,7 @@ namespace Student_Assignment_System
             // btnRemoveAssignment
             // 
             this.btnRemoveAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveAssignment.Location = new System.Drawing.Point(420, 370);
+            this.btnRemoveAssignment.Location = new System.Drawing.Point(420, 352);
             this.btnRemoveAssignment.Name = "btnRemoveAssignment";
             this.btnRemoveAssignment.Size = new System.Drawing.Size(153, 34);
             this.btnRemoveAssignment.TabIndex = 4;
@@ -222,7 +224,7 @@ namespace Student_Assignment_System
             // btnEditAssignment
             // 
             this.btnEditAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAssignment.Location = new System.Drawing.Point(882, 370);
+            this.btnEditAssignment.Location = new System.Drawing.Point(882, 352);
             this.btnEditAssignment.Name = "btnEditAssignment";
             this.btnEditAssignment.Size = new System.Drawing.Size(153, 34);
             this.btnEditAssignment.TabIndex = 3;
@@ -233,7 +235,7 @@ namespace Student_Assignment_System
             // btnCreateAssignment
             // 
             this.btnCreateAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAssignment.Location = new System.Drawing.Point(116, 370);
+            this.btnCreateAssignment.Location = new System.Drawing.Point(116, 352);
             this.btnCreateAssignment.Name = "btnCreateAssignment";
             this.btnCreateAssignment.Size = new System.Drawing.Size(140, 34);
             this.btnCreateAssignment.TabIndex = 2;
@@ -378,6 +380,16 @@ namespace Student_Assignment_System
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = true;
             // 
+            // btnAssSave
+            // 
+            this.btnAssSave.Location = new System.Drawing.Point(490, 415);
+            this.btnAssSave.Name = "btnAssSave";
+            this.btnAssSave.Size = new System.Drawing.Size(130, 28);
+            this.btnAssSave.TabIndex = 6;
+            this.btnAssSave.Text = "Save";
+            this.btnAssSave.UseVisualStyleBackColor = true;
+            this.btnAssSave.Click += new System.EventHandler(this.btnAssSave_Click);
+            // 
             // LecturerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,5 +444,6 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader AssignmentID;
         private System.Windows.Forms.Button btnDescription;
+        private System.Windows.Forms.Button btnAssSave;
     }
 }

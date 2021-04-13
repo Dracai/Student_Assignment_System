@@ -117,7 +117,7 @@ namespace Student_Assignment_System
         private void SaveFiles()
         {
             WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
-            WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
+            //WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
         }
 
         public void UpdateListViews()
@@ -234,7 +234,7 @@ namespace Student_Assignment_System
             Form assignmentDetails;
             if (lvAssignmentsAss.SelectedItems.Count > 0)
             {
-                foreach (Assignment a in AssignmentList)
+                /*foreach (Assignment a in AssignmentList)
                 {
                     if(lvAssignmentsAss.SelectedItems[0].Text == a.AssignmentID)
                     {
@@ -246,14 +246,27 @@ namespace Student_Assignment_System
                             AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
                         }
                     }
+                }*/
+                assignmentDetails = new AssignmentDetails(ref user, "", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
+                completeBtn = assignmentDetails.ShowDialog();
+                if (completeBtn == DialogResult.OK)
+                {
+                    Assignment newassignment = (Assignment)assignmentDetails.Tag;
+                    AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
                 }
-                
+                UpdateListViews();
+
 
             }
             else
             {
                 MessageBox.Show("Please Select An Assignment To Edit", "Error");
             }
+        }
+
+        private void btnAssSave_Click(object sender, EventArgs e)
+        {
+            SaveFiles();
         }
     }
 }
