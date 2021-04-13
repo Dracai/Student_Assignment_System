@@ -30,7 +30,6 @@ namespace Student_Assignment_System
         private void InitializeComponent()
         {
             this.btnComplete = new System.Windows.Forms.Button();
-            this.txtLecturerModuleToTeach = new System.Windows.Forms.TextBox();
             this.txtLecturerPassword = new System.Windows.Forms.TextBox();
             this.txtLecturerPPSN = new System.Windows.Forms.TextBox();
             this.txtLecturerAddress = new System.Windows.Forms.TextBox();
@@ -48,12 +47,13 @@ namespace Student_Assignment_System
             this.lblLectDetailsheading = new System.Windows.Forms.Label();
             this.dtpLecturerDOB = new System.Windows.Forms.DateTimePicker();
             this.dtpLecturerDateOfHire = new System.Windows.Forms.DateTimePicker();
+            this.clbModulesToTeach = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // btnComplete
             // 
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComplete.Location = new System.Drawing.Point(260, 435);
+            this.btnComplete.Location = new System.Drawing.Point(260, 532);
             this.btnComplete.Margin = new System.Windows.Forms.Padding(4);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(279, 39);
@@ -61,15 +61,6 @@ namespace Student_Assignment_System
             this.btnComplete.Text = "Complete";
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
-            // 
-            // txtLecturerModuleToTeach
-            // 
-            this.txtLecturerModuleToTeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecturerModuleToTeach.Location = new System.Drawing.Point(260, 333);
-            this.txtLecturerModuleToTeach.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLecturerModuleToTeach.Name = "txtLecturerModuleToTeach";
-            this.txtLecturerModuleToTeach.Size = new System.Drawing.Size(277, 27);
-            this.txtLecturerModuleToTeach.TabIndex = 33;
             // 
             // txtLecturerPassword
             // 
@@ -113,7 +104,6 @@ namespace Student_Assignment_System
             this.txtLecturerID.Location = new System.Drawing.Point(260, 65);
             this.txtLecturerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtLecturerID.Name = "txtLecturerID";
-            this.txtLecturerID.ReadOnly = true;
             this.txtLecturerID.Size = new System.Drawing.Size(277, 27);
             this.txtLecturerID.TabIndex = 27;
             // 
@@ -121,7 +111,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerDateOfHire.AutoSize = true;
             this.lblLecturerDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerDateOfHire.Location = new System.Drawing.Point(86, 379);
+            this.lblLecturerDateOfHire.Location = new System.Drawing.Point(102, 450);
             this.lblLecturerDateOfHire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerDateOfHire.Name = "lblLecturerDateOfHire";
             this.lblLecturerDateOfHire.Size = new System.Drawing.Size(114, 25);
@@ -143,7 +133,7 @@ namespace Student_Assignment_System
             // 
             this.lblLecturerPassword.AutoSize = true;
             this.lblLecturerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLecturerPassword.Location = new System.Drawing.Point(26, 289);
+            this.lblLecturerPassword.Location = new System.Drawing.Point(50, 288);
             this.lblLecturerPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLecturerPassword.Name = "lblLecturerPassword";
             this.lblLecturerPassword.Size = new System.Drawing.Size(174, 25);
@@ -236,21 +226,29 @@ namespace Student_Assignment_System
             // dtpLecturerDateOfHire
             // 
             this.dtpLecturerDateOfHire.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpLecturerDateOfHire.Location = new System.Drawing.Point(260, 381);
+            this.dtpLecturerDateOfHire.Location = new System.Drawing.Point(258, 452);
             this.dtpLecturerDateOfHire.Name = "dtpLecturerDateOfHire";
             this.dtpLecturerDateOfHire.Size = new System.Drawing.Size(279, 22);
             this.dtpLecturerDateOfHire.TabIndex = 38;
+            // 
+            // clbModulesToTeach
+            // 
+            this.clbModulesToTeach.FormattingEnabled = true;
+            this.clbModulesToTeach.Location = new System.Drawing.Point(258, 332);
+            this.clbModulesToTeach.Name = "clbModulesToTeach";
+            this.clbModulesToTeach.Size = new System.Drawing.Size(279, 106);
+            this.clbModulesToTeach.TabIndex = 39;
             // 
             // LecturerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 496);
+            this.ClientSize = new System.Drawing.Size(564, 597);
+            this.Controls.Add(this.clbModulesToTeach);
             this.Controls.Add(this.dtpLecturerDateOfHire);
             this.Controls.Add(this.dtpLecturerDOB);
             this.Controls.Add(this.lblLectDetailsheading);
             this.Controls.Add(this.btnComplete);
-            this.Controls.Add(this.txtLecturerModuleToTeach);
             this.Controls.Add(this.txtLecturerPassword);
             this.Controls.Add(this.txtLecturerPPSN);
             this.Controls.Add(this.txtLecturerAddress);
@@ -275,7 +273,6 @@ namespace Student_Assignment_System
         #endregion
 
         private System.Windows.Forms.Button btnComplete;
-        private System.Windows.Forms.TextBox txtLecturerModuleToTeach;
         private System.Windows.Forms.TextBox txtLecturerPassword;
         private System.Windows.Forms.TextBox txtLecturerPPSN;
         private System.Windows.Forms.TextBox txtLecturerAddress;
@@ -293,5 +290,6 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Label lblLectDetailsheading;
         private System.Windows.Forms.DateTimePicker dtpLecturerDOB;
         private System.Windows.Forms.DateTimePicker dtpLecturerDateOfHire;
+        private System.Windows.Forms.CheckedListBox clbModulesToTeach;
     }
 }

@@ -367,7 +367,17 @@ namespace Student_Assignment_System
 
         private void btnAddLect_Click(object sender, EventArgs e)
         {
-            
+            string formHeading = "Add Lecturer";
+            Lecturer newLect = new Lecturer();
+            Form lectDetails = new LecturerDetails(formHeading);
+            DialogResult completeBtn = lectDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newLect = (Lecturer)lectDetails.Tag;
+                LectList.Add(newLect);
+            }
+            listViewLecturer.Items.Clear();
+            RefreshLecturerDetails();
         }
 
         private void btnEditLect_Click(object sender, EventArgs e)
