@@ -19,12 +19,12 @@ namespace Student_Assignment_System
             {
                 txtAdminID.Text = selectedAdmin.AdminID;
                 txtAdminName.Text = selectedAdmin.Name;
-                txtAdminDOB.Text = selectedAdmin.DateOfBirth.ToShortDateString();
+                dtpAdminDOB.Value = selectedAdmin.DateOfBirth;
                 txtAdminAddress.Text = selectedAdmin.Address;
                 txtAdminPPSN.Text = selectedAdmin.PPSNumber;
                 txtAdminPassword.Text = selectedAdmin.AdminPassword;
                 txtAdminPhoneNumber.Text = selectedAdmin.PhoneNumber;
-                txtAdminDateOfHire.Text = selectedAdmin.DateOfHire.ToShortDateString();
+                dtpAdminDateOfHire.Value = selectedAdmin.DateOfHire;
             }
         }
 
@@ -32,7 +32,7 @@ namespace Student_Assignment_System
         {
             if(validateInput())
             {
-                Administrator admin = new Administrator(txtAdminID.Text, txtAdminPassword.Text, txtAdminPhoneNumber.Text, Convert.ToDateTime(txtAdminDateOfHire.Text), txtAdminName.Text, Convert.ToDateTime(txtAdminDOB.Text), txtAdminAddress.Text, txtAdminPPSN.Text);
+                Administrator admin = new Administrator(txtAdminID.Text, txtAdminPassword.Text, txtAdminPhoneNumber.Text, dtpAdminDOB.Value, txtAdminName.Text, dtpAdminDateOfHire.Value, txtAdminAddress.Text, txtAdminPPSN.Text);
                 this.Tag = admin;
                 this.DialogResult = DialogResult.OK;
                 this.Close();

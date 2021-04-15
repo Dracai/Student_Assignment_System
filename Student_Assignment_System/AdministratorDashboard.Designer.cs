@@ -55,6 +55,7 @@ namespace Student_Assignment_System
             this.columnHeaderDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPPSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDateOfHire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAdminPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLects = new System.Windows.Forms.TabPage();
             this.lblLecturerHeading = new System.Windows.Forms.Label();
             this.btnDeleteLect = new System.Windows.Forms.Button();
@@ -70,9 +71,9 @@ namespace Student_Assignment_System
             this.columnHeaderLectModulesToTeach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageStuds = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnDeleteStudent = new System.Windows.Forms.Button();
+            this.btnEditStudent = new System.Windows.Forms.Button();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.listViewStudent = new System.Windows.Forms.ListView();
             this.columnHeaderStudentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStudentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,6 +82,8 @@ namespace Student_Assignment_System
             this.columnHeaderStudentPPSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStudentDateEnrolled = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStudentClassGroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCourse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStudentCompletedAssignments = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageModules = new System.Windows.Forms.TabPage();
             this.lblModuleHeading = new System.Windows.Forms.Label();
             this.btnDeleteModule = new System.Windows.Forms.Button();
@@ -333,16 +336,17 @@ namespace Student_Assignment_System
             this.columnHeaderAddress,
             this.columnHeaderDOB,
             this.columnHeaderPPSN,
-            this.columnHeaderDateOfHire});
+            this.columnHeaderDateOfHire,
+            this.columnHeaderAdminPhoneNumber});
             this.listViewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAdmin.FullRowSelect = true;
             this.listViewAdmin.GridLines = true;
             this.listViewAdmin.HideSelection = false;
-            this.listViewAdmin.Location = new System.Drawing.Point(170, 80);
+            this.listViewAdmin.Location = new System.Drawing.Point(71, 80);
             this.listViewAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewAdmin.MultiSelect = false;
             this.listViewAdmin.Name = "listViewAdmin";
-            this.listViewAdmin.Size = new System.Drawing.Size(1003, 176);
+            this.listViewAdmin.Size = new System.Drawing.Size(1168, 176);
             this.listViewAdmin.TabIndex = 0;
             this.listViewAdmin.UseCompatibleStateImageBehavior = false;
             this.listViewAdmin.View = System.Windows.Forms.View.Details;
@@ -376,6 +380,11 @@ namespace Student_Assignment_System
             // 
             this.columnHeaderDateOfHire.Text = "Date Of Hire";
             this.columnHeaderDateOfHire.Width = 127;
+            // 
+            // columnHeaderAdminPhoneNumber
+            // 
+            this.columnHeaderAdminPhoneNumber.Text = "Phone Number";
+            this.columnHeaderAdminPhoneNumber.Width = 120;
             // 
             // tabPageLects
             // 
@@ -412,6 +421,7 @@ namespace Student_Assignment_System
             this.btnDeleteLect.TabIndex = 8;
             this.btnDeleteLect.Text = "Delete Lecturer";
             this.btnDeleteLect.UseVisualStyleBackColor = true;
+            this.btnDeleteLect.Click += new System.EventHandler(this.btnDeleteLect_Click);
             // 
             // btnEditLect
             // 
@@ -497,9 +507,9 @@ namespace Student_Assignment_System
             // tabPageStuds
             // 
             this.tabPageStuds.Controls.Add(this.label4);
-            this.tabPageStuds.Controls.Add(this.button4);
-            this.tabPageStuds.Controls.Add(this.button5);
-            this.tabPageStuds.Controls.Add(this.button6);
+            this.tabPageStuds.Controls.Add(this.btnDeleteStudent);
+            this.tabPageStuds.Controls.Add(this.btnEditStudent);
+            this.tabPageStuds.Controls.Add(this.btnAddStudent);
             this.tabPageStuds.Controls.Add(this.listViewStudent);
             this.tabPageStuds.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageStuds.Location = new System.Drawing.Point(4, 29);
@@ -521,35 +531,41 @@ namespace Student_Assignment_System
             this.label4.TabIndex = 9;
             this.label4.Text = "Students";
             // 
-            // button4
+            // btnDeleteStudent
             // 
-            this.button4.Location = new System.Drawing.Point(870, 288);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(285, 39);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Delete Admin";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStudent.Location = new System.Drawing.Point(870, 288);
+            this.btnDeleteStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteStudent.Name = "btnDeleteStudent";
+            this.btnDeleteStudent.Size = new System.Drawing.Size(285, 39);
+            this.btnDeleteStudent.TabIndex = 8;
+            this.btnDeleteStudent.Text = "Delete Student";
+            this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
-            // button5
+            // btnEditStudent
             // 
-            this.button5.Location = new System.Drawing.Point(527, 288);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(285, 39);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Edit Admin";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStudent.Location = new System.Drawing.Point(527, 288);
+            this.btnEditStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditStudent.Name = "btnEditStudent";
+            this.btnEditStudent.Size = new System.Drawing.Size(285, 39);
+            this.btnEditStudent.TabIndex = 7;
+            this.btnEditStudent.Text = "Edit Student";
+            this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click);
             // 
-            // button6
+            // btnAddStudent
             // 
-            this.button6.Location = new System.Drawing.Point(187, 288);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(285, 39);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Add Admin";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.Location = new System.Drawing.Point(187, 288);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(285, 39);
+            this.btnAddStudent.TabIndex = 6;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // listViewStudent
             // 
@@ -561,16 +577,18 @@ namespace Student_Assignment_System
             this.columnHeaderStudentDOB,
             this.columnHeaderStudentPPSN,
             this.columnHeaderStudentDateEnrolled,
-            this.columnHeaderStudentClassGroup});
+            this.columnHeaderStudentClassGroup,
+            this.columnHeaderStudentCourse,
+            this.columnHeaderStudentCompletedAssignments});
             this.listViewStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewStudent.FullRowSelect = true;
             this.listViewStudent.GridLines = true;
             this.listViewStudent.HideSelection = false;
-            this.listViewStudent.Location = new System.Drawing.Point(52, 92);
+            this.listViewStudent.Location = new System.Drawing.Point(15, 92);
             this.listViewStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewStudent.MultiSelect = false;
             this.listViewStudent.Name = "listViewStudent";
-            this.listViewStudent.Size = new System.Drawing.Size(1205, 176);
+            this.listViewStudent.Size = new System.Drawing.Size(1272, 176);
             this.listViewStudent.TabIndex = 5;
             this.listViewStudent.UseCompatibleStateImageBehavior = false;
             this.listViewStudent.View = System.Windows.Forms.View.Details;
@@ -609,6 +627,16 @@ namespace Student_Assignment_System
             // 
             this.columnHeaderStudentClassGroup.Text = "Class Group";
             this.columnHeaderStudentClassGroup.Width = 140;
+            // 
+            // columnHeaderStudentCourse
+            // 
+            this.columnHeaderStudentCourse.Text = "Course";
+            this.columnHeaderStudentCourse.Width = 120;
+            // 
+            // columnHeaderStudentCompletedAssignments
+            // 
+            this.columnHeaderStudentCompletedAssignments.Text = "Completed Assignments";
+            this.columnHeaderStudentCompletedAssignments.Width = 180;
             // 
             // tabPageModules
             // 
@@ -802,9 +830,9 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeaderLectDateOfHire;
         private System.Windows.Forms.ColumnHeader columnHeaderLectModulesToTeach;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDeleteStudent;
+        private System.Windows.Forms.Button btnEditStudent;
+        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.ListView listViewStudent;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentID;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentName;
@@ -813,5 +841,8 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeaderStudentPPSN;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentDateEnrolled;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentClassGroup;
+        private System.Windows.Forms.ColumnHeader columnHeaderAdminPhoneNumber;
+        private System.Windows.Forms.ColumnHeader columnHeaderStudentCourse;
+        private System.Windows.Forms.ColumnHeader columnHeaderStudentCompletedAssignments;
     }
 }

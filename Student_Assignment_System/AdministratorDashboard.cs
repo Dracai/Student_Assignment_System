@@ -54,6 +54,7 @@ namespace Student_Assignment_System
                 item.SubItems.Add(admin.DateOfBirth.ToShortDateString());
                 item.SubItems.Add(admin.PPSNumber);
                 item.SubItems.Add(admin.DateOfHire.ToShortDateString());
+                item.SubItems.Add(admin.PhoneNumber);
                 this.listViewAdmin.Items.Add(item);
             }
         }
@@ -116,10 +117,21 @@ namespace Student_Assignment_System
                 item.Name = student.StudentID;
                 item.Text = student.StudentID;
                 item.SubItems.Add(student.Name);
+                item.SubItems.Add(student.Address);
                 item.SubItems.Add(student.DateOfBirth.ToShortDateString());
                 item.SubItems.Add(student.PPSNumber);
                 item.SubItems.Add(student.DateEnrolled.ToShortDateString());
                 item.SubItems.Add(student.ClassGroup);
+                item.SubItems.Add(student.Course);
+                if (!(student.CompletedAssignments.Count == 0))
+                {
+                    foreach (string completedAssignment in student.CompletedAssignments)
+                    {
+                        temp += completedAssignment + ", ";
+                    }
+                    temp = temp.Trim(',', ' ');
+                    item.SubItems.Add(temp);
+                }
                 this.listViewStudent.Items.Add(item);
             }
         }
@@ -221,6 +233,8 @@ namespace Student_Assignment_System
         {
             WriteFile<Administrator>(AdminList, "AdminFile.dat");
             WriteFile<Module>(ModuleList, "ModuleFile.dat");
+            WriteFile<Lecturer>(LectList, "LecturerFiles.dat");
+            WriteFile<Student>(StudentList, "StudentFiles.dat");
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -366,7 +380,17 @@ namespace Student_Assignment_System
 
         private void btnAddLect_Click(object sender, EventArgs e)
         {
-            
+            string formHeading = "Add Lecturer";
+            Lecturer newLect = new Lecturer();
+            Form lectDetails = new LecturerDetails(formHeading);
+            DialogResult completeBtn = lectDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newLect = (Lecturer)lectDetails.Tag;
+                LectList.Add(newLect);
+            }
+            listViewLecturer.Items.Clear();
+            RefreshLecturerDetails();
         }
 
         private void btnEditLect_Click(object sender, EventArgs e)
@@ -388,6 +412,73 @@ namespace Student_Assignment_System
             }
             listViewLecturer.Items.Clear();
             RefreshLecturerDetails();
+        }
+
+        private void btnDeleteLect_Click(object sender, EventArgs e)
+        {
+            if (listViewLecturer.SelectedItems.Count > 0)
+            {
+                Debug.WriteLine(listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0]));
+                LectList.RemoveAt(listViewLecturer.Items.IndexOf(listViewLecturer.SelectedItems[0]));
+                listViewLecturer.Items.Clear();
+                RefreshLecturerDetails();
+            }
+            else
+            {
+                MessageBox.Show("Select a lecturer to delete", "No lecturer selected", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudent.SelectedItems.Count > 0)
+            {
+                Debug.WriteLine(listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0]));
+                StudentList.RemoveAt(listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0]));
+                listViewStudent.Items.Clear();
+                RefreshStudentDetails();
+            }
+            else
+            {
+                MessageBox.Show("Select a student to delete", "No student selected", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            string formHeading = "Add Student";
+            Student newStud = new Student();
+            Form studDetails = new StudentDetails(formHeading);
+            DialogResult completeBtn = studDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newStud = (Student) studDetails.Tag;
+                StudentList.Add(newStud);
+            }
+            listViewStudent.Items.Clear();
+            RefreshStudentDetails();
+        }
+
+        private void btnEditStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudent.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a student to edit", "No student selected", MessageBoxButtons.OK);
+                return;
+            }
+            string formHeading = "Edit Student";
+            Student newStud = new Student();
+            Form studDetails = new StudentDetails(formHeading, StudentList[listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0])]);
+            DialogResult completeBtn = studDetails.ShowDialog();
+            if (completeBtn == DialogResult.OK)
+            {
+                newStud = (Student)studDetails.Tag;
+                StudentList[listViewStudent.Items.IndexOf(listViewStudent.SelectedItems[0])] = newStud;
+            }
+            listViewStudent.Items.Clear();
+            RefreshStudentDetails();
         }
     }
 }
