@@ -14,17 +14,14 @@ namespace Student_Assignment_System
 {
     public partial class LecturerDashboard : Form
     {
-        //Temp User
 
-        Lecturer user;
-
-
+        Lecturer user = new Lecturer();
         List<Module> ModuleList = new List<Module>();
         List<Student> StudentList = new List<Student>();
         List<Assignment> AssignmentList = new List<Assignment>();
         List<ClassGroup> ClassGroupList = new List<ClassGroup>();
 
-        public LecturerDashboard(List<Student> stulist)
+        public LecturerDashboard(List<Student> stulist, Lecturer User = null)
         {
             InitializeComponent();
             List<Student> StudentList = stulist;
@@ -33,9 +30,12 @@ namespace Student_Assignment_System
             List<string> mod = new List<string>();
             mod.Add("M002");
             mod.Add("M001");
-            user = new Lecturer("Guinane Man", Convert.ToDateTime("23/02/1293"), "Hobbiton", "PHHHHHP", "L002", "PASSWORD2", mod, Convert.ToDateTime("23/03/0987"));
-
-
+            if (User == null)
+            {
+                User = new Lecturer("Guinane Man", Convert.ToDateTime("23/02/1293"), "Hobbiton", "PHHHHHP", "L002", "PASSWORD2", mod, Convert.ToDateTime("23/03/0987"));   
+            }
+            user = User;
+            lblLectName.Text = user.Name;
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)

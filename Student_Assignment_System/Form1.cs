@@ -140,7 +140,7 @@ namespace Student_Assignment_System
                         {
                             //Open Lecturer Dashboard
                             this.Hide();
-                            var LD = new LecturerDashboard(studentList);
+                            var LD = new LecturerDashboard(studentList, l);
                             LD.FormClosed += (s, args) => this.Close();
                             LD.Show();
 
