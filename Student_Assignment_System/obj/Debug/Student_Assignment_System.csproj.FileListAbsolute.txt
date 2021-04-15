@@ -32,3 +32,4 @@ D:\Second Year College Work\Semester 2\Applications Development\Student_Assignme
 D:\Second Year College Work\Semester 2\Applications Development\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.ModuleDetails.resources
 C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.LecturerDetails.resources
 C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.StudentDetails.resources
+C:\Users\ethan_894f3fn\Student_Assignment_System\Student_Assignment_System\obj\Debug\Student_Assignment_System.UpcomingAssignments.resources

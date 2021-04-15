@@ -29,6 +29,9 @@ namespace Student_Assignment_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageDashboard = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,13 +97,13 @@ namespace Student_Assignment_System
             this.columnHeaderModName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPageLogOut = new System.Windows.Forms.TabPage();
             this.tabPageStats = new System.Windows.Forms.TabPage();
-            this.lblNumberOfAssignments = new System.Windows.Forms.Label();
-            this.txtNumberOfAssignments = new System.Windows.Forms.TextBox();
-            this.lblLecturers = new System.Windows.Forms.Label();
             this.txtNumberOfCompletedAssignments = new System.Windows.Forms.TextBox();
             this.lblNumberOfCompletedAssignments = new System.Windows.Forms.Label();
+            this.txtNumberOfAssignments = new System.Windows.Forms.TextBox();
+            this.lblNumberOfAssignments = new System.Windows.Forms.Label();
+            this.tabPageLogOut = new System.Windows.Forms.TabPage();
+            this.chartGivenAssignments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.grpbModules.SuspendLayout();
@@ -112,6 +115,7 @@ namespace Student_Assignment_System
             this.tabPageStuds.SuspendLayout();
             this.tabPageModules.SuspendLayout();
             this.tabPageStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGivenAssignments)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -745,6 +749,54 @@ namespace Student_Assignment_System
             this.columnHeaderClassGroups.Text = "ClassGroups";
             this.columnHeaderClassGroups.Width = 228;
             // 
+            // tabPageStats
+            // 
+            this.tabPageStats.Controls.Add(this.chartGivenAssignments);
+            this.tabPageStats.Controls.Add(this.txtNumberOfCompletedAssignments);
+            this.tabPageStats.Controls.Add(this.lblNumberOfCompletedAssignments);
+            this.tabPageStats.Controls.Add(this.txtNumberOfAssignments);
+            this.tabPageStats.Controls.Add(this.lblNumberOfAssignments);
+            this.tabPageStats.Location = new System.Drawing.Point(4, 29);
+            this.tabPageStats.Name = "tabPageStats";
+            this.tabPageStats.Size = new System.Drawing.Size(1301, 393);
+            this.tabPageStats.TabIndex = 6;
+            this.tabPageStats.Text = "Stats";
+            this.tabPageStats.UseVisualStyleBackColor = true;
+            // 
+            // txtNumberOfCompletedAssignments
+            // 
+            this.txtNumberOfCompletedAssignments.Location = new System.Drawing.Point(457, 247);
+            this.txtNumberOfCompletedAssignments.Name = "txtNumberOfCompletedAssignments";
+            this.txtNumberOfCompletedAssignments.ReadOnly = true;
+            this.txtNumberOfCompletedAssignments.Size = new System.Drawing.Size(100, 27);
+            this.txtNumberOfCompletedAssignments.TabIndex = 4;
+            // 
+            // lblNumberOfCompletedAssignments
+            // 
+            this.lblNumberOfCompletedAssignments.AutoSize = true;
+            this.lblNumberOfCompletedAssignments.Location = new System.Drawing.Point(45, 250);
+            this.lblNumberOfCompletedAssignments.Name = "lblNumberOfCompletedAssignments";
+            this.lblNumberOfCompletedAssignments.Size = new System.Drawing.Size(375, 20);
+            this.lblNumberOfCompletedAssignments.TabIndex = 3;
+            this.lblNumberOfCompletedAssignments.Text = "Number of Assignments Completed by students: ";
+            // 
+            // txtNumberOfAssignments
+            // 
+            this.txtNumberOfAssignments.Location = new System.Drawing.Point(457, 101);
+            this.txtNumberOfAssignments.Name = "txtNumberOfAssignments";
+            this.txtNumberOfAssignments.ReadOnly = true;
+            this.txtNumberOfAssignments.Size = new System.Drawing.Size(100, 27);
+            this.txtNumberOfAssignments.TabIndex = 1;
+            // 
+            // lblNumberOfAssignments
+            // 
+            this.lblNumberOfAssignments.AutoSize = true;
+            this.lblNumberOfAssignments.Location = new System.Drawing.Point(45, 104);
+            this.lblNumberOfAssignments.Name = "lblNumberOfAssignments";
+            this.lblNumberOfAssignments.Size = new System.Drawing.Size(345, 20);
+            this.lblNumberOfAssignments.TabIndex = 0;
+            this.lblNumberOfAssignments.Text = "Number of Assignments given by lectureres: ";
+            // 
             // tabPageLogOut
             // 
             this.tabPageLogOut.Location = new System.Drawing.Point(4, 29);
@@ -755,62 +807,23 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
-            // tabPageStats
+            // chartGivenAssignments
             // 
-            this.tabPageStats.Controls.Add(this.txtNumberOfCompletedAssignments);
-            this.tabPageStats.Controls.Add(this.lblNumberOfCompletedAssignments);
-            this.tabPageStats.Controls.Add(this.lblLecturers);
-            this.tabPageStats.Controls.Add(this.txtNumberOfAssignments);
-            this.tabPageStats.Controls.Add(this.lblNumberOfAssignments);
-            this.tabPageStats.Location = new System.Drawing.Point(4, 29);
-            this.tabPageStats.Name = "tabPageStats";
-            this.tabPageStats.Size = new System.Drawing.Size(1301, 393);
-            this.tabPageStats.TabIndex = 6;
-            this.tabPageStats.Text = "Stats";
-            this.tabPageStats.UseVisualStyleBackColor = true;
-            // 
-            // lblNumberOfAssignments
-            // 
-            this.lblNumberOfAssignments.AutoSize = true;
-            this.lblNumberOfAssignments.Location = new System.Drawing.Point(381, 117);
-            this.lblNumberOfAssignments.Name = "lblNumberOfAssignments";
-            this.lblNumberOfAssignments.Size = new System.Drawing.Size(345, 20);
-            this.lblNumberOfAssignments.TabIndex = 0;
-            this.lblNumberOfAssignments.Text = "Number of Assignments given by lectureres: ";
-            // 
-            // txtNumberOfAssignments
-            // 
-            this.txtNumberOfAssignments.Location = new System.Drawing.Point(793, 114);
-            this.txtNumberOfAssignments.Name = "txtNumberOfAssignments";
-            this.txtNumberOfAssignments.ReadOnly = true;
-            this.txtNumberOfAssignments.Size = new System.Drawing.Size(100, 27);
-            this.txtNumberOfAssignments.TabIndex = 1;
-            // 
-            // lblLecturers
-            // 
-            this.lblLecturers.AutoSize = true;
-            this.lblLecturers.Location = new System.Drawing.Point(391, 188);
-            this.lblLecturers.Name = "lblLecturers";
-            this.lblLecturers.Size = new System.Drawing.Size(53, 20);
-            this.lblLecturers.TabIndex = 2;
-            this.lblLecturers.Text = "label3";
-            // 
-            // txtNumberOfCompletedAssignments
-            // 
-            this.txtNumberOfCompletedAssignments.Location = new System.Drawing.Point(793, 260);
-            this.txtNumberOfCompletedAssignments.Name = "txtNumberOfCompletedAssignments";
-            this.txtNumberOfCompletedAssignments.ReadOnly = true;
-            this.txtNumberOfCompletedAssignments.Size = new System.Drawing.Size(100, 27);
-            this.txtNumberOfCompletedAssignments.TabIndex = 4;
-            // 
-            // lblNumberOfCompletedAssignments
-            // 
-            this.lblNumberOfCompletedAssignments.AutoSize = true;
-            this.lblNumberOfCompletedAssignments.Location = new System.Drawing.Point(381, 263);
-            this.lblNumberOfCompletedAssignments.Name = "lblNumberOfCompletedAssignments";
-            this.lblNumberOfCompletedAssignments.Size = new System.Drawing.Size(375, 20);
-            this.lblNumberOfCompletedAssignments.TabIndex = 3;
-            this.lblNumberOfCompletedAssignments.Text = "Number of Assignments Completed by students: ";
+            chartArea2.Name = "ChartArea1";
+            this.chartGivenAssignments.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartGivenAssignments.Legends.Add(legend2);
+            this.chartGivenAssignments.Location = new System.Drawing.Point(660, 56);
+            this.chartGivenAssignments.Name = "chartGivenAssignments";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "SeriesGivenAssignments";
+            series2.YValuesPerPoint = 4;
+            this.chartGivenAssignments.Series.Add(series2);
+            this.chartGivenAssignments.Size = new System.Drawing.Size(579, 300);
+            this.chartGivenAssignments.TabIndex = 5;
+            this.chartGivenAssignments.Text = "chart1";
             // 
             // AdministratorDashboard
             // 
@@ -839,6 +852,7 @@ namespace Student_Assignment_System
             this.tabPageModules.PerformLayout();
             this.tabPageStats.ResumeLayout(false);
             this.tabPageStats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGivenAssignments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -912,10 +926,10 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeaderStudentCourse;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentCompletedAssignments;
         private System.Windows.Forms.TabPage tabPageStats;
-        private System.Windows.Forms.Label lblLecturers;
         private System.Windows.Forms.TextBox txtNumberOfAssignments;
         private System.Windows.Forms.Label lblNumberOfAssignments;
         private System.Windows.Forms.TextBox txtNumberOfCompletedAssignments;
         private System.Windows.Forms.Label lblNumberOfCompletedAssignments;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartGivenAssignments;
     }
 }

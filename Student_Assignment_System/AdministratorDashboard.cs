@@ -43,7 +43,6 @@ namespace Student_Assignment_System
             lblDashboardHeading.Text = $"Welcome, {currentAdmin.Name}";
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             txtNumberOfAssignments.Text = AssignmentList.Count.ToString();
-            string temp = "";
             Dictionary<string, int> LectAssignmentCount = new Dictionary<string, int>();
             foreach(Assignment a in AssignmentList)
             {
@@ -52,15 +51,17 @@ namespace Student_Assignment_System
             }
             foreach(Assignment a in AssignmentList)
             {
-                if (LectAssignmentCount.ContainsKey(a.LecturerID))
-                    LectAssignmentCount[a.LecturerID]++;
+                if (a.DateIssued.Date >= DateTime.Today.AddMonths(-1))
+                {
+                    if (LectAssignmentCount.ContainsKey(a.LecturerID))
+                        LectAssignmentCount[a.LecturerID]++;
+                }
             }
             foreach(KeyValuePair<string,int> kvp in LectAssignmentCount)
             {
-                temp += $"{kvp.Key} = {kvp.Value}, ";
+                chartGivenAssignments.Series[0].Points.AddXY($"{kvp.Key}", kvp.Value.ToString());
             }
-            temp = temp.Trim(',', ' ');
-            lblLecturers.Text = temp;
+
 
             int completedAssignments = 0;
             foreach(Student s in StudentList)
@@ -68,7 +69,10 @@ namespace Student_Assignment_System
                 completedAssignments += s.CompletedAssignments.Count;
             }
             txtNumberOfCompletedAssignments.Text = completedAssignments.ToString();
-
+            for (int i = 1; i <= 8; i++)
+            {
+               
+            }
         }
 
         public void RefreshAdminDetails()
