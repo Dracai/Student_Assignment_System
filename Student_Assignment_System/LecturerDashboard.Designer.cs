@@ -56,6 +56,11 @@ namespace Student_Assignment_System
             this.YearofStudy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClassSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClassGroups = new System.Windows.Forms.TabPage();
+            this.btnViewNextMonth = new System.Windows.Forms.Button();
+            this.btnViewNextWeek = new System.Windows.Forms.Button();
+            this.lvStudents = new System.Windows.Forms.ListView();
+            this.StuID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvClassGroupsCG = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -214,10 +219,9 @@ namespace Student_Assignment_System
             // 
             // btnAssSave
             // 
-            this.btnAssSave.Location = new System.Drawing.Point(653, 511);
-            this.btnAssSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAssSave.Location = new System.Drawing.Point(490, 415);
             this.btnAssSave.Name = "btnAssSave";
-            this.btnAssSave.Size = new System.Drawing.Size(173, 34);
+            this.btnAssSave.Size = new System.Drawing.Size(130, 28);
             this.btnAssSave.TabIndex = 6;
             this.btnAssSave.Text = "Save";
             this.btnAssSave.UseVisualStyleBackColor = true;
@@ -352,6 +356,9 @@ namespace Student_Assignment_System
             // 
             // ClassGroups
             // 
+            this.ClassGroups.Controls.Add(this.btnViewNextMonth);
+            this.ClassGroups.Controls.Add(this.btnViewNextWeek);
+            this.ClassGroups.Controls.Add(this.lvStudents);
             this.ClassGroups.Controls.Add(this.lvClassGroupsCG);
             this.ClassGroups.Location = new System.Drawing.Point(4, 34);
             this.ClassGroups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -361,6 +368,54 @@ namespace Student_Assignment_System
             this.ClassGroups.TabIndex = 3;
             this.ClassGroups.Text = "Class Groups";
             this.ClassGroups.UseVisualStyleBackColor = true;
+            // 
+            // btnViewNextMonth
+            // 
+            this.btnViewNextMonth.Location = new System.Drawing.Point(816, 221);
+            this.btnViewNextMonth.Name = "btnViewNextMonth";
+            this.btnViewNextMonth.Size = new System.Drawing.Size(199, 49);
+            this.btnViewNextMonth.TabIndex = 4;
+            this.btnViewNextMonth.Text = "View Next Months Assignments";
+            this.btnViewNextMonth.UseVisualStyleBackColor = true;
+            this.btnViewNextMonth.Click += new System.EventHandler(this.btnViewNextMonth_Click);
+            // 
+            // btnViewNextWeek
+            // 
+            this.btnViewNextWeek.Location = new System.Drawing.Point(816, 114);
+            this.btnViewNextWeek.Name = "btnViewNextWeek";
+            this.btnViewNextWeek.Size = new System.Drawing.Size(199, 49);
+            this.btnViewNextWeek.TabIndex = 3;
+            this.btnViewNextWeek.Text = "View Next Weeks Assignments";
+            this.btnViewNextWeek.UseVisualStyleBackColor = true;
+            this.btnViewNextWeek.Click += new System.EventHandler(this.btnViewNextWeek_Click);
+            // 
+            // lvStudents
+            // 
+            this.lvStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.StuID,
+            this.StuName});
+            this.lvStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvStudents.FullRowSelect = true;
+            this.lvStudents.GridLines = true;
+            this.lvStudents.HideSelection = false;
+            this.lvStudents.Location = new System.Drawing.Point(408, 21);
+            this.lvStudents.MultiSelect = false;
+            this.lvStudents.Name = "lvStudents";
+            this.lvStudents.Size = new System.Drawing.Size(326, 401);
+            this.lvStudents.TabIndex = 2;
+            this.lvStudents.UseCompatibleStateImageBehavior = false;
+            this.lvStudents.View = System.Windows.Forms.View.Details;
+            this.lvStudents.SelectedIndexChanged += new System.EventHandler(this.UpdateStudentsLV);
+            // 
+            // StuID
+            // 
+            this.StuID.Text = "ID";
+            this.StuID.Width = 134;
+            // 
+            // StuName
+            // 
+            this.StuName.Text = "Name";
+            this.StuName.Width = 187;
             // 
             // lvClassGroupsCG
             // 
@@ -377,10 +432,11 @@ namespace Student_Assignment_System
             this.lvClassGroupsCG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvClassGroupsCG.MultiSelect = false;
             this.lvClassGroupsCG.Name = "lvClassGroupsCG";
-            this.lvClassGroupsCG.Size = new System.Drawing.Size(433, 379);
+            this.lvClassGroupsCG.Size = new System.Drawing.Size(326, 401);
             this.lvClassGroupsCG.TabIndex = 1;
             this.lvClassGroupsCG.UseCompatibleStateImageBehavior = false;
             this.lvClassGroupsCG.View = System.Windows.Forms.View.Details;
+            this.lvClassGroupsCG.SelectedIndexChanged += new System.EventHandler(this.UpdateStudentsLV);
             // 
             // columnHeader1
             // 
@@ -469,5 +525,10 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader AssignmentID;
         private System.Windows.Forms.Button btnDescription;
         private System.Windows.Forms.Button btnAssSave;
+        private System.Windows.Forms.ListView lvStudents;
+        private System.Windows.Forms.ColumnHeader StuID;
+        private System.Windows.Forms.ColumnHeader StuName;
+        private System.Windows.Forms.Button btnViewNextMonth;
+        private System.Windows.Forms.Button btnViewNextWeek;
     }
 }

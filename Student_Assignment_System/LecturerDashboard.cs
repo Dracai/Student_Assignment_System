@@ -112,12 +112,12 @@ namespace Student_Assignment_System
             ReadFile<Module>(ref ModuleList, "ModuleFiles.dat");
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             ReadFile<ClassGroup>(ref ClassGroupList, "ClassGroupFile.dat");
+            ReadFile<Student>(ref StudentList, "StudentFiles.dat");
         }
 
         private void SaveFiles()
         {
             WriteFile<Assignment>(AssignmentList, "AssignmentFiles.dat");
-            //WriteFile<ClassGroup>(ClassGroupList, "ClassGroupFile.dat");
         }
 
         public void UpdateListViews()
@@ -125,6 +125,7 @@ namespace Student_Assignment_System
             lvAssignmentsAss.Items.Clear();
             lvAssignmentsCG.Items.Clear();
             lvClassGroupsCG.Items.Clear();
+
             ListViewItem item;
             foreach (ClassGroup cg in ClassGroupList)
             {
@@ -153,6 +154,7 @@ namespace Student_Assignment_System
                 lvAssignmentsAss.Items.Add(item);
             }
 
+            
 
         }
 
@@ -234,19 +236,7 @@ namespace Student_Assignment_System
             Form assignmentDetails;
             if (lvAssignmentsAss.SelectedItems.Count > 0)
             {
-                /*foreach (Assignment a in AssignmentList)
-                {
-                    if(lvAssignmentsAss.SelectedItems[0].Text == a.AssignmentID)
-                    {
-                        assignmentDetails = new AssignmentDetails(ref user,"", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
-                        completeBtn = assignmentDetails.ShowDialog();
-                        if (completeBtn == DialogResult.OK)
-                        {
-                            Assignment newassignment = (Assignment)assignmentDetails.Tag;
-                            AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
-                        }
-                    }
-                }*/
+
                 assignmentDetails = new AssignmentDetails(ref user, "", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
                 completeBtn = assignmentDetails.ShowDialog();
                 if (completeBtn == DialogResult.OK)
@@ -255,7 +245,6 @@ namespace Student_Assignment_System
                     AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
                 }
                 UpdateListViews();
-
 
             }
             else
@@ -267,6 +256,52 @@ namespace Student_Assignment_System
         private void btnAssSave_Click(object sender, EventArgs e)
         {
             SaveFiles();
+        }
+
+        private void UpdateStudentsLV(object sender, EventArgs e)
+        {
+            if (lvClassGroupsCG.SelectedItems.Count > 0)
+            {
+                lvStudents.Items.Clear();
+                string cg = ClassGroupList[lvClassGroupsCG.Items.IndexOf(lvClassGroupsCG.SelectedItems[0])].ClassGroupName;
+                ListViewItem item;
+                foreach (Student s in StudentList)
+                {
+                    if (cg == s.ClassGroup)
+                    {
+                        item = new ListViewItem(s.StudentID);
+                        item.SubItems.Add(s.Name);
+                        lvStudents.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void btnViewNextWeek_Click(object sender, EventArgs e)
+        {
+            if (lvClassGroupsCG.SelectedItems.Count > 0)
+            {
+                Form up = new UpcomingAssignments(ClassGroupList[lvClassGroupsCG.Items.IndexOf(lvClassGroupsCG.SelectedItems[0])].ClassGroupName, "Week");
+                up.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please Select A Class Group", "Error");
+            }
+
+        }
+
+        private void btnViewNextMonth_Click(object sender, EventArgs e)
+        {
+            if (lvClassGroupsCG.SelectedItems.Count > 0)
+            {
+                Form up = new UpcomingAssignments(ClassGroupList[lvClassGroupsCG.Items.IndexOf(lvClassGroupsCG.SelectedItems[0])].ClassGroupName, "Month");
+                up.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please Select A Class Group", "Error");
+            }
         }
     }
 }
