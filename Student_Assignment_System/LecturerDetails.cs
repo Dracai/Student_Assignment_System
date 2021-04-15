@@ -27,7 +27,7 @@ namespace Student_Assignment_System
             }
             if (!(selectedLecturer == null))
             {
-                txtLecturerID.ReadOnly = true;
+                //txtLecturerID.ReadOnly = true;
                 txtLecturerID.Text = selectedLecturer.LecturerID;
                 txtLecturerName.Text = selectedLecturer.Name;
                 dtpLecturerDOB.Value = selectedLecturer.DateOfBirth;
