@@ -21,6 +21,7 @@ namespace Student_Assignment_System
         List<ClassGroup> ClassGroups = new List<ClassGroup>();
         List<Lecturer> LectList = new List<Lecturer>();
         List<Student> StudentList = new List<Student>();
+        List<Assignment> AssignmentList = new List<Assignment>();
 
         //Allow one admin object to be passed to constructor, as this is 
         //The admin that has successfully logged in
@@ -40,6 +41,34 @@ namespace Student_Assignment_System
             RefreshStudentDetails();
             //Personalise dashboard heading
             lblDashboardHeading.Text = $"Welcome, {currentAdmin.Name}";
+            ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
+            txtNumberOfAssignments.Text = AssignmentList.Count.ToString();
+            string temp = "";
+            Dictionary<string, int> LectAssignmentCount = new Dictionary<string, int>();
+            foreach(Assignment a in AssignmentList)
+            {
+                if (!LectAssignmentCount.ContainsKey(a.LecturerID))
+                    LectAssignmentCount.Add(a.LecturerID, 0);
+            }
+            foreach(Assignment a in AssignmentList)
+            {
+                if (LectAssignmentCount.ContainsKey(a.LecturerID))
+                    LectAssignmentCount[a.LecturerID]++;
+            }
+            foreach(KeyValuePair<string,int> kvp in LectAssignmentCount)
+            {
+                temp += $"{kvp.Key} = {kvp.Value}, ";
+            }
+            temp = temp.Trim(',', ' ');
+            lblLecturers.Text = temp;
+
+            int completedAssignments = 0;
+            foreach(Student s in StudentList)
+            {
+                completedAssignments += s.CompletedAssignments.Count;
+            }
+            txtNumberOfCompletedAssignments.Text = completedAssignments.ToString();
+
         }
 
         public void RefreshAdminDetails()
@@ -245,7 +274,7 @@ namespace Student_Assignment_System
 
         private void Administrator_Logout(object sender, EventArgs e)
         {
-            if (tabControlAdmin.SelectedIndex == 5)
+            if (tabControlAdmin.SelectedIndex == 6)
             {
                 this.Hide();
                 var Login = new Form1();
