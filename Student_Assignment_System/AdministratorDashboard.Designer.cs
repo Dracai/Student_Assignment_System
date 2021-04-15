@@ -95,6 +95,12 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
+            this.tabPageStats = new System.Windows.Forms.TabPage();
+            this.lblNumberOfAssignments = new System.Windows.Forms.Label();
+            this.txtNumberOfAssignments = new System.Windows.Forms.TextBox();
+            this.lblLecturers = new System.Windows.Forms.Label();
+            this.txtNumberOfCompletedAssignments = new System.Windows.Forms.TextBox();
+            this.lblNumberOfCompletedAssignments = new System.Windows.Forms.Label();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.grpbModules.SuspendLayout();
@@ -105,6 +111,7 @@ namespace Student_Assignment_System
             this.tabPageLects.SuspendLayout();
             this.tabPageStuds.SuspendLayout();
             this.tabPageModules.SuspendLayout();
+            this.tabPageStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -114,6 +121,7 @@ namespace Student_Assignment_System
             this.tabControlAdmin.Controls.Add(this.tabPageLects);
             this.tabControlAdmin.Controls.Add(this.tabPageStuds);
             this.tabControlAdmin.Controls.Add(this.tabPageModules);
+            this.tabControlAdmin.Controls.Add(this.tabPageStats);
             this.tabControlAdmin.Controls.Add(this.tabPageLogOut);
             this.tabControlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAdmin.Location = new System.Drawing.Point(12, 12);
@@ -747,6 +755,63 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
+            // tabPageStats
+            // 
+            this.tabPageStats.Controls.Add(this.txtNumberOfCompletedAssignments);
+            this.tabPageStats.Controls.Add(this.lblNumberOfCompletedAssignments);
+            this.tabPageStats.Controls.Add(this.lblLecturers);
+            this.tabPageStats.Controls.Add(this.txtNumberOfAssignments);
+            this.tabPageStats.Controls.Add(this.lblNumberOfAssignments);
+            this.tabPageStats.Location = new System.Drawing.Point(4, 29);
+            this.tabPageStats.Name = "tabPageStats";
+            this.tabPageStats.Size = new System.Drawing.Size(1301, 393);
+            this.tabPageStats.TabIndex = 6;
+            this.tabPageStats.Text = "Stats";
+            this.tabPageStats.UseVisualStyleBackColor = true;
+            // 
+            // lblNumberOfAssignments
+            // 
+            this.lblNumberOfAssignments.AutoSize = true;
+            this.lblNumberOfAssignments.Location = new System.Drawing.Point(381, 117);
+            this.lblNumberOfAssignments.Name = "lblNumberOfAssignments";
+            this.lblNumberOfAssignments.Size = new System.Drawing.Size(345, 20);
+            this.lblNumberOfAssignments.TabIndex = 0;
+            this.lblNumberOfAssignments.Text = "Number of Assignments given by lectureres: ";
+            // 
+            // txtNumberOfAssignments
+            // 
+            this.txtNumberOfAssignments.Location = new System.Drawing.Point(793, 114);
+            this.txtNumberOfAssignments.Name = "txtNumberOfAssignments";
+            this.txtNumberOfAssignments.ReadOnly = true;
+            this.txtNumberOfAssignments.Size = new System.Drawing.Size(100, 27);
+            this.txtNumberOfAssignments.TabIndex = 1;
+            // 
+            // lblLecturers
+            // 
+            this.lblLecturers.AutoSize = true;
+            this.lblLecturers.Location = new System.Drawing.Point(391, 188);
+            this.lblLecturers.Name = "lblLecturers";
+            this.lblLecturers.Size = new System.Drawing.Size(53, 20);
+            this.lblLecturers.TabIndex = 2;
+            this.lblLecturers.Text = "label3";
+            // 
+            // txtNumberOfCompletedAssignments
+            // 
+            this.txtNumberOfCompletedAssignments.Location = new System.Drawing.Point(793, 260);
+            this.txtNumberOfCompletedAssignments.Name = "txtNumberOfCompletedAssignments";
+            this.txtNumberOfCompletedAssignments.ReadOnly = true;
+            this.txtNumberOfCompletedAssignments.Size = new System.Drawing.Size(100, 27);
+            this.txtNumberOfCompletedAssignments.TabIndex = 4;
+            // 
+            // lblNumberOfCompletedAssignments
+            // 
+            this.lblNumberOfCompletedAssignments.AutoSize = true;
+            this.lblNumberOfCompletedAssignments.Location = new System.Drawing.Point(381, 263);
+            this.lblNumberOfCompletedAssignments.Name = "lblNumberOfCompletedAssignments";
+            this.lblNumberOfCompletedAssignments.Size = new System.Drawing.Size(375, 20);
+            this.lblNumberOfCompletedAssignments.TabIndex = 3;
+            this.lblNumberOfCompletedAssignments.Text = "Number of Assignments Completed by students: ";
+            // 
             // AdministratorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -772,6 +837,8 @@ namespace Student_Assignment_System
             this.tabPageStuds.PerformLayout();
             this.tabPageModules.ResumeLayout(false);
             this.tabPageModules.PerformLayout();
+            this.tabPageStats.ResumeLayout(false);
+            this.tabPageStats.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -844,5 +911,11 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader columnHeaderAdminPhoneNumber;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentCourse;
         private System.Windows.Forms.ColumnHeader columnHeaderStudentCompletedAssignments;
+        private System.Windows.Forms.TabPage tabPageStats;
+        private System.Windows.Forms.Label lblLecturers;
+        private System.Windows.Forms.TextBox txtNumberOfAssignments;
+        private System.Windows.Forms.Label lblNumberOfAssignments;
+        private System.Windows.Forms.TextBox txtNumberOfCompletedAssignments;
+        private System.Windows.Forms.Label lblNumberOfCompletedAssignments;
     }
 }
