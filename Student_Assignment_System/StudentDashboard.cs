@@ -27,9 +27,9 @@ namespace Student_Assignment_System
             InitializeComponent();
             student = st;
             List<Student> studentList = studList;
-            Debug.WriteLine(studentList.Count);
+            Debug.WriteLine($"Student list: {studentList.Count}");
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
-            StudentsAssignments(AssignmentList, studentAssignments, student);
+            StudentsAssignments(AssignmentList, ref studentAssignments, student);
             setupAssignments();
             startUp(student);
         }
@@ -105,7 +105,7 @@ namespace Student_Assignment_System
             Console.WriteLine("Data written to file");
         }
 
-        private static void StudentsAssignments(List<Assignment> AssignmentList, List<Assignment> studentAssignments, Student student)
+        private static void StudentsAssignments(List<Assignment> AssignmentList, ref List<Assignment> studentAssignments, Student student)
         {
             foreach(Assignment a in AssignmentList)
             {
@@ -140,7 +140,7 @@ namespace Student_Assignment_System
                 this.lvDeadlines.Items.Clear();
                 this.studentAssignments.Clear();
 
-                StudentsAssignments(AssignmentList, studentAssignments, student);
+                StudentsAssignments(AssignmentList,  ref studentAssignments, student);
                 startUp(student);
             }
             else if (tcStudentDash.SelectedTab.Text == "Assignments")
@@ -187,8 +187,9 @@ namespace Student_Assignment_System
         {
             foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
             {
+
                 student.CompletedAssignments.Add(x.SubItems[0].Text);
-                Debug.WriteLine(student.CompletedAssignments.Count);
+                Debug.WriteLine("Student completed assignments: " + student.CompletedAssignments.Count);
                 AssignmentList.RemoveAt(x.Index);
                 lvStudentAssignments.Items.RemoveAt(x.Index);
             }
@@ -198,8 +199,18 @@ namespace Student_Assignment_System
             this.txtSADateDue.Clear();
             this.txtSALecturer.Clear();
             this.txtSADesciption.Clear();
-
+            int tempIndex = 0;
+            foreach(Student s in studentList)
+            {
+                if(s.StudentID == student.StudentID)
+                {
+                    tempIndex = studentList.IndexOf(s);
+                }
+            }
+            studentList[tempIndex] = student;
             WriteFile<Student>(studentList, "StudentFiles.dat");
+
+
         }
     }
 }
