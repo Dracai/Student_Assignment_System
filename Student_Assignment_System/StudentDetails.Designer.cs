@@ -46,15 +46,17 @@ namespace Student_Assignment_System
             this.lblStudentDOB = new System.Windows.Forms.Label();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblStudentID = new System.Windows.Forms.Label();
-            this.txtStudentClassGroups = new System.Windows.Forms.TextBox();
             this.txtStudentCourse = new System.Windows.Forms.TextBox();
             this.lblStudentCourse = new System.Windows.Forms.Label();
+            this.clbStudentCompletedAssignments = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.clbClassGroups = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // dtpStudentDateEnrolled
             // 
             this.dtpStudentDateEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStudentDateEnrolled.Location = new System.Drawing.Point(240, 426);
+            this.dtpStudentDateEnrolled.Location = new System.Drawing.Point(240, 487);
             this.dtpStudentDateEnrolled.Name = "dtpStudentDateEnrolled";
             this.dtpStudentDateEnrolled.Size = new System.Drawing.Size(279, 22);
             this.dtpStudentDateEnrolled.TabIndex = 56;
@@ -80,7 +82,7 @@ namespace Student_Assignment_System
             // btnComplete
             // 
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComplete.Location = new System.Drawing.Point(240, 467);
+            this.btnComplete.Location = new System.Drawing.Point(240, 667);
             this.btnComplete.Margin = new System.Windows.Forms.Padding(4);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(279, 39);
@@ -138,7 +140,7 @@ namespace Student_Assignment_System
             // 
             this.lblStudentDateEnrolled.AutoSize = true;
             this.lblStudentDateEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentDateEnrolled.Location = new System.Drawing.Point(67, 424);
+            this.lblStudentDateEnrolled.Location = new System.Drawing.Point(67, 485);
             this.lblStudentDateEnrolled.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentDateEnrolled.Name = "lblStudentDateEnrolled";
             this.lblStudentDateEnrolled.Size = new System.Drawing.Size(129, 25);
@@ -222,19 +224,10 @@ namespace Student_Assignment_System
             this.lblStudentID.TabIndex = 40;
             this.lblStudentID.Text = "Student ID";
             // 
-            // txtStudentClassGroups
-            // 
-            this.txtStudentClassGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentClassGroups.Location = new System.Drawing.Point(240, 325);
-            this.txtStudentClassGroups.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentClassGroups.Name = "txtStudentClassGroups";
-            this.txtStudentClassGroups.Size = new System.Drawing.Size(277, 27);
-            this.txtStudentClassGroups.TabIndex = 54;
-            // 
             // txtStudentCourse
             // 
             this.txtStudentCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentCourse.Location = new System.Drawing.Point(240, 372);
+            this.txtStudentCourse.Location = new System.Drawing.Point(240, 433);
             this.txtStudentCourse.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentCourse.Name = "txtStudentCourse";
             this.txtStudentCourse.Size = new System.Drawing.Size(277, 27);
@@ -244,21 +237,51 @@ namespace Student_Assignment_System
             // 
             this.lblStudentCourse.AutoSize = true;
             this.lblStudentCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentCourse.Location = new System.Drawing.Point(120, 371);
+            this.lblStudentCourse.Location = new System.Drawing.Point(120, 432);
             this.lblStudentCourse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentCourse.Name = "lblStudentCourse";
             this.lblStudentCourse.Size = new System.Drawing.Size(76, 25);
             this.lblStudentCourse.TabIndex = 59;
             this.lblStudentCourse.Text = "Course";
             // 
+            // clbStudentCompletedAssignments
+            // 
+            this.clbStudentCompletedAssignments.FormattingEnabled = true;
+            this.clbStudentCompletedAssignments.Location = new System.Drawing.Point(240, 537);
+            this.clbStudentCompletedAssignments.Name = "clbStudentCompletedAssignments";
+            this.clbStudentCompletedAssignments.Size = new System.Drawing.Size(277, 123);
+            this.clbStudentCompletedAssignments.TabIndex = 60;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(76, 537);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 50);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Completed \r\nAssignments";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // clbClassGroups
+            // 
+            this.clbClassGroups.FormattingEnabled = true;
+            this.clbClassGroups.Location = new System.Drawing.Point(240, 324);
+            this.clbClassGroups.Name = "clbClassGroups";
+            this.clbClassGroups.Size = new System.Drawing.Size(277, 89);
+            this.clbClassGroups.TabIndex = 62;
+            // 
             // StudentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 521);
+            this.ClientSize = new System.Drawing.Size(546, 722);
+            this.Controls.Add(this.clbClassGroups);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.clbStudentCompletedAssignments);
             this.Controls.Add(this.lblStudentCourse);
             this.Controls.Add(this.txtStudentCourse);
-            this.Controls.Add(this.txtStudentClassGroups);
             this.Controls.Add(this.dtpStudentDateEnrolled);
             this.Controls.Add(this.dtpStudentDOB);
             this.Controls.Add(this.lblStudDetailsHeading);
@@ -302,8 +325,10 @@ namespace Student_Assignment_System
         private System.Windows.Forms.Label lblStudentDOB;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.TextBox txtStudentClassGroups;
         private System.Windows.Forms.TextBox txtStudentCourse;
         private System.Windows.Forms.Label lblStudentCourse;
+        private System.Windows.Forms.CheckedListBox clbStudentCompletedAssignments;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox clbClassGroups;
     }
 }
