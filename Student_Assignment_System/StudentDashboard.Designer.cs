@@ -30,13 +30,15 @@
         {
             this.tcStudentDash = new System.Windows.Forms.TabControl();
             this.tbStudentDashboard = new System.Windows.Forms.TabPage();
+            this.lvDeadlines = new System.Windows.Forms.ListView();
+            this.deadlineName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deadlineDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtStudentAssignmentNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStudentClassgroup = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtStudentCourse = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lboxDeadlines = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStudentWelcome = new System.Windows.Forms.Label();
             this.tpStudentAssignments = new System.Windows.Forms.TabPage();
@@ -76,13 +78,13 @@
             // 
             // tbStudentDashboard
             // 
+            this.tbStudentDashboard.Controls.Add(this.lvDeadlines);
             this.tbStudentDashboard.Controls.Add(this.txtStudentAssignmentNum);
             this.tbStudentDashboard.Controls.Add(this.label5);
             this.tbStudentDashboard.Controls.Add(this.txtStudentClassgroup);
             this.tbStudentDashboard.Controls.Add(this.label4);
             this.tbStudentDashboard.Controls.Add(this.txtStudentCourse);
             this.tbStudentDashboard.Controls.Add(this.label3);
-            this.tbStudentDashboard.Controls.Add(this.lboxDeadlines);
             this.tbStudentDashboard.Controls.Add(this.label1);
             this.tbStudentDashboard.Controls.Add(this.lblStudentWelcome);
             this.tbStudentDashboard.Location = new System.Drawing.Point(4, 29);
@@ -92,6 +94,30 @@
             this.tbStudentDashboard.TabIndex = 0;
             this.tbStudentDashboard.Text = "Dashboard";
             this.tbStudentDashboard.UseVisualStyleBackColor = true;
+            // 
+            // lvDeadlines
+            // 
+            this.lvDeadlines.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.deadlineName,
+            this.deadlineDate});
+            this.lvDeadlines.GridLines = true;
+            this.lvDeadlines.HideSelection = false;
+            this.lvDeadlines.Location = new System.Drawing.Point(492, 82);
+            this.lvDeadlines.Name = "lvDeadlines";
+            this.lvDeadlines.Size = new System.Drawing.Size(270, 305);
+            this.lvDeadlines.TabIndex = 12;
+            this.lvDeadlines.UseCompatibleStateImageBehavior = false;
+            this.lvDeadlines.View = System.Windows.Forms.View.Details;
+            // 
+            // deadlineName
+            // 
+            this.deadlineName.Text = "Name";
+            this.deadlineName.Width = 130;
+            // 
+            // deadlineDate
+            // 
+            this.deadlineDate.Text = "Date due";
+            this.deadlineDate.Width = 130;
             // 
             // txtStudentAssignmentNum
             // 
@@ -144,20 +170,11 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Course:";
             // 
-            // lboxDeadlines
-            // 
-            this.lboxDeadlines.FormattingEnabled = true;
-            this.lboxDeadlines.ItemHeight = 20;
-            this.lboxDeadlines.Location = new System.Drawing.Point(545, 82);
-            this.lboxDeadlines.Name = "lboxDeadlines";
-            this.lboxDeadlines.Size = new System.Drawing.Size(217, 304);
-            this.lboxDeadlines.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(605, 53);
+            this.label1.Location = new System.Drawing.Point(569, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 26);
             this.label1.TabIndex = 2;
@@ -210,6 +227,7 @@
             this.txtSADesciption.Location = new System.Drawing.Point(563, 258);
             this.txtSADesciption.Multiline = true;
             this.txtSADesciption.Name = "txtSADesciption";
+            this.txtSADesciption.ReadOnly = true;
             this.txtSADesciption.Size = new System.Drawing.Size(199, 118);
             this.txtSADesciption.TabIndex = 10;
             // 
@@ -226,6 +244,7 @@
             // 
             this.txtSALecturer.Location = new System.Drawing.Point(563, 203);
             this.txtSALecturer.Name = "txtSALecturer";
+            this.txtSALecturer.ReadOnly = true;
             this.txtSALecturer.Size = new System.Drawing.Size(199, 26);
             this.txtSALecturer.TabIndex = 8;
             // 
@@ -242,6 +261,7 @@
             // 
             this.txtSADateDue.Location = new System.Drawing.Point(562, 150);
             this.txtSADateDue.Name = "txtSADateDue";
+            this.txtSADateDue.ReadOnly = true;
             this.txtSADateDue.Size = new System.Drawing.Size(200, 26);
             this.txtSADateDue.TabIndex = 6;
             // 
@@ -258,6 +278,7 @@
             // 
             this.txtSAName.Location = new System.Drawing.Point(563, 98);
             this.txtSAName.Name = "txtSAName";
+            this.txtSAName.ReadOnly = true;
             this.txtSAName.Size = new System.Drawing.Size(199, 26);
             this.txtSAName.TabIndex = 4;
             // 
@@ -274,6 +295,7 @@
             // 
             this.txtSAModuleID.Location = new System.Drawing.Point(562, 43);
             this.txtSAModuleID.Name = "txtSAModuleID";
+            this.txtSAModuleID.ReadOnly = true;
             this.txtSAModuleID.Size = new System.Drawing.Size(200, 26);
             this.txtSAModuleID.TabIndex = 2;
             // 
@@ -354,7 +376,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStudentCourse;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lboxDeadlines;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStudentWelcome;
         private System.Windows.Forms.Button btnAComplete;
@@ -373,5 +394,8 @@
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.TabPage tpStudentLogout;
         private System.Windows.Forms.ColumnHeader chID;
+        private System.Windows.Forms.ListView lvDeadlines;
+        private System.Windows.Forms.ColumnHeader deadlineName;
+        private System.Windows.Forms.ColumnHeader deadlineDate;
     }
 }

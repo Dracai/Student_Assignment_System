@@ -9,6 +9,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Student_Assignment_System
 {
@@ -42,11 +43,12 @@ namespace Student_Assignment_System
         }
 
         private void btnStudentLogin_Click(object sender, EventArgs e)
-        {
+        {/*
             this.Hide();
-            var studentDashboard = new StudentDashboard();
+            var studentDashboard = new StudentDashboard(st);
             studentDashboard.Closed += (s, args) => this.Close();
             studentDashboard.Show();
+            */
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)
@@ -117,7 +119,7 @@ namespace Student_Assignment_System
                         {
                             //Open Student Dashboard
                             this.Hide();
-                            var studentDashboard = new StudentDashboard();
+                            var studentDashboard = new StudentDashboard(st, studentList);
                             studentDashboard.Closed += (s, args) => this.Close();
                             studentDashboard.Show();
 

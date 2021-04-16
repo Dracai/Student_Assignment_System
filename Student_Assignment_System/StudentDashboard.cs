@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-//AssignmentList.Add(new Assignment("A001", "Student Application System", Convert.ToDateTime("01/03/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Applications Development", "L001", "Group Project For Windows Forms Driven Desktop Application"));
-//AssignmentList.Add(new Assignment("A002", "Database Driven Web Application", Convert.ToDateTime("21/01/2021"), Convert.ToDateTime("05/05/2021"), "SD2A", "Data Driven Systems", "L002", "Plan, Develop, Implement and Test a Fully Functional Web Application Driven by PHP"));
 
 namespace Student_Assignment_System
 {
@@ -21,22 +19,32 @@ namespace Student_Assignment_System
         Student student;
         List<Assignment> AssignmentList = new List<Assignment>();
         List<Assignment> studentAssignments = new List<Assignment>();
-        List<string> sCA = new List<string>();
+        List<Student> studentList = new List<Student>();
 
-        public StudentDashboard()
+
+        public StudentDashboard(Student st, List<Student> studList)
         {
             InitializeComponent();
-            student = new Student("Jakub Pawluczuk", Convert.ToDateTime("05/05/2001").Date, "15 Inis Orga", "3571228N", "K00251917", "Password1",
-                "Software Development", "SD2A", Convert.ToDateTime("01/09/2019").Date, sCA);
-            setupData();
+            student = st;
+            List<Student> studentList = studList;
+            Debug.WriteLine(studentList.Count);
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             StudentsAssignments(AssignmentList, studentAssignments, student);
             setupAssignments();
             startUp(student);
         }
 
-        private void setupData()
+        private void setupDeadlines()
         {
+            ListViewItem item;
+                foreach (Assignment a in studentAssignments)
+                {
+                    string[] arr = new string[2];
+                    arr[0] = a.Name;
+                    arr[1] = a.DateDue.ToShortDateString();
+                    item = new ListViewItem(arr);
+                    lvDeadlines.Items.Add(item);
+                }
             
         }
 
@@ -67,6 +75,36 @@ namespace Student_Assignment_System
             }
         }
 
+        public static void WriteFile<T>(List<T> list, string file)
+        {
+            FileInfo fileInfo = new FileInfo(file);
+            FileStream stream;
+
+            if (fileInfo.Exists)
+            {
+                stream = new FileStream(file, FileMode.Truncate, FileAccess.Write);
+                Console.WriteLine("found file " + fileInfo.FullName);
+            }
+            else
+            {
+                stream = new FileStream(file, FileMode.Create, FileAccess.Write);
+                Console.WriteLine("created file" + fileInfo.FullName);
+            }
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(stream, list);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception caught: {e}");
+            }
+
+            stream.Close();
+            Console.WriteLine("Data written to file");
+        }
+
         private static void StudentsAssignments(List<Assignment> AssignmentList, List<Assignment> studentAssignments, Student student)
         {
             foreach(Assignment a in AssignmentList)
@@ -76,11 +114,6 @@ namespace Student_Assignment_System
                     studentAssignments.Add(a);
                 }
             }
-        }
-
-        private static void ReadAssignments()
-        {
-
         }
 
         private void setupAssignments()
@@ -101,11 +134,18 @@ namespace Student_Assignment_System
         {
             if (tcStudentDash.SelectedTab.Text == "Dashboard")
             {
-                
+                this.txtStudentCourse.Clear();
+                this.txtStudentClassgroup.Clear();
+                this.txtStudentAssignmentNum.Clear();
+                this.lvDeadlines.Items.Clear();
+                this.studentAssignments.Clear();
+
+                StudentsAssignments(AssignmentList, studentAssignments, student);
+                startUp(student);
             }
             else if (tcStudentDash.SelectedTab.Text == "Assignments")
             {
-
+                ReadFile(ref studentList, "StudentFiles.dat");
             }
             else if (tcStudentDash.SelectedTab.Text == "Logout")
             {
@@ -122,6 +162,7 @@ namespace Student_Assignment_System
             txtStudentCourse.Text = s1.Course;
             txtStudentClassgroup.Text = s1.ClassGroup;
             txtStudentAssignmentNum.Text = studentAssignments.Count.ToString();
+            setupDeadlines();
         }
 
         private void lvStudentAssignments_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,9 +188,9 @@ namespace Student_Assignment_System
             foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
             {
                 student.CompletedAssignments.Add(x.SubItems[0].Text);
+                Debug.WriteLine(student.CompletedAssignments.Count);
                 AssignmentList.RemoveAt(x.Index);
                 lvStudentAssignments.Items.RemoveAt(x.Index);
-
             }
 
             this.txtSAModuleID.Clear();
@@ -157,6 +198,8 @@ namespace Student_Assignment_System
             this.txtSADateDue.Clear();
             this.txtSALecturer.Clear();
             this.txtSADesciption.Clear();
+
+            WriteFile<Student>(studentList, "StudentFiles.dat");
         }
     }
 }
