@@ -106,12 +106,13 @@ namespace Student_Assignment_System
         }
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            bool checklogin = false;
             if (ValidateLogin())
             {
                 ReadFile(ref studentList, "StudentFiles.dat");
                 foreach (Student st in studentList)
                 {
-                    if (st.StudentID == txtUserID.Text)
+                    if (st.StudentID == txtUserID.Text.ToUpper())
                     {
                         if (st.StudentPassword == txtUserPassword.Text)
                         {
@@ -120,7 +121,7 @@ namespace Student_Assignment_System
                             var studentDashboard = new StudentDashboard();
                             studentDashboard.Closed += (s, args) => this.Close();
                             studentDashboard.Show();
-
+                            checklogin = true;
                             return;
                         }
                         else
@@ -134,7 +135,7 @@ namespace Student_Assignment_System
                 ReadFile(ref lecturerList, "LecturerFiles.dat");
                 foreach (Lecturer l in lecturerList)
                 {
-                    if (l.LecturerID == txtUserID.Text)
+                    if (l.LecturerID == txtUserID.Text.ToUpper())
                     {
                         if (l.LecturerPassword == txtUserPassword.Text)
                         {
@@ -143,7 +144,7 @@ namespace Student_Assignment_System
                             var LD = new LecturerDashboard(studentList, l);
                             LD.FormClosed += (s, args) => this.Close();
                             LD.Show();
-
+                            checklogin = true;
                             return;
                         }
                         else
@@ -157,7 +158,7 @@ namespace Student_Assignment_System
                 ReadFile(ref administratorList, "AdminFile.dat");
                 foreach (Administrator a in administratorList)
                 {
-                    if (a.AdminID == txtUserID.Text)
+                    if (a.AdminID == txtUserID.Text.ToUpper())
                     {
                         if (a.AdminPassword == txtUserPassword.Text)
                         {
@@ -166,7 +167,7 @@ namespace Student_Assignment_System
                             var adminDash = new AdministratorDashboard(a);
                             adminDash.FormClosed += (s, args) => this.Close();
                             adminDash.Show();
-
+                            checklogin = true;
                             return;
                         }
                         else
@@ -176,6 +177,10 @@ namespace Student_Assignment_System
                         }
                     }
 
+                }
+                if(checklogin==false)
+                {
+                    MessageBox.Show("No user with that id exists");
                 }
             }
         }
