@@ -31,6 +31,10 @@ namespace Student_Assignment_System
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageDashboard = new System.Windows.Forms.TabPage();
@@ -98,12 +102,13 @@ namespace Student_Assignment_System
             this.columnHeaderCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderClassGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageStats = new System.Windows.Forms.TabPage();
+            this.chartGivenAssignments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txtNumberOfCompletedAssignments = new System.Windows.Forms.TextBox();
             this.lblNumberOfCompletedAssignments = new System.Windows.Forms.Label();
             this.txtNumberOfAssignments = new System.Windows.Forms.TextBox();
             this.lblNumberOfAssignments = new System.Windows.Forms.Label();
             this.tabPageLogOut = new System.Windows.Forms.TabPage();
-            this.chartGivenAssignments = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartAssignmentsCompleted = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageDashboard.SuspendLayout();
             this.grpbModules.SuspendLayout();
@@ -116,6 +121,7 @@ namespace Student_Assignment_System
             this.tabPageModules.SuspendLayout();
             this.tabPageStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGivenAssignments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssignmentsCompleted)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -751,6 +757,7 @@ namespace Student_Assignment_System
             // 
             // tabPageStats
             // 
+            this.tabPageStats.Controls.Add(this.chartAssignmentsCompleted);
             this.tabPageStats.Controls.Add(this.chartGivenAssignments);
             this.tabPageStats.Controls.Add(this.txtNumberOfCompletedAssignments);
             this.tabPageStats.Controls.Add(this.lblNumberOfCompletedAssignments);
@@ -763,9 +770,28 @@ namespace Student_Assignment_System
             this.tabPageStats.Text = "Stats";
             this.tabPageStats.UseVisualStyleBackColor = true;
             // 
+            // chartGivenAssignments
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartGivenAssignments.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartGivenAssignments.Legends.Add(legend2);
+            this.chartGivenAssignments.Location = new System.Drawing.Point(3, 14);
+            this.chartGivenAssignments.Name = "chartGivenAssignments";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "SeriesGivenAssignments";
+            series3.YValuesPerPoint = 4;
+            this.chartGivenAssignments.Series.Add(series3);
+            this.chartGivenAssignments.Size = new System.Drawing.Size(579, 300);
+            this.chartGivenAssignments.TabIndex = 5;
+            this.chartGivenAssignments.Text = "ch";
+            this.chartGivenAssignments.Click += new System.EventHandler(this.chartGivenAssignments_Click);
+            // 
             // txtNumberOfCompletedAssignments
             // 
-            this.txtNumberOfCompletedAssignments.Location = new System.Drawing.Point(457, 247);
+            this.txtNumberOfCompletedAssignments.Location = new System.Drawing.Point(1159, 340);
             this.txtNumberOfCompletedAssignments.Name = "txtNumberOfCompletedAssignments";
             this.txtNumberOfCompletedAssignments.ReadOnly = true;
             this.txtNumberOfCompletedAssignments.Size = new System.Drawing.Size(100, 27);
@@ -774,7 +800,7 @@ namespace Student_Assignment_System
             // lblNumberOfCompletedAssignments
             // 
             this.lblNumberOfCompletedAssignments.AutoSize = true;
-            this.lblNumberOfCompletedAssignments.Location = new System.Drawing.Point(45, 250);
+            this.lblNumberOfCompletedAssignments.Location = new System.Drawing.Point(747, 343);
             this.lblNumberOfCompletedAssignments.Name = "lblNumberOfCompletedAssignments";
             this.lblNumberOfCompletedAssignments.Size = new System.Drawing.Size(375, 20);
             this.lblNumberOfCompletedAssignments.TabIndex = 3;
@@ -782,7 +808,7 @@ namespace Student_Assignment_System
             // 
             // txtNumberOfAssignments
             // 
-            this.txtNumberOfAssignments.Location = new System.Drawing.Point(457, 101);
+            this.txtNumberOfAssignments.Location = new System.Drawing.Point(440, 340);
             this.txtNumberOfAssignments.Name = "txtNumberOfAssignments";
             this.txtNumberOfAssignments.ReadOnly = true;
             this.txtNumberOfAssignments.Size = new System.Drawing.Size(100, 27);
@@ -791,7 +817,7 @@ namespace Student_Assignment_System
             // lblNumberOfAssignments
             // 
             this.lblNumberOfAssignments.AutoSize = true;
-            this.lblNumberOfAssignments.Location = new System.Drawing.Point(45, 104);
+            this.lblNumberOfAssignments.Location = new System.Drawing.Point(28, 343);
             this.lblNumberOfAssignments.Name = "lblNumberOfAssignments";
             this.lblNumberOfAssignments.Size = new System.Drawing.Size(345, 20);
             this.lblNumberOfAssignments.TabIndex = 0;
@@ -807,23 +833,27 @@ namespace Student_Assignment_System
             this.tabPageLogOut.Text = "Log Out";
             this.tabPageLogOut.UseVisualStyleBackColor = true;
             // 
-            // chartGivenAssignments
+            // chartAssignmentsCompleted
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartGivenAssignments.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartGivenAssignments.Legends.Add(legend2);
-            this.chartGivenAssignments.Location = new System.Drawing.Point(660, 56);
-            this.chartGivenAssignments.Name = "chartGivenAssignments";
+            chartArea1.Name = "ChartArea1";
+            this.chartAssignmentsCompleted.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAssignmentsCompleted.Legends.Add(legend1);
+            this.chartAssignmentsCompleted.Location = new System.Drawing.Point(751, 14);
+            this.chartAssignmentsCompleted.Name = "chartAssignmentsCompleted";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "To Do";
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series2.Legend = "Legend1";
-            series2.Name = "SeriesGivenAssignments";
-            series2.YValuesPerPoint = 4;
-            this.chartGivenAssignments.Series.Add(series2);
-            this.chartGivenAssignments.Size = new System.Drawing.Size(579, 300);
-            this.chartGivenAssignments.TabIndex = 5;
-            this.chartGivenAssignments.Text = "chart1";
+            series2.Name = "Completed";
+            this.chartAssignmentsCompleted.Series.Add(series1);
+            this.chartAssignmentsCompleted.Series.Add(series2);
+            this.chartAssignmentsCompleted.Size = new System.Drawing.Size(508, 300);
+            this.chartAssignmentsCompleted.TabIndex = 6;
+            this.chartAssignmentsCompleted.Text = "chart1";
             // 
             // AdministratorDashboard
             // 
@@ -853,6 +883,7 @@ namespace Student_Assignment_System
             this.tabPageStats.ResumeLayout(false);
             this.tabPageStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGivenAssignments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssignmentsCompleted)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -931,5 +962,6 @@ namespace Student_Assignment_System
         private System.Windows.Forms.TextBox txtNumberOfCompletedAssignments;
         private System.Windows.Forms.Label lblNumberOfCompletedAssignments;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGivenAssignments;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAssignmentsCompleted;
     }
 }
