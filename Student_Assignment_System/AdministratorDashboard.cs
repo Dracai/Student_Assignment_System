@@ -61,7 +61,20 @@ namespace Student_Assignment_System
             {
                 chartGivenAssignments.Series[0].Points.AddXY($"{kvp.Key}", kvp.Value.ToString());
             }
-
+            int assignmentToStudent;
+            foreach(Student s in StudentList)
+            {
+                assignmentToStudent = 0;
+                foreach(Assignment a in AssignmentList)
+                {
+                    if(s.ClassGroup == a.ClassGroup)
+                    {
+                        assignmentToStudent++;
+                    }
+                }
+                chartAssignmentsCompleted.Series[0].Points.AddXY(s.Name, assignmentToStudent);
+                chartAssignmentsCompleted.Series[1].Points.AddXY(s.Name, s.CompletedAssignments.Count);
+            }
 
             int completedAssignments = 0;
             foreach(Student s in StudentList)
@@ -512,6 +525,11 @@ namespace Student_Assignment_System
             }
             listViewStudent.Items.Clear();
             RefreshStudentDetails();
+        }
+
+        private void chartGivenAssignments_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
