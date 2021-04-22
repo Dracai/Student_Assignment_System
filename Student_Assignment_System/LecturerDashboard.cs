@@ -187,7 +187,23 @@ namespace Student_Assignment_System
         {
             if (lvAssignmentsCG.SelectedItems.Count > 0)
             {
-                Form assignmentDetails = new AssignmentDetails(ref user,lvAssignmentsCG.SelectedItems[0].Text);
+                Random random = new Random();
+                var s = AssignmentList.Select(_ => _.AssignmentID);
+                string id = "";
+                int timeout = 0;
+                
+                while (timeout<15)
+                {
+                    id = $"A{(random.Next(1, 101)).ToString().PadLeft(3, '0')}";
+                    if (!s.Contains(id))
+                        break;
+                    timeout++;
+                }
+                if (timeout == 15)
+                {
+                    id = "";
+                }
+                Form assignmentDetails = new AssignmentDetails(ref user,lvAssignmentsCG.SelectedItems[0].Text,null,id);
                 DialogResult completeBtn = assignmentDetails.ShowDialog();
                 if (completeBtn == DialogResult.OK)
                 {

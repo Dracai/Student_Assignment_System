@@ -21,7 +21,7 @@ namespace Student_Assignment_System
         List<Assignment> Assignments;
         Assignment edit;
 
-        public AssignmentDetails(ref Lecturer user, string classgroup = "", Assignment edit = null)
+        public AssignmentDetails(ref Lecturer user, string classgroup = "", Assignment edit = null, string id = null)
         {
             InitializeComponent();
             ReadFiles();
@@ -46,12 +46,21 @@ namespace Student_Assignment_System
             }
             else
             {
+                txtID.Text = id;
                 txtCG.Text = cg;
                 foreach (Module s in modlist)
                 {
                     if (user.ModulesToTeach.Contains(s.ModuleCode))
                         cbModule.Items.Add(s.ModuleName);
                 }
+            }
+
+            if (id == null)
+                txtID.ReadOnly = false;
+            else
+            {
+                txtID.Text = id;
+                txtID.ReadOnly = true;
             }
 
         }
