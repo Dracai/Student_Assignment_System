@@ -27,7 +27,6 @@ namespace Student_Assignment_System
             InitializeComponent();
             student = st;
             List<Student> studentList = studList;
-            Debug.WriteLine($"Student list: {studentList.Count}");
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             StudentsAssignments(AssignmentList, ref studentAssignments, student);
             setupAssignments();
@@ -37,14 +36,14 @@ namespace Student_Assignment_System
         private void setupDeadlines()
         {
             ListViewItem item;
-                foreach (Assignment a in studentAssignments)
-                {
-                    string[] arr = new string[2];
-                    arr[0] = a.Name;
-                    arr[1] = a.DateDue.ToShortDateString();
-                    item = new ListViewItem(arr);
-                    lvDeadlines.Items.Add(item);
-                }
+            foreach (Assignment a in studentAssignments)
+            {
+                string[] arr = new string[2];
+                arr[0] = a.Name;
+                arr[1] = a.DateDue.ToShortDateString();
+                item = new ListViewItem(arr);
+                lvDeadlines.Items.Add(item);
+            }
             
         }
 
@@ -185,31 +184,35 @@ namespace Student_Assignment_System
 
         private void btnAComplete_Click(object sender, EventArgs e)
         {
-            foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
+            if (String.IsNullOrEmpty(this.txtSAModuleID.Text))
             {
-
-                student.CompletedAssignments.Add(x.SubItems[0].Text);
-                Debug.WriteLine("Student completed assignments: " + student.CompletedAssignments.Count);
-                AssignmentList.RemoveAt(x.Index);
-                lvStudentAssignments.Items.RemoveAt(x.Index);
+                MessageBox.Show("You have not selected any Assignments to Complete !");
             }
-
-            this.txtSAModuleID.Clear();
-            this.txtSAName.Clear();
-            this.txtSADateDue.Clear();
-            this.txtSALecturer.Clear();
-            this.txtSADesciption.Clear();
-            int tempIndex = 0;
-            foreach(Student s in studentList)
+            else
             {
-                if(s.StudentID == student.StudentID)
+                foreach(ListViewItem x in lvStudentAssignments.SelectedItems)
                 {
-                    tempIndex = studentList.IndexOf(s);
+                    student.CompletedAssignments.Add(x.SubItems[0].Text);
+                    AssignmentList.RemoveAt(x.Index);
+                    lvStudentAssignments.Items.RemoveAt(x.Index);
                 }
-            }
-            studentList[tempIndex] = student;
-            WriteFile<Student>(studentList, "StudentFiles.dat");
 
+                this.txtSAModuleID.Clear();
+                this.txtSAName.Clear();
+                this.txtSADateDue.Clear();
+                this.txtSALecturer.Clear();
+                this.txtSADesciption.Clear();
+                int tempIndex = 0;
+                foreach(Student s in studentList)
+                {
+                    if(s.StudentID == student.StudentID)
+                    {
+                        tempIndex = studentList.IndexOf(s);
+                    }
+                }
+                studentList[tempIndex] = student;
+                WriteFile<Student>(studentList, "StudentFiles.dat");
+            }
 
         }
     }
