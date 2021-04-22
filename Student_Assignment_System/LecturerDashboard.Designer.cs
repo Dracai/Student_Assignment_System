@@ -67,6 +67,10 @@ namespace Student_Assignment_System
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Logout = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tcDash.SuspendLayout();
             this.Dashboard.SuspendLayout();
             this.gb.SuspendLayout();
@@ -85,7 +89,7 @@ namespace Student_Assignment_System
             this.tcDash.Location = new System.Drawing.Point(15, 12);
             this.tcDash.Name = "tcDash";
             this.tcDash.SelectedIndex = 0;
-            this.tcDash.Size = new System.Drawing.Size(1113, 482);
+            this.tcDash.Size = new System.Drawing.Size(1113, 502);
             this.tcDash.TabIndex = 1;
             this.tcDash.SelectedIndexChanged += new System.EventHandler(this.LecLogout);
             // 
@@ -97,8 +101,8 @@ namespace Student_Assignment_System
             this.Dashboard.Controls.Add(this.gbassignments);
             this.Dashboard.Location = new System.Drawing.Point(4, 29);
             this.Dashboard.Name = "Dashboard";
-            this.Dashboard.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Dashboard.Size = new System.Drawing.Size(1105, 449);
+            this.Dashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.Dashboard.Size = new System.Drawing.Size(1105, 469);
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "Dashboard";
             this.Dashboard.UseVisualStyleBackColor = true;
@@ -189,6 +193,8 @@ namespace Student_Assignment_System
             // 
             // Assignments
             // 
+            this.Assignments.Controls.Add(this.label4);
+            this.Assignments.Controls.Add(this.label3);
             this.Assignments.Controls.Add(this.btnAssSave);
             this.Assignments.Controls.Add(this.btnDescription);
             this.Assignments.Controls.Add(this.btnRemoveAssignment);
@@ -198,16 +204,16 @@ namespace Student_Assignment_System
             this.Assignments.Controls.Add(this.lvAssignmentsCG);
             this.Assignments.Location = new System.Drawing.Point(4, 29);
             this.Assignments.Name = "Assignments";
-            this.Assignments.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Assignments.Size = new System.Drawing.Size(1105, 449);
+            this.Assignments.Padding = new System.Windows.Forms.Padding(3);
+            this.Assignments.Size = new System.Drawing.Size(1105, 469);
             this.Assignments.TabIndex = 1;
             this.Assignments.Text = "Assignments";
             this.Assignments.UseVisualStyleBackColor = true;
             // 
             // btnAssSave
             // 
-            this.btnAssSave.Location = new System.Drawing.Point(663, 411);
-            this.btnAssSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAssSave.Location = new System.Drawing.Point(664, 421);
+            this.btnAssSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnAssSave.Name = "btnAssSave";
             this.btnAssSave.Size = new System.Drawing.Size(98, 33);
             this.btnAssSave.TabIndex = 6;
@@ -218,7 +224,7 @@ namespace Student_Assignment_System
             // btnDescription
             // 
             this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDescription.Location = new System.Drawing.Point(638, 351);
+            this.btnDescription.Location = new System.Drawing.Point(638, 373);
             this.btnDescription.Name = "btnDescription";
             this.btnDescription.Size = new System.Drawing.Size(153, 34);
             this.btnDescription.TabIndex = 5;
@@ -229,7 +235,7 @@ namespace Student_Assignment_System
             // btnRemoveAssignment
             // 
             this.btnRemoveAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveAssignment.Location = new System.Drawing.Point(420, 352);
+            this.btnRemoveAssignment.Location = new System.Drawing.Point(420, 374);
             this.btnRemoveAssignment.Name = "btnRemoveAssignment";
             this.btnRemoveAssignment.Size = new System.Drawing.Size(153, 34);
             this.btnRemoveAssignment.TabIndex = 4;
@@ -240,7 +246,7 @@ namespace Student_Assignment_System
             // btnEditAssignment
             // 
             this.btnEditAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAssignment.Location = new System.Drawing.Point(882, 352);
+            this.btnEditAssignment.Location = new System.Drawing.Point(882, 374);
             this.btnEditAssignment.Name = "btnEditAssignment";
             this.btnEditAssignment.Size = new System.Drawing.Size(153, 34);
             this.btnEditAssignment.TabIndex = 3;
@@ -251,7 +257,7 @@ namespace Student_Assignment_System
             // btnCreateAssignment
             // 
             this.btnCreateAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAssignment.Location = new System.Drawing.Point(116, 352);
+            this.btnCreateAssignment.Location = new System.Drawing.Point(116, 374);
             this.btnCreateAssignment.Name = "btnCreateAssignment";
             this.btnCreateAssignment.Size = new System.Drawing.Size(140, 34);
             this.btnCreateAssignment.TabIndex = 2;
@@ -270,7 +276,7 @@ namespace Student_Assignment_System
             this.lvAssignmentsAss.FullRowSelect = true;
             this.lvAssignmentsAss.GridLines = true;
             this.lvAssignmentsAss.HideSelection = false;
-            this.lvAssignmentsAss.Location = new System.Drawing.Point(384, 24);
+            this.lvAssignmentsAss.Location = new System.Drawing.Point(384, 46);
             this.lvAssignmentsAss.MultiSelect = false;
             this.lvAssignmentsAss.Name = "lvAssignmentsAss";
             this.lvAssignmentsAss.Size = new System.Drawing.Size(691, 309);
@@ -308,7 +314,7 @@ namespace Student_Assignment_System
             this.lvAssignmentsCG.FullRowSelect = true;
             this.lvAssignmentsCG.GridLines = true;
             this.lvAssignmentsCG.HideSelection = false;
-            this.lvAssignmentsCG.Location = new System.Drawing.Point(34, 24);
+            this.lvAssignmentsCG.Location = new System.Drawing.Point(34, 46);
             this.lvAssignmentsCG.MultiSelect = false;
             this.lvAssignmentsCG.Name = "lvAssignmentsCG";
             this.lvAssignmentsCG.Size = new System.Drawing.Size(326, 309);
@@ -338,22 +344,24 @@ namespace Student_Assignment_System
             // 
             // ClassGroups
             // 
+            this.ClassGroups.Controls.Add(this.label6);
+            this.ClassGroups.Controls.Add(this.label5);
             this.ClassGroups.Controls.Add(this.btnViewNextMonth);
             this.ClassGroups.Controls.Add(this.btnViewNextWeek);
             this.ClassGroups.Controls.Add(this.lvStudents);
             this.ClassGroups.Controls.Add(this.lvClassGroupsCG);
             this.ClassGroups.Location = new System.Drawing.Point(4, 29);
             this.ClassGroups.Name = "ClassGroups";
-            this.ClassGroups.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.ClassGroups.Size = new System.Drawing.Size(1105, 449);
+            this.ClassGroups.Padding = new System.Windows.Forms.Padding(3);
+            this.ClassGroups.Size = new System.Drawing.Size(1105, 469);
             this.ClassGroups.TabIndex = 3;
             this.ClassGroups.Text = "Class Groups";
             this.ClassGroups.UseVisualStyleBackColor = true;
             // 
             // btnViewNextMonth
             // 
-            this.btnViewNextMonth.Location = new System.Drawing.Point(851, 204);
-            this.btnViewNextMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewNextMonth.Location = new System.Drawing.Point(851, 243);
+            this.btnViewNextMonth.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewNextMonth.Name = "btnViewNextMonth";
             this.btnViewNextMonth.Size = new System.Drawing.Size(149, 54);
             this.btnViewNextMonth.TabIndex = 4;
@@ -364,7 +372,7 @@ namespace Student_Assignment_System
             // btnViewNextWeek
             // 
             this.btnViewNextWeek.Location = new System.Drawing.Point(851, 107);
-            this.btnViewNextWeek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewNextWeek.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewNextWeek.Name = "btnViewNextWeek";
             this.btnViewNextWeek.Size = new System.Drawing.Size(149, 54);
             this.btnViewNextWeek.TabIndex = 3;
@@ -381,11 +389,11 @@ namespace Student_Assignment_System
             this.lvStudents.FullRowSelect = true;
             this.lvStudents.GridLines = true;
             this.lvStudents.HideSelection = false;
-            this.lvStudents.Location = new System.Drawing.Point(439, 21);
-            this.lvStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvStudents.Location = new System.Drawing.Point(439, 50);
+            this.lvStudents.Margin = new System.Windows.Forms.Padding(2);
             this.lvStudents.MultiSelect = false;
             this.lvStudents.Name = "lvStudents";
-            this.lvStudents.Size = new System.Drawing.Size(327, 411);
+            this.lvStudents.Size = new System.Drawing.Size(327, 382);
             this.lvStudents.TabIndex = 2;
             this.lvStudents.UseCompatibleStateImageBehavior = false;
             this.lvStudents.View = System.Windows.Forms.View.Details;
@@ -412,10 +420,10 @@ namespace Student_Assignment_System
             this.lvClassGroupsCG.FullRowSelect = true;
             this.lvClassGroupsCG.GridLines = true;
             this.lvClassGroupsCG.HideSelection = false;
-            this.lvClassGroupsCG.Location = new System.Drawing.Point(27, 21);
+            this.lvClassGroupsCG.Location = new System.Drawing.Point(27, 50);
             this.lvClassGroupsCG.MultiSelect = false;
             this.lvClassGroupsCG.Name = "lvClassGroupsCG";
-            this.lvClassGroupsCG.Size = new System.Drawing.Size(382, 411);
+            this.lvClassGroupsCG.Size = new System.Drawing.Size(382, 382);
             this.lvClassGroupsCG.TabIndex = 1;
             this.lvClassGroupsCG.UseCompatibleStateImageBehavior = false;
             this.lvClassGroupsCG.View = System.Windows.Forms.View.Details;
@@ -445,11 +453,47 @@ namespace Student_Assignment_System
             // 
             this.Logout.Location = new System.Drawing.Point(4, 29);
             this.Logout.Name = "Logout";
-            this.Logout.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Logout.Padding = new System.Windows.Forms.Padding(3);
             this.Logout.Size = new System.Drawing.Size(1105, 449);
             this.Logout.TabIndex = 2;
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(142, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Class Groups";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(634, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Module Assignments";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(161, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Class Groups";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(510, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Students in Class Group";
             // 
             // LecturerDashboard
             // 
@@ -467,7 +511,9 @@ namespace Student_Assignment_System
             this.gbassignments.ResumeLayout(false);
             this.gbassignments.PerformLayout();
             this.Assignments.ResumeLayout(false);
+            this.Assignments.PerformLayout();
             this.ClassGroups.ResumeLayout(false);
+            this.ClassGroups.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -511,5 +557,9 @@ namespace Student_Assignment_System
         private System.Windows.Forms.ColumnHeader StuName;
         private System.Windows.Forms.Button btnViewNextMonth;
         private System.Windows.Forms.Button btnViewNextWeek;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

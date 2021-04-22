@@ -142,6 +142,7 @@ namespace Student_Assignment_System
             // 
             // cbModule
             // 
+            this.cbModule.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModule.FormattingEnabled = true;
             this.cbModule.Location = new System.Drawing.Point(201, 391);

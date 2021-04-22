@@ -21,7 +21,7 @@ namespace Student_Assignment_System
         List<Assignment> Assignments;
         Assignment edit;
 
-        public AssignmentDetails(ref Lecturer user, string classgroup = "", Assignment edit = null)
+        public AssignmentDetails(ref Lecturer user, string classgroup = "", Assignment edit = null, string id = null)
         {
             InitializeComponent();
             ReadFiles();
@@ -46,12 +46,21 @@ namespace Student_Assignment_System
             }
             else
             {
+                txtID.Text = id;
                 txtCG.Text = cg;
                 foreach (Module s in modlist)
                 {
                     if (user.ModulesToTeach.Contains(s.ModuleCode))
                         cbModule.Items.Add(s.ModuleName);
                 }
+            }
+
+            if (id == null)
+                txtID.ReadOnly = false;
+            else
+            {
+                txtID.Text = id;
+                txtID.ReadOnly = true;
             }
 
         }
@@ -70,17 +79,13 @@ namespace Student_Assignment_System
 
         public bool validateInput()
         {
-            if (!Regex.IsMatch(txtCG.Text, @"^[a-zA-Z]+$"))
-            {
-                MessageBox.Show("Class Group Unrecognised, Try Again");
-                return false;
-            }
-            else if (String.IsNullOrEmpty(txtDescript.Text))
+            
+            if (String.IsNullOrEmpty(txtDescript.Text))
             {
                 MessageBox.Show("Assignment requires short Description");
                 return false;
             }
-            else if (dtpDue.Value > DateTime.Today)
+            else if (dtpDue.Value < DateTime.Today)
             {
                 MessageBox.Show("Select a valid date");
                 return false;
