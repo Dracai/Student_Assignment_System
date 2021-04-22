@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Student_Assignment_System
 {
@@ -25,6 +26,7 @@ namespace Student_Assignment_System
             {
                 clbModulesToTeach.Items.Add(m.ModuleName);
             }
+            txtLecturerID.ReadOnly = true;
             if (!(selectedLecturer == null))
             {
                 //txtLecturerID.ReadOnly = true;
@@ -59,6 +61,9 @@ namespace Student_Assignment_System
         {
             if (validateInput())
             {
+                List<Lecturer> lectList = new List<Lecturer>();
+                ReadFile<Lecturer>(ref lectList, "LecturerFiles.dat");
+                List<string> lectIDs = lectList.Select(_ => _.LecturerID).ToList();
                 List<string> modulesToTeach = new List<string>();
                 foreach(string module in clbModulesToTeach.CheckedItems)
                 {
@@ -70,20 +75,56 @@ namespace Student_Assignment_System
                         }
                     }
                 }
-                Lecturer lect = new Lecturer(txtLecturerName.Text,dtpLecturerDOB.Value,txtLecturerAddress.Text,txtLecturerPPSN.Text,txtLecturerID.Text,txtLecturerPassword.Text,modulesToTeach,dtpLecturerDateOfHire.Value);
+                Random random = new Random();
+                string lectID = $"L{random.Next(100, 999)}";
+                while (lectIDs.Contains(lectID))
+                {
+                    lectID = $"L{random.Next(100, 999)}";
+                }
+                Lecturer lect = new Lecturer(lectID,dtpLecturerDOB.Value,txtLecturerAddress.Text,txtLecturerPPSN.Text,txtLecturerID.Text,txtLecturerPassword.Text,modulesToTeach,dtpLecturerDateOfHire.Value);
                 this.Tag = lect;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            else
-            {
-                //Validate your shit son
-
             }
         }
 
         public bool validateInput()
         {
+            if (!Regex.IsMatch(txtLecturerName.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Name has to contain alphabetic characters only");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtLecturerName.Text))
+            {
+                MessageBox.Show("Name text box cannot be empty");
+                return false;
+            }
+            else if (dtpLecturerDOB.Value >= DateTime.Today)
+            {
+                MessageBox.Show("Select a valid date of birth");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtLecturerAddress.Text))
+            {
+                MessageBox.Show("Address text box cannot be empty");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtLecturerPPSN.Text))
+            {
+                MessageBox.Show("PPS number  text box cannot be empty");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtLecturerPassword.Text))
+            {
+                MessageBox.Show("Password text box cannot be empty");
+                return false;
+            }
+            else if (dtpLecturerDateOfHire.Value >= dtpLecturerDOB.Value)
+            {
+                MessageBox.Show("Pick a valid date of hire");
+                return false;
+            }
             return true;
         }
 
