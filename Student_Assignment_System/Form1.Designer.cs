@@ -29,9 +29,6 @@ namespace Student_Assignment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnStudentLogin = new System.Windows.Forms.Button();
-            this.btnLecturerLogin = new System.Windows.Forms.Button();
-            this.btnAdminLogin = new System.Windows.Forms.Button();
             this.lblHeading = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -40,41 +37,11 @@ namespace Student_Assignment_System
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnStudentLogin
-            // 
-            this.btnStudentLogin.Location = new System.Drawing.Point(375, 262);
-            this.btnStudentLogin.Name = "btnStudentLogin";
-            this.btnStudentLogin.Size = new System.Drawing.Size(116, 43);
-            this.btnStudentLogin.TabIndex = 7;
-            this.btnStudentLogin.Text = "Student";
-            this.btnStudentLogin.UseVisualStyleBackColor = true;
-            this.btnStudentLogin.Click += new System.EventHandler(this.btnStudentLogin_Click);
-            // 
-            // btnLecturerLogin
-            // 
-            this.btnLecturerLogin.Location = new System.Drawing.Point(375, 148);
-            this.btnLecturerLogin.Name = "btnLecturerLogin";
-            this.btnLecturerLogin.Size = new System.Drawing.Size(116, 43);
-            this.btnLecturerLogin.TabIndex = 6;
-            this.btnLecturerLogin.Text = "Lecturer";
-            this.btnLecturerLogin.UseVisualStyleBackColor = true;
-            this.btnLecturerLogin.Click += new System.EventHandler(this.btnLecturerLogin_Click);
-            // 
-            // btnAdminLogin
-            // 
-            this.btnAdminLogin.Location = new System.Drawing.Point(375, 37);
-            this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(116, 43);
-            this.btnAdminLogin.TabIndex = 5;
-            this.btnAdminLogin.Text = "Administrator";
-            this.btnAdminLogin.UseVisualStyleBackColor = true;
-            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
-            // 
             // lblHeading
             // 
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading.Location = new System.Drawing.Point(210, 51);
+            this.lblHeading.Location = new System.Drawing.Point(231, 54);
             this.lblHeading.Name = "lblHeading";
             this.lblHeading.Size = new System.Drawing.Size(73, 29);
             this.lblHeading.TabIndex = 3;
@@ -84,26 +51,26 @@ namespace Student_Assignment_System
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(103, 107);
+            this.lblID.Location = new System.Drawing.Point(138, 107);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(26, 20);
+            this.lblID.Size = new System.Drawing.Size(34, 20);
             this.lblID.TabIndex = 6;
-            this.lblID.Text = "ID";
+            this.lblID.Text = "ID :";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(36, 163);
+            this.lblPassword.Location = new System.Drawing.Point(86, 163);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(86, 20);
             this.lblPassword.TabIndex = 7;
-            this.lblPassword.Text = "Password";
+            this.lblPassword.Text = "Password :";
             // 
             // txtUserID
             // 
             this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(170, 101);
+            this.txtUserID.Location = new System.Drawing.Point(189, 102);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(163, 28);
             this.txtUserID.TabIndex = 2;
@@ -111,7 +78,7 @@ namespace Student_Assignment_System
             // txtUserPassword
             // 
             this.txtUserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserPassword.Location = new System.Drawing.Point(170, 157);
+            this.txtUserPassword.Location = new System.Drawing.Point(189, 158);
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.Size = new System.Drawing.Size(163, 28);
             this.txtUserPassword.TabIndex = 3;
@@ -119,7 +86,7 @@ namespace Student_Assignment_System
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(170, 225);
+            this.btnLogin.Location = new System.Drawing.Point(189, 227);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(163, 38);
             this.btnLogin.TabIndex = 4;
@@ -138,9 +105,6 @@ namespace Student_Assignment_System
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblHeading);
-            this.Controls.Add(this.btnAdminLogin);
-            this.Controls.Add(this.btnLecturerLogin);
-            this.Controls.Add(this.btnStudentLogin);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -149,10 +113,6 @@ namespace Student_Assignment_System
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnStudentLogin;
-        private System.Windows.Forms.Button btnLecturerLogin;
-        private System.Windows.Forms.Button btnAdminLogin;
         private System.Windows.Forms.Label lblHeading;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPassword;

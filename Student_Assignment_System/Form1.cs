@@ -26,31 +26,6 @@ namespace Student_Assignment_System
             
         }
 
-        private void btnAdminLogin_Click(object sender, EventArgs e)
-        {/*
-            this.Hide();
-            var adminDash = new AdministratorDashboard();
-            adminDash.FormClosed += (s, args) => this.Close();
-            adminDash.Show();*/
-        }
-
-        private void btnLecturerLogin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var LD = new LecturerDashboard(studentList);
-            LD.FormClosed += (s, args) => this.Close();
-            LD.Show();
-        }
-
-        private void btnStudentLogin_Click(object sender, EventArgs e)
-        {/*
-            this.Hide();
-            var studentDashboard = new StudentDashboard(st);
-            studentDashboard.Closed += (s, args) => this.Close();
-            studentDashboard.Show();
-            */
-        }
-
         public static void ReadFile<T>(ref List<T> list, string file)
         {
             List<T> templist = new List<T>();
