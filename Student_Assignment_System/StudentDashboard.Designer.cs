@@ -69,11 +69,10 @@
             this.tcStudentDash.Controls.Add(this.tpStudentAssignments);
             this.tcStudentDash.Controls.Add(this.tpStudentLogout);
             this.tcStudentDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcStudentDash.Location = new System.Drawing.Point(16, 15);
-            this.tcStudentDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcStudentDash.Location = new System.Drawing.Point(12, 12);
             this.tcStudentDash.Name = "tcStudentDash";
             this.tcStudentDash.SelectedIndex = 0;
-            this.tcStudentDash.Size = new System.Drawing.Size(1035, 524);
+            this.tcStudentDash.Size = new System.Drawing.Size(776, 426);
             this.tcStudentDash.TabIndex = 0;
             this.tcStudentDash.SelectedIndexChanged += new System.EventHandler(this.StudentFormIndexChange);
             // 
@@ -88,11 +87,10 @@
             this.tbStudentDashboard.Controls.Add(this.label3);
             this.tbStudentDashboard.Controls.Add(this.label1);
             this.tbStudentDashboard.Controls.Add(this.lblStudentWelcome);
-            this.tbStudentDashboard.Location = new System.Drawing.Point(4, 34);
-            this.tbStudentDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStudentDashboard.Location = new System.Drawing.Point(4, 29);
             this.tbStudentDashboard.Name = "tbStudentDashboard";
-            this.tbStudentDashboard.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbStudentDashboard.Size = new System.Drawing.Size(1027, 486);
+            this.tbStudentDashboard.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbStudentDashboard.Size = new System.Drawing.Size(768, 393);
             this.tbStudentDashboard.TabIndex = 0;
             this.tbStudentDashboard.Text = "Dashboard";
             this.tbStudentDashboard.UseVisualStyleBackColor = true;
@@ -102,12 +100,12 @@
             this.lvDeadlines.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.deadlineName,
             this.deadlineDate});
+            this.lvDeadlines.Enabled = false;
             this.lvDeadlines.GridLines = true;
             this.lvDeadlines.HideSelection = false;
-            this.lvDeadlines.Location = new System.Drawing.Point(656, 101);
-            this.lvDeadlines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvDeadlines.Location = new System.Drawing.Point(492, 82);
             this.lvDeadlines.Name = "lvDeadlines";
-            this.lvDeadlines.Size = new System.Drawing.Size(359, 374);
+            this.lvDeadlines.Size = new System.Drawing.Size(270, 305);
             this.lvDeadlines.TabIndex = 12;
             this.lvDeadlines.UseCompatibleStateImageBehavior = false;
             this.lvDeadlines.View = System.Windows.Forms.View.Details;
@@ -124,58 +122,55 @@
             // 
             // txtStudentAssignmentNum
             // 
-            this.txtStudentAssignmentNum.Location = new System.Drawing.Point(333, 257);
-            this.txtStudentAssignmentNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentAssignmentNum.Location = new System.Drawing.Point(250, 209);
             this.txtStudentAssignmentNum.Name = "txtStudentAssignmentNum";
-            this.txtStudentAssignmentNum.Size = new System.Drawing.Size(251, 30);
+            this.txtStudentAssignmentNum.ReadOnly = true;
+            this.txtStudentAssignmentNum.Size = new System.Drawing.Size(189, 26);
             this.txtStudentAssignmentNum.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 256);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(36, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(258, 31);
+            this.label5.Size = new System.Drawing.Size(208, 26);
             this.label5.TabIndex = 10;
             this.label5.Text = "No. of Assignments:";
             // 
             // txtStudentClassgroup
             // 
-            this.txtStudentClassgroup.Location = new System.Drawing.Point(333, 206);
-            this.txtStudentClassgroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentClassgroup.Location = new System.Drawing.Point(250, 167);
             this.txtStudentClassgroup.Name = "txtStudentClassgroup";
-            this.txtStudentClassgroup.Size = new System.Drawing.Size(251, 30);
+            this.txtStudentClassgroup.ReadOnly = true;
+            this.txtStudentClassgroup.Size = new System.Drawing.Size(189, 26);
             this.txtStudentClassgroup.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(155, 204);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(116, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 31);
+            this.label4.Size = new System.Drawing.Size(128, 26);
             this.label4.TabIndex = 8;
             this.label4.Text = "Classgroup:";
             // 
             // txtStudentCourse
             // 
-            this.txtStudentCourse.Location = new System.Drawing.Point(333, 156);
-            this.txtStudentCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentCourse.Location = new System.Drawing.Point(250, 127);
             this.txtStudentCourse.Name = "txtStudentCourse";
-            this.txtStudentCourse.Size = new System.Drawing.Size(251, 30);
+            this.txtStudentCourse.ReadOnly = true;
+            this.txtStudentCourse.Size = new System.Drawing.Size(189, 26);
             this.txtStudentCourse.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(208, 155);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(156, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 31);
+            this.label3.Size = new System.Drawing.Size(88, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "Course:";
             // 
@@ -183,10 +178,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(759, 65);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(569, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 31);
+            this.label1.Size = new System.Drawing.Size(109, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Deadlines";
             // 
@@ -194,10 +188,9 @@
             // 
             this.lblStudentWelcome.AutoSize = true;
             this.lblStudentWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentWelcome.Location = new System.Drawing.Point(47, 26);
-            this.lblStudentWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentWelcome.Location = new System.Drawing.Point(35, 21);
             this.lblStudentWelcome.Name = "lblStudentWelcome";
-            this.lblStudentWelcome.Size = new System.Drawing.Size(298, 39);
+            this.lblStudentWelcome.Size = new System.Drawing.Size(238, 31);
             this.lblStudentWelcome.TabIndex = 0;
             this.lblStudentWelcome.Text = "Welcome, { User } ";
             // 
@@ -215,21 +208,19 @@
             this.tpStudentAssignments.Controls.Add(this.txtSAModuleID);
             this.tpStudentAssignments.Controls.Add(this.label6);
             this.tpStudentAssignments.Controls.Add(this.lvStudentAssignments);
-            this.tpStudentAssignments.Location = new System.Drawing.Point(4, 34);
-            this.tpStudentAssignments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpStudentAssignments.Location = new System.Drawing.Point(4, 29);
             this.tpStudentAssignments.Name = "tpStudentAssignments";
-            this.tpStudentAssignments.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpStudentAssignments.Size = new System.Drawing.Size(1027, 486);
+            this.tpStudentAssignments.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpStudentAssignments.Size = new System.Drawing.Size(768, 393);
             this.tpStudentAssignments.TabIndex = 1;
             this.tpStudentAssignments.Text = "Assignments";
             this.tpStudentAssignments.UseVisualStyleBackColor = true;
             // 
             // btnAComplete
             // 
-            this.btnAComplete.Location = new System.Drawing.Point(557, 423);
-            this.btnAComplete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAComplete.Location = new System.Drawing.Point(418, 344);
             this.btnAComplete.Name = "btnAComplete";
-            this.btnAComplete.Size = new System.Drawing.Size(127, 39);
+            this.btnAComplete.Size = new System.Drawing.Size(95, 32);
             this.btnAComplete.TabIndex = 11;
             this.btnAComplete.Text = "Complete";
             this.btnAComplete.UseVisualStyleBackColor = true;
@@ -237,97 +228,87 @@
             // 
             // txtSADesciption
             // 
-            this.txtSADesciption.Location = new System.Drawing.Point(751, 318);
-            this.txtSADesciption.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSADesciption.Location = new System.Drawing.Point(563, 258);
             this.txtSADesciption.Multiline = true;
             this.txtSADesciption.Name = "txtSADesciption";
             this.txtSADesciption.ReadOnly = true;
-            this.txtSADesciption.Size = new System.Drawing.Size(264, 144);
+            this.txtSADesciption.Size = new System.Drawing.Size(199, 118);
             this.txtSADesciption.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(613, 321);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(460, 261);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 25);
+            this.label10.Size = new System.Drawing.Size(97, 20);
             this.label10.TabIndex = 9;
             this.label10.Text = "Description :";
             // 
             // txtSALecturer
             // 
-            this.txtSALecturer.Location = new System.Drawing.Point(751, 250);
-            this.txtSALecturer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSALecturer.Location = new System.Drawing.Point(563, 203);
             this.txtSALecturer.Name = "txtSALecturer";
             this.txtSALecturer.ReadOnly = true;
-            this.txtSALecturer.Size = new System.Drawing.Size(264, 30);
+            this.txtSALecturer.Size = new System.Drawing.Size(199, 26);
             this.txtSALecturer.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(641, 254);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(481, 206);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 25);
+            this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 7;
             this.label9.Text = "Lecturer :";
             // 
             // txtSADateDue
             // 
-            this.txtSADateDue.Location = new System.Drawing.Point(749, 185);
-            this.txtSADateDue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSADateDue.Location = new System.Drawing.Point(562, 150);
             this.txtSADateDue.Name = "txtSADateDue";
             this.txtSADateDue.ReadOnly = true;
-            this.txtSADateDue.Size = new System.Drawing.Size(265, 30);
+            this.txtSADateDue.Size = new System.Drawing.Size(200, 26);
             this.txtSADateDue.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(627, 188);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(470, 153);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 25);
+            this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 5;
             this.label8.Text = "Date Due :";
             // 
             // txtSAName
             // 
-            this.txtSAName.Location = new System.Drawing.Point(751, 121);
-            this.txtSAName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSAName.Location = new System.Drawing.Point(563, 98);
             this.txtSAName.Name = "txtSAName";
             this.txtSAName.ReadOnly = true;
-            this.txtSAName.Size = new System.Drawing.Size(264, 30);
+            this.txtSAName.Size = new System.Drawing.Size(199, 26);
             this.txtSAName.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(664, 124);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(498, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 25);
+            this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Name :";
             // 
             // txtSAModuleID
             // 
-            this.txtSAModuleID.Location = new System.Drawing.Point(749, 53);
-            this.txtSAModuleID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSAModuleID.Location = new System.Drawing.Point(562, 43);
             this.txtSAModuleID.Name = "txtSAModuleID";
             this.txtSAModuleID.ReadOnly = true;
-            this.txtSAModuleID.Size = new System.Drawing.Size(265, 30);
+            this.txtSAModuleID.Size = new System.Drawing.Size(200, 26);
             this.txtSAModuleID.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(641, 57);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(481, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 25);
+            this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Module :";
             // 
@@ -340,10 +321,9 @@
             this.lvStudentAssignments.FullRowSelect = true;
             this.lvStudentAssignments.GridLines = true;
             this.lvStudentAssignments.HideSelection = false;
-            this.lvStudentAssignments.Location = new System.Drawing.Point(8, 22);
-            this.lvStudentAssignments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvStudentAssignments.Location = new System.Drawing.Point(6, 18);
             this.lvStudentAssignments.Name = "lvStudentAssignments";
-            this.lvStudentAssignments.Size = new System.Drawing.Size(540, 440);
+            this.lvStudentAssignments.Size = new System.Drawing.Size(406, 358);
             this.lvStudentAssignments.TabIndex = 0;
             this.lvStudentAssignments.UseCompatibleStateImageBehavior = false;
             this.lvStudentAssignments.View = System.Windows.Forms.View.Details;
@@ -366,21 +346,19 @@
             // 
             // tpStudentLogout
             // 
-            this.tpStudentLogout.Location = new System.Drawing.Point(4, 34);
-            this.tpStudentLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpStudentLogout.Location = new System.Drawing.Point(4, 29);
             this.tpStudentLogout.Name = "tpStudentLogout";
-            this.tpStudentLogout.Size = new System.Drawing.Size(1027, 486);
+            this.tpStudentLogout.Size = new System.Drawing.Size(768, 393);
             this.tpStudentLogout.TabIndex = 2;
             this.tpStudentLogout.Text = "Logout";
             this.tpStudentLogout.UseVisualStyleBackColor = true;
             // 
             // StudentDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcStudentDash);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StudentDashboard";
             this.Text = "StudentDashboard";
             this.tcStudentDash.ResumeLayout(false);
