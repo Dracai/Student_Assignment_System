@@ -70,17 +70,13 @@ namespace Student_Assignment_System
 
         public bool validateInput()
         {
-            if (!Regex.IsMatch(txtCG.Text, @"^[a-zA-Z]+$"))
-            {
-                MessageBox.Show("Class Group Unrecognised, Try Again");
-                return false;
-            }
-            else if (String.IsNullOrEmpty(txtDescript.Text))
+            
+            if (String.IsNullOrEmpty(txtDescript.Text))
             {
                 MessageBox.Show("Assignment requires short Description");
                 return false;
             }
-            else if (dtpDue.Value > DateTime.Today)
+            else if (dtpDue.Value < DateTime.Today)
             {
                 MessageBox.Show("Select a valid date");
                 return false;

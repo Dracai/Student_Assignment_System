@@ -9,6 +9,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Student_Assignment_System
 {
@@ -26,7 +27,7 @@ namespace Student_Assignment_System
             InitializeComponent();
             List<Student> StudentList = stulist;
             ReadFiles();
-            UpdateListViews();
+            
             List<string> mod = new List<string>();
             mod.Add("M002");
             mod.Add("M001");
@@ -36,6 +37,7 @@ namespace Student_Assignment_System
             }
             user = User;
             lblLectName.Text = user.Name;
+            UpdateListViews();
         }
 
         public static void ReadFile<T>(ref List<T> list, string file)
@@ -109,7 +111,7 @@ namespace Student_Assignment_System
 
         private void ReadFiles()
         {
-            ReadFile<Module>(ref ModuleList, "ModuleFiles.dat");
+            ReadFile<Module>(ref ModuleList, "ModuleFile.dat");
             ReadFile<Assignment>(ref AssignmentList, "AssignmentFiles.dat");
             ReadFile<ClassGroup>(ref ClassGroupList, "ClassGroupFile.dat");
             ReadFile<Student>(ref StudentList, "StudentFiles.dat");
@@ -122,6 +124,7 @@ namespace Student_Assignment_System
 
         public void UpdateListViews()
         {
+            List<string> moduleaccess = new List<string>();
             lvAssignmentsAss.Items.Clear();
             lvAssignmentsCG.Items.Clear();
             lvClassGroupsCG.Items.Clear();
@@ -145,13 +148,25 @@ namespace Student_Assignment_System
                 lvClassGroupsCG.Items.Add(item);
             }
 
+            foreach(Module m in ModuleList)
+            {
+                if(user.ModulesToTeach.Contains(m.ModuleCode))
+                {
+                    moduleaccess.Add(m.ModuleName);
+                    Debug.WriteLine(m.ModuleName);
+                }
+            }
+
             foreach (Assignment a in AssignmentList)
             {
-                item = new ListViewItem(a.AssignmentID);
-                item.SubItems.Add(a.Name);
-                item.SubItems.Add(a.DateDue.ToShortDateString().ToString());
-                item.SubItems.Add(a.Module);
-                lvAssignmentsAss.Items.Add(item);
+                if (moduleaccess.Contains(a.Module))
+                {
+                    item = new ListViewItem(a.AssignmentID);
+                    item.SubItems.Add(a.Name);
+                    item.SubItems.Add(a.DateDue.ToShortDateString().ToString());
+                    item.SubItems.Add(a.Module);
+                    lvAssignmentsAss.Items.Add(item);
+                }
             }
 
             
