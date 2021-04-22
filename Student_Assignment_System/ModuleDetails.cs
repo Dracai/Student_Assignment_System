@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +24,7 @@ namespace Student_Assignment_System
             {
                 clbClassGroups.Items.Add(cg.ClassGroupName);
             }
+            txtModuleCode.ReadOnly = true;
 
             lblModuleHeading.Text = moduleHeading;
             if(!(selectedModule == null))
@@ -48,25 +50,59 @@ namespace Student_Assignment_System
         {
             if (validateInput())
             {
+                List<Module> modulelist = new List<Module>();
+                List<string> moduleIDList = modulelist.Select(_ => _.ModuleCode).ToList();
+                ReadFile<Module>(ref modulelist, "ModuleFile.dat");
                 List<string> moduleClassGroups = new List<string>();
                 foreach (string cg in clbClassGroups.CheckedItems)
                 {
                     moduleClassGroups.Add(cg);
                 }
-                Module module = new Module(txtModuleCode.Text, txtModuleName.Text, Convert.ToInt32(txtModuleCredits.Text), moduleClassGroups);
+                Random random = new Random();
+                string moduleID = $"M{random.Next(100, 999)}";
+                while(moduleIDList.Contains(moduleID))
+                {
+                    moduleID = $"M{random.Next(100, 999)}";
+                }
+                Module module = new Module(moduleID, txtModuleName.Text, Convert.ToInt32(txtModuleCredits.Text), moduleClassGroups);
                 this.Tag = module;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            else
-            {
-                //Validate your shit son
-
             }
         }
 
         public bool validateInput()
         {
+            if (!Regex.IsMatch(txtModuleName.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Name has to contain alphabetic characters only");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtModuleName.Text))
+            {
+                MessageBox.Show("Name text box cannot be empty");
+                return false;
+            }
+            else if (IsNumeric(txtModuleCredits.Text))
+            {
+                MessageBox.Show("Credits must be a numeric value");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtModuleCredits.Text))
+            {
+                MessageBox.Show("PPS number  text box cannot be empty");
+                return false;
+            }
+            else if (clbClassGroups.SelectedItems.Count == 2)
+            {
+                MessageBox.Show("Select only one class group");
+                return false;
+            }
+            else if (clbClassGroups.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a class group");
+                return false;
+            }
             return true;
         }
 
@@ -96,6 +132,11 @@ namespace Student_Assignment_System
                 Console.WriteLine($"ERROR CANT FIND FILE " + fileInfo.FullName);
             }
         
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

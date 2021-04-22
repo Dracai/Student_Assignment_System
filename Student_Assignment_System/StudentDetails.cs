@@ -29,7 +29,7 @@ namespace Student_Assignment_System
             }
             if (!(selectedStudent == null))
             {
-                
+                txtStudentID.ReadOnly = true;
                 txtStudentID.Text = selectedStudent.StudentID;
                 txtStudentName.Text = selectedStudent.Name;
                 dtpStudentDOB.Value = selectedStudent.DateOfBirth;
@@ -59,18 +59,20 @@ namespace Student_Assignment_System
         {
             if (validateInput())
             {
+                List<Student> studentlist = new List<Student>();
+                ReadFile<Student>(ref studentlist, "StudentFiles.dat");
+                List<string> studentKnumbers = studentlist.Select(_ => _.StudentID).ToList();
                 Random random = new Random();
                 string kNumber = $"K00{random.Next(100000,999999)}";
+                while (studentKnumbers.Contains(kNumber))
+                {
+                    kNumber = $"K00{random.Next(100000, 999999)}";
+                }
                 List<string> sCA = new List<string>();
                 Student stud = new Student(txtStudentName.Text, dtpStudentDOB.Value, txtStudentAddress.Text, txtStudentPPSN.Text, kNumber, txtStudentPassword.Text, txtStudentCourse.Text, clbClassGroups.SelectedItem.ToString(), dtpStudentDateEnrolled.Value, sCA);
                 this.Tag = stud;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            else
-            {
-                //Validate your shit son
-
             }
         }
 
