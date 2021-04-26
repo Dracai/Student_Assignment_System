@@ -32,11 +32,11 @@ namespace Student_Assignment_System
             this.lblUpcoming = new System.Windows.Forms.Label();
             this.lblCg = new System.Windows.Forms.Label();
             this.lvUpcomingAssignment = new System.Windows.Forms.ListView();
-            this.AssignName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AssignDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AssignModule = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnViewDescription = new System.Windows.Forms.Button();
             this.AssignID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AssignName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AssignModule = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AssignDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnViewDescription = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUpcoming
@@ -66,6 +66,7 @@ namespace Student_Assignment_System
             this.AssignName,
             this.AssignModule,
             this.AssignDue});
+            this.lvUpcomingAssignment.FullRowSelect = true;
             this.lvUpcomingAssignment.GridLines = true;
             this.lvUpcomingAssignment.HideSelection = false;
             this.lvUpcomingAssignment.Location = new System.Drawing.Point(12, 74);
@@ -76,22 +77,25 @@ namespace Student_Assignment_System
             this.lvUpcomingAssignment.UseCompatibleStateImageBehavior = false;
             this.lvUpcomingAssignment.View = System.Windows.Forms.View.Details;
             // 
+            // AssignID
+            // 
+            this.AssignID.Text = "ID";
+            this.AssignID.Width = 0;
+            // 
             // AssignName
             // 
-            this.AssignName.DisplayIndex = 0;
             this.AssignName.Text = "Assignment Name";
             this.AssignName.Width = 186;
-            // 
-            // AssignDue
-            // 
-            this.AssignDue.DisplayIndex = 1;
-            this.AssignDue.Text = "Due Date";
-            this.AssignDue.Width = 95;
             // 
             // AssignModule
             // 
             this.AssignModule.Text = "Module";
             this.AssignModule.Width = 228;
+            // 
+            // AssignDue
+            // 
+            this.AssignDue.Text = "Due Date";
+            this.AssignDue.Width = 95;
             // 
             // btnViewDescription
             // 
@@ -102,11 +106,6 @@ namespace Student_Assignment_System
             this.btnViewDescription.Text = "View Description";
             this.btnViewDescription.UseVisualStyleBackColor = true;
             this.btnViewDescription.Click += new System.EventHandler(this.btnViewDescription_Click);
-            // 
-            // AssignID
-            // 
-            this.AssignID.Text = "ID";
-            this.AssignID.Width = 0;
             // 
             // UpcomingAssignments
             // 
