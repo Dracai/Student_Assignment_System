@@ -265,11 +265,21 @@ namespace Student_Assignment_System
         {
             DialogResult completeBtn = DialogResult.No;
             Form assignmentDetails;
+            Assignment tempa = new Assignment();
             if (lvAssignmentsAss.SelectedItems.Count > 0)
             {
+                foreach(Assignment a in AssignmentList)
+                {
+                    if (a.AssignmentID == lvAssignmentsAss.SelectedItems[0].Text)
+                    {
+                        tempa = a;
+                        
+                    }
+                }
 
-                assignmentDetails = new AssignmentDetails(ref user, "", AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])]);
+                assignmentDetails = new AssignmentDetails(ref user, "", tempa);
                 completeBtn = assignmentDetails.ShowDialog();
+
                 if (completeBtn == DialogResult.OK)
                 {
                     Assignment newassignment = (Assignment)assignmentDetails.Tag;
