@@ -17,9 +17,11 @@ namespace Student_Assignment_System
     public partial class LecturerDetails : Form
     {
         public List<Module> moduleList = new List<Module>();
+        Lecturer lecturerToEdit = null;
         public LecturerDetails(string detailsHeading, Lecturer selectedLecturer = null)
         {
             InitializeComponent();
+            lecturerToEdit = selectedLecturer;
             lblLectDetailsheading.Text = detailsHeading;
             ReadFile<Module>(ref moduleList, "ModuleFile.dat");
             foreach (Module m in moduleList)
@@ -75,13 +77,21 @@ namespace Student_Assignment_System
                         }
                     }
                 }
-                Random random = new Random();
-                string lectID = $"L{random.Next(100, 999)}";
-                while (lectIDs.Contains(lectID))
+                Lecturer lect = new Lecturer();
+                if (lecturerToEdit == null)
                 {
-                    lectID = $"L{random.Next(100, 999)}";
+                    Random random = new Random();
+                    string lectID = $"L{random.Next(100, 999)}";
+                    while (lectIDs.Contains(lectID))
+                    {
+                        lectID = $"L{random.Next(100, 999)}";
+                    }
+                    lect = new Lecturer(txtLecturerName.Text, dtpLecturerDOB.Value, txtLecturerAddress.Text, txtLecturerAddress.Text, lectID, txtLecturerPassword.Text, modulesToTeach, dtpLecturerDateOfHire.Value);
                 }
-                Lecturer lect = new Lecturer(lectID,dtpLecturerDOB.Value,txtLecturerAddress.Text,txtLecturerPPSN.Text,txtLecturerID.Text,txtLecturerPassword.Text,modulesToTeach,dtpLecturerDateOfHire.Value);
+                else
+                {
+                   lect = new Lecturer(txtLecturerName.Text, dtpLecturerDOB.Value, txtLecturerAddress.Text, txtLecturerAddress.Text, txtLecturerID.Text, txtLecturerPassword.Text, modulesToTeach, dtpLecturerDateOfHire.Value);
+                }
                 this.Tag = lect;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -90,7 +100,7 @@ namespace Student_Assignment_System
 
         public bool validateInput()
         {
-            if (!Regex.IsMatch(txtLecturerName.Text, @"^[a-zA-Z]+$"))
+            if ((!Regex.IsMatch(txtLecturerName.Text, @"^[a-zA-Z]+$")) && !(txtLecturerName.Text.Contains(' ')))
             {
                 MessageBox.Show("Name has to contain alphabetic characters only");
                 return false;
@@ -120,7 +130,7 @@ namespace Student_Assignment_System
                 MessageBox.Show("Password text box cannot be empty");
                 return false;
             }
-            else if (dtpLecturerDateOfHire.Value >= dtpLecturerDOB.Value)
+            else if (dtpLecturerDateOfHire.Value <= dtpLecturerDOB.Value)
             {
                 MessageBox.Show("Pick a valid date of hire");
                 return false;

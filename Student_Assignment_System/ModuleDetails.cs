@@ -16,9 +16,11 @@ namespace Student_Assignment_System
     public partial class ModuleDetails : Form
     {
         List<ClassGroup> ClassGroups = new List<ClassGroup>();
+        Module ModuleToEdit = null;
         public ModuleDetails(string moduleHeading, Module selectedModule = null)
         {
             InitializeComponent();
+            ModuleToEdit = selectedModule;
             ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
             foreach(ClassGroup cg in ClassGroups)
             {
@@ -58,13 +60,22 @@ namespace Student_Assignment_System
                 {
                     moduleClassGroups.Add(cg);
                 }
-                Random random = new Random();
-                string moduleID = $"M{random.Next(100, 999)}";
-                while(moduleIDList.Contains(moduleID))
+                Module module = new Module();
+                if (ModuleToEdit == null)
                 {
-                    moduleID = $"M{random.Next(100, 999)}";
+                    Random random = new Random();
+                    string moduleID = $"M{random.Next(100, 999)}";
+                    while (moduleIDList.Contains(moduleID))
+                    {
+                        moduleID = $"M{random.Next(100, 999)}";
+                    }
+
+                     module = new Module(moduleID, txtModuleName.Text, Convert.ToInt32(txtModuleCredits.Text), moduleClassGroups);
                 }
-                Module module = new Module(moduleID, txtModuleName.Text, Convert.ToInt32(txtModuleCredits.Text), moduleClassGroups);
+                else
+                {
+                    module = new Module(txtModuleCode.Text, txtModuleName.Text, Convert.ToInt32(txtModuleCredits.Text), moduleClassGroups);
+                }
                 this.Tag = module;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -83,7 +94,7 @@ namespace Student_Assignment_System
                 MessageBox.Show("Name text box cannot be empty");
                 return false;
             }
-            else if (IsNumeric(txtModuleCredits.Text))
+            else if (!IsNumeric(txtModuleCredits.Text))
             {
                 MessageBox.Show("Credits must be a numeric value");
                 return false;
@@ -93,12 +104,7 @@ namespace Student_Assignment_System
                 MessageBox.Show("PPS number  text box cannot be empty");
                 return false;
             }
-            else if (clbClassGroups.SelectedItems.Count == 2)
-            {
-                MessageBox.Show("Select only one class group");
-                return false;
-            }
-            else if (clbClassGroups.SelectedItems.Count == 0)
+            else if (clbClassGroups.CheckedItems.Count == 0)
             {
                 MessageBox.Show("Select a class group");
                 return false;

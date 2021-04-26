@@ -22,11 +22,13 @@ namespace Student_Assignment_System
         List<Lecturer> LectList = new List<Lecturer>();
         List<Student> StudentList = new List<Student>();
         List<Assignment> AssignmentList = new List<Assignment>();
+        Administrator currentAdminLoggedIn = null;
 
         //Allow one admin object to be passed to constructor, as this is 
         //The admin that has successfully logged in
         public AdministratorDashboard(Administrator currentAdmin)
         {
+            currentAdminLoggedIn = currentAdmin;
             InitializeComponent();
             //Read data from files and populate lists, refreshing list views as data is read
             ReadFile<Administrator>(ref AdminList, "AdminFile.dat");
@@ -319,6 +321,14 @@ namespace Student_Assignment_System
         {
             if(listViewAdmin.SelectedItems.Count > 0)
             {
+                foreach(ListViewItem lvi in listViewAdmin.SelectedItems)
+                {
+                    if(lvi.Text == currentAdminLoggedIn.AdminID)
+                    {
+                        MessageBox.Show("Can not delete yourself", "Error", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
                 AdminList.RemoveAt(listViewAdmin.Items.IndexOf(listViewAdmin.SelectedItems[0]));
                 listViewAdmin.Items.Clear();
                 RefreshAdminDetails();
