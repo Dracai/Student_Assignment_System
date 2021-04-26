@@ -17,9 +17,11 @@ namespace Student_Assignment_System
     {
         List<Assignment> assignmentList = new List<Assignment>();
         List<ClassGroup> ClassGroups = new List<ClassGroup>();
+        Student studentToEdit = null;
         public StudentDetails(string detailsHeading, Student selectedStudent = null)
         {
             InitializeComponent();
+            studentToEdit = selectedStudent;
             txtStudentID.ReadOnly = true;
             ReadFile<Assignment>(ref assignmentList, "AssignmentFiles.dat");
             ReadFile<ClassGroup>(ref ClassGroups, "ClassGroupFile.dat");
@@ -62,14 +64,24 @@ namespace Student_Assignment_System
                 List<Student> studentlist = new List<Student>();
                 ReadFile<Student>(ref studentlist, "StudentFiles.dat");
                 List<string> studentKnumbers = studentlist.Select(_ => _.StudentID).ToList();
-                Random random = new Random();
-                string kNumber = $"K00{random.Next(100000,999999)}";
-                while (studentKnumbers.Contains(kNumber))
+                Student stud = new Student();
+                if (studentToEdit == null)
                 {
-                    kNumber = $"K00{random.Next(100000, 999999)}";
+                    Random random = new Random();
+                    string kNumber = $"K00{random.Next(100000, 999999)}";
+                    while (studentKnumbers.Contains(kNumber))
+                    {
+                        kNumber = $"K00{random.Next(100000, 999999)}";
+                    }
+                    List<string> sCA = new List<string>();
+                    stud = new Student(txtStudentName.Text, dtpStudentDOB.Value, txtStudentAddress.Text, txtStudentPPSN.Text, kNumber, txtStudentPassword.Text, txtStudentCourse.Text, clbClassGroups.CheckedItems.ToString(), dtpStudentDateEnrolled.Value, sCA);
                 }
-                List<string> sCA = new List<string>();
-                Student stud = new Student(txtStudentName.Text, dtpStudentDOB.Value, txtStudentAddress.Text, txtStudentPPSN.Text, kNumber, txtStudentPassword.Text, txtStudentCourse.Text, clbClassGroups.SelectedItem.ToString(), dtpStudentDateEnrolled.Value, sCA);
+                else
+                {
+                    List<string> sCA = new List<string>();
+                    stud = new Student(txtStudentName.Text, dtpStudentDOB.Value, txtStudentAddress.Text, txtStudentPPSN.Text, txtStudentID.Text, txtStudentPassword.Text, txtStudentCourse.Text, clbClassGroups.CheckedItems.ToString(), dtpStudentDateEnrolled.Value, sCA) ;
+                }
+
                 this.Tag = stud;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -78,7 +90,7 @@ namespace Student_Assignment_System
 
         public bool validateInput()
         {
-            if (!Regex.IsMatch(txtStudentName.Text, @"^[a-zA-Z]+$"))
+            if ((!Regex.IsMatch(txtStudentName.Text, @"^[a-zA-Z]+$")) && !(txtStudentName.Text.Contains(' ')))
             {
                 MessageBox.Show("Name has to contain alphabetic characters only");
                 return false;
@@ -113,20 +125,22 @@ namespace Student_Assignment_System
                 MessageBox.Show("Password text box cannot be empty");
                 return false;
             }
-            else if(clbClassGroups.SelectedItems.Count > 1)
+            else if(clbClassGroups.CheckedItems.Count > 1)
             {
                 MessageBox.Show("Select only one class group");
+                return false;
             }
-            else if (clbClassGroups.SelectedItems.Count == 0)
+            else if (clbClassGroups.CheckedItems.Count == 0)
             {
                 MessageBox.Show("Select a class group");
+                return false;
             }
             else if (String.IsNullOrEmpty(txtStudentCourse.Text))
             {
                 MessageBox.Show("Course text box cannot be empty");
                 return false;
             }
-            else if (dtpStudentDateEnrolled.Value >= dtpStudentDOB.Value)
+            else if (dtpStudentDateEnrolled.Value <= dtpStudentDOB.Value)
             {
                 MessageBox.Show("Pick a valid date enrolled");
                 return false;

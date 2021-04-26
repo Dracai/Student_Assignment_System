@@ -15,11 +15,13 @@ namespace Student_Assignment_System
 {
     public partial class AdminDetails : Form
     {
+        public Administrator adminToEdit  = null;
         public AdminDetails(string detailsHeading, Administrator selectedAdmin = null)
         {
-            txtAdminID.ReadOnly = true;
             InitializeComponent();
-            if(!(selectedAdmin == null))
+            adminToEdit = selectedAdmin;
+            txtAdminID.ReadOnly = true;
+            if (!(selectedAdmin == null))
             {
                 txtAdminID.Text = selectedAdmin.AdminID;
                 txtAdminName.Text = selectedAdmin.Name;
@@ -40,12 +42,20 @@ namespace Student_Assignment_System
                 ReadFile<Administrator>(ref adminlist, "AdminFile.dat");
                 List<string> adminIDList = adminlist.Select(_ => _.AdminID).ToList();
                 Random random = new Random();
-                string adminID= $"A{random.Next(100, 999)}";
-                while (adminIDList.Contains(adminID))
+                Administrator admin = new Administrator();
+                if (adminToEdit == null)
                 {
-                    adminID = $"L{random.Next(100, 999)}";
+                    string adminID = $"A{random.Next(100, 999)}";
+                    while (adminIDList.Contains(adminID))
+                    {
+                        adminID = $"L{random.Next(100, 999)}";
+                    }
+                     admin = new Administrator(adminID, txtAdminPassword.Text, txtAdminPhoneNumber.Text, dtpAdminDateOfHire.Value, txtAdminName.Text, dtpAdminDOB.Value, txtAdminAddress.Text, txtAdminPPSN.Text);
                 }
-                Administrator admin = new Administrator(adminID, txtAdminPassword.Text, txtAdminPhoneNumber.Text, dtpAdminDOB.Value, txtAdminName.Text, dtpAdminDateOfHire.Value, txtAdminAddress.Text, txtAdminPPSN.Text);
+                else
+                {
+                     admin = new Administrator(txtAdminID.Text, txtAdminPassword.Text, txtAdminPhoneNumber.Text, dtpAdminDateOfHire.Value, txtAdminName.Text, dtpAdminDOB.Value, txtAdminAddress.Text, txtAdminPPSN.Text);
+                }
                 this.Tag = admin;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -55,7 +65,7 @@ namespace Student_Assignment_System
 
         public bool validateInput()
         {
-            if (!Regex.IsMatch(txtAdminName.Text, @"^[a-zA-Z]+$"))
+            if ((!Regex.IsMatch(txtAdminName.Text, @"^[a-zA-Z]+$")) && !(txtAdminName.Text.Contains(' ')))
             {
                 MessageBox.Show("Name has to contain alphabetic characters only");
                 return false;
@@ -90,7 +100,7 @@ namespace Student_Assignment_System
                 MessageBox.Show("Phone Number text box cannot be empty");
                 return false;
             }
-            else if (dtpAdminDateOfHire.Value >= dtpAdminDOB.Value)
+            else if (dtpAdminDateOfHire.Value <= dtpAdminDOB.Value)
             {
                 MessageBox.Show("Pick a valid date of hire");
                 return false;
