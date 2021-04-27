@@ -70,7 +70,8 @@ namespace Student_Assignment_System
             if (validateInput())
             {
                 Assignment assignment = new Assignment(txtID.Text, txtName.Text, DateTime.Now, dtpDue.Value, txtCG.Text, cbModule.Text, lecturer.LecturerID, txtDescript.Text);
-                this.Tag = assignment;
+                edit = assignment;
+                this.Tag = edit;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
