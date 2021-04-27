@@ -265,6 +265,7 @@ namespace Student_Assignment_System
         {
             DialogResult completeBtn = DialogResult.No;
             Form assignmentDetails;
+            int index = 0;
             Assignment tempa = new Assignment();
             if (lvAssignmentsAss.SelectedItems.Count > 0)
             {
@@ -273,18 +274,20 @@ namespace Student_Assignment_System
                     if (a.AssignmentID == lvAssignmentsAss.SelectedItems[0].Text)
                     {
                         tempa = a;
-                        
+                        index = AssignmentList.IndexOf(a);
+                        break;
                     }
                 }
-
-                assignmentDetails = new AssignmentDetails(ref user, "", tempa);
+                assignmentDetails = new AssignmentDetails(ref user, "", AssignmentList[index]);
                 completeBtn = assignmentDetails.ShowDialog();
 
                 if (completeBtn == DialogResult.OK)
                 {
                     Assignment newassignment = (Assignment)assignmentDetails.Tag;
-                    AssignmentList[lvAssignmentsAss.Items.IndexOf(lvAssignmentsAss.SelectedItems[0])] = newassignment;
+                    AssignmentList[index] = newassignment;
                 }
+
+
                 UpdateListViews();
 
             }
